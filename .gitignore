@@ -1,0 +1,6 @@
+data/
+data_old/
+logs/
+results/
+shell/QSUB/
+shell_old/
