@@ -18,6 +18,10 @@ sh /media/inter/mkapun/projects/WolbEvolHist_2023/shell/assembly.sh
 
 sh /media/inter/mkapun/projects/WolbEvolHist_2023/shell/finish.sh
 
+## Make Annotation with exonerate
+
+sh /media/inter/mkapun/projects/WolbEvolHist_2023/shell/Annotation.sh
+
 ## map isolated reads against corresponding reference
 
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/mapReads.sh
