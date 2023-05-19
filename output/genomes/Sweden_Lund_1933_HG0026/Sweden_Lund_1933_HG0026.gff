@@ -1,0 +1,928 @@
+NODE_182_length_909_cov_2.417067	exonerate:protein2genome:local	gene	532	756	359	+	.	gene_id F0F1_ATP_synthase_subunit_C_[Wolbachia] ; sequence WP_006014985.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_182_length_909_cov_2.417067	exonerate:protein2genome:local	cds	532	756	.	+	.	
+NODE_182_length_909_cov_2.417067	exonerate:protein2genome:local	exon	532	756	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_182_length_909_cov_2.417067	exonerate:protein2genome:local	similarity	532	756	359	+	.	alignment_id 0 ; Query WP_006014985.1 ; Align 532 1 225
+NODE_399_length_668_cov_1.543147	exonerate:protein2genome:local	gene	251	613	617	-	.	gene_id ClpXP_protease_specificity-enhancing_factor_SspB_[Wolbachia] ; sequence WP_006279412.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_399_length_668_cov_1.543147	exonerate:protein2genome:local	cds	251	613	.	-	.	
+NODE_399_length_668_cov_1.543147	exonerate:protein2genome:local	exon	251	613	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_399_length_668_cov_1.543147	exonerate:protein2genome:local	similarity	251	613	617	-	.	alignment_id 0 ; Query WP_006279412.1 ; Align 614 25 363
+NODE_963_length_429_cov_1.170455	exonerate:protein2genome:local	gene	138	356	363	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_006279415.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_963_length_429_cov_1.170455	exonerate:protein2genome:local	cds	138	356	.	-	.	
+NODE_963_length_429_cov_1.170455	exonerate:protein2genome:local	exon	138	356	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_963_length_429_cov_1.170455	exonerate:protein2genome:local	similarity	138	356	363	-	.	alignment_id 0 ; Query WP_006279415.1 ; Align 357 1 219
+NODE_80_length_1154_cov_1.224698	exonerate:protein2genome:local	gene	625	1152	909	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_006279429.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_80_length_1154_cov_1.224698	exonerate:protein2genome:local	cds	625	1152	.	+	.	
+NODE_80_length_1154_cov_1.224698	exonerate:protein2genome:local	exon	625	1152	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_80_length_1154_cov_1.224698	exonerate:protein2genome:local	similarity	625	1152	909	+	.	alignment_id 0 ; Query WP_006279429.1 ; Align 625 1 528
+NODE_52_length_1362_cov_0.748638	exonerate:protein2genome:local	gene	447	1241	1395	+	.	gene_id phosphoribosylformylglycinamidine_synthase_subunit_PurQ_[Wolbachia] ; sequence WP_006279487.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_52_length_1362_cov_0.748638	exonerate:protein2genome:local	cds	447	1241	.	+	.	
+NODE_52_length_1362_cov_0.748638	exonerate:protein2genome:local	exon	447	1241	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_52_length_1362_cov_0.748638	exonerate:protein2genome:local	similarity	447	1241	1395	+	.	alignment_id 0 ; Query WP_006279487.1 ; Align 447 1 795
+NODE_307_length_741_cov_1.941265	exonerate:protein2genome:local	gene	147	422	483	-	.	gene_id YggT_family_protein_[Rickettsiales] ; sequence WP_006279515.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_307_length_741_cov_1.941265	exonerate:protein2genome:local	cds	147	422	.	-	.	
+NODE_307_length_741_cov_1.941265	exonerate:protein2genome:local	exon	147	422	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_307_length_741_cov_1.941265	exonerate:protein2genome:local	similarity	147	422	483	-	.	alignment_id 0 ; Query WP_006279515.1 ; Align 423 1 276
+NODE_2332_length_232_cov_3.832258	exonerate:protein2genome:local	gene	2	157	252	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_006279522.1 ; gene_orientation . ; identity 98.08 ; similarity 100.00
+NODE_2332_length_232_cov_3.832258	exonerate:protein2genome:local	cds	2	157	.	-	.	
+NODE_2332_length_232_cov_3.832258	exonerate:protein2genome:local	exon	2	157	.	-	.	insertions 0 ; deletions 0 ; identity 98.08 ; similarity 100.00
+NODE_2332_length_232_cov_3.832258	exonerate:protein2genome:local	similarity	2	157	252	-	.	alignment_id 0 ; Query WP_006279522.1 ; Align 158 1 156
+NODE_37_length_1538_cov_1.470910	exonerate:protein2genome:local	gene	806	1321	831	-	.	gene_id 50S_ribosomal_protein_L10_[Wolbachia] ; sequence WP_006279539.1 ; gene_orientation . ; identity 99.42 ; similarity 100.00
+NODE_37_length_1538_cov_1.470910	exonerate:protein2genome:local	cds	806	1321	.	-	.	
+NODE_37_length_1538_cov_1.470910	exonerate:protein2genome:local	exon	806	1321	.	-	.	insertions 0 ; deletions 0 ; identity 99.42 ; similarity 100.00
+NODE_37_length_1538_cov_1.470910	exonerate:protein2genome:local	similarity	806	1321	831	-	.	alignment_id 0 ; Query WP_006279539.1 ; Align 1322 1 516
+NODE_356_length_705_cov_0.727707	exonerate:protein2genome:local	gene	72	641	1015	-	.	gene_id NADH-quinone_oxidoreductase_subunit_C_[Wolbachia] ; sequence WP_006279573.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_356_length_705_cov_0.727707	exonerate:protein2genome:local	cds	72	641	.	-	.	
+NODE_356_length_705_cov_0.727707	exonerate:protein2genome:local	exon	72	641	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_356_length_705_cov_0.727707	exonerate:protein2genome:local	similarity	72	641	1015	-	.	alignment_id 0 ; Query WP_006279573.1 ; Align 642 1 570
+NODE_1095_length_396_cov_4.012539	exonerate:protein2genome:local	gene	62	394	574	+	.	gene_id NADH-quinone_oxidoreductase_subunit_A_[Wolbachia] ; sequence WP_006279576.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_1095_length_396_cov_4.012539	exonerate:protein2genome:local	cds	62	394	.	+	.	
+NODE_1095_length_396_cov_4.012539	exonerate:protein2genome:local	exon	62	394	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_1095_length_396_cov_4.012539	exonerate:protein2genome:local	similarity	62	394	574	+	.	alignment_id 0 ; Query WP_006279576.1 ; Align 62 1 333
+NODE_58_length_1301_cov_2.303105	exonerate:protein2genome:local	gene	784	909	221	+	.	gene_id type_B_50S_ribosomal_protein_L36_[Rickettsiales] ; sequence WP_006279631.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_58_length_1301_cov_2.303105	exonerate:protein2genome:local	cds	784	909	.	+	.	
+NODE_58_length_1301_cov_2.303105	exonerate:protein2genome:local	exon	784	909	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_58_length_1301_cov_2.303105	exonerate:protein2genome:local	similarity	784	909	221	+	.	alignment_id 0 ; Query WP_006279631.1 ; Align 784 1 126
+NODE_446_length_638_cov_3.327986	exonerate:protein2genome:local	gene	186	494	505	+	.	gene_id cation:proton_antiporter_subunit_C_[Wolbachia] ; sequence WP_006279706.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_446_length_638_cov_3.327986	exonerate:protein2genome:local	cds	186	494	.	+	.	
+NODE_446_length_638_cov_3.327986	exonerate:protein2genome:local	exon	186	494	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_446_length_638_cov_3.327986	exonerate:protein2genome:local	similarity	186	494	505	+	.	alignment_id 0 ; Query WP_006279706.1 ; Align 186 1 309
+NODE_603_length_556_cov_2.210856	exonerate:protein2genome:local	gene	2	514	876	+	.	gene_id elongation_factor_P_[Wolbachia] ; sequence WP_006279719.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_603_length_556_cov_2.210856	exonerate:protein2genome:local	cds	2	514	.	+	.	
+NODE_603_length_556_cov_2.210856	exonerate:protein2genome:local	exon	2	514	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_603_length_556_cov_2.210856	exonerate:protein2genome:local	similarity	2	514	876	+	.	alignment_id 0 ; Query WP_006279719.1 ; Align 2 18 513
+NODE_622_length_545_cov_4.587607	exonerate:protein2genome:local	gene	1	405	691	-	.	gene_id protein-export_chaperone_SecB_[Wolbachia] ; sequence WP_006279761.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_622_length_545_cov_4.587607	exonerate:protein2genome:local	cds	1	405	.	-	.	
+NODE_622_length_545_cov_4.587607	exonerate:protein2genome:local	exon	1	405	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_622_length_545_cov_4.587607	exonerate:protein2genome:local	similarity	1	405	691	-	.	alignment_id 0 ; Query WP_006279761.1 ; Align 406 1 405
+NODE_788_length_481_cov_0.896040	exonerate:protein2genome:local	gene	144	467	566	+	.	gene_id MerR_family_transcriptional_regulator_[Wolbachia] ; sequence WP_006279880.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_788_length_481_cov_0.896040	exonerate:protein2genome:local	cds	144	467	.	+	.	
+NODE_788_length_481_cov_0.896040	exonerate:protein2genome:local	exon	144	467	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_788_length_481_cov_0.896040	exonerate:protein2genome:local	similarity	144	467	566	+	.	alignment_id 0 ; Query WP_006279880.1 ; Align 144 1 324
+NODE_42_length_1456_cov_2.092821	exonerate:protein2genome:local	gene	803	934	230	-	.	gene_id 50S_ribosomal_protein_L34_[Rickettsiales] ; sequence WP_006279898.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_42_length_1456_cov_2.092821	exonerate:protein2genome:local	cds	803	934	.	-	.	
+NODE_42_length_1456_cov_2.092821	exonerate:protein2genome:local	exon	803	934	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_42_length_1456_cov_2.092821	exonerate:protein2genome:local	similarity	803	934	230	-	.	alignment_id 0 ; Query WP_006279898.1 ; Align 935 1 132
+NODE_456_length_632_cov_0.623423	exonerate:protein2genome:local	gene	141	389	435	+	.	gene_id cold_shock_domain-containing_protein_[Wolbachia] ; sequence WP_006279919.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_456_length_632_cov_0.623423	exonerate:protein2genome:local	cds	141	389	.	+	.	
+NODE_456_length_632_cov_0.623423	exonerate:protein2genome:local	exon	141	389	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_456_length_632_cov_0.623423	exonerate:protein2genome:local	similarity	141	389	435	+	.	alignment_id 0 ; Query WP_006279919.1 ; Align 141 1 249
+NODE_149_length_972_cov_1.634637	exonerate:protein2genome:local	gene	310	600	487	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_006280049.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_149_length_972_cov_1.634637	exonerate:protein2genome:local	cds	310	600	.	-	.	
+NODE_149_length_972_cov_1.634637	exonerate:protein2genome:local	exon	310	600	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_149_length_972_cov_1.634637	exonerate:protein2genome:local	similarity	310	600	487	-	.	alignment_id 0 ; Query WP_006280049.1 ; Align 601 1 291
+NODE_58_length_1301_cov_2.303105	exonerate:protein2genome:local	gene	3	731	1242	+	.	gene_id pyruvate,_water_dikinase_regulatory_protein_[Wolbachia] ; sequence WP_006280267.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_58_length_1301_cov_2.303105	exonerate:protein2genome:local	cds	3	731	.	+	.	
+NODE_58_length_1301_cov_2.303105	exonerate:protein2genome:local	exon	3	731	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_58_length_1301_cov_2.303105	exonerate:protein2genome:local	similarity	3	731	1242	+	.	alignment_id 0 ; Query WP_006280267.1 ; Align 3 34 729
+NODE_4_length_2521_cov_1.572422	exonerate:protein2genome:local	gene	1	747	1269	+	.	gene_id ankyrin_repeat_domain-containing_protein_[Wolbachia] ; sequence WP_006280296.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_4_length_2521_cov_1.572422	exonerate:protein2genome:local	cds	1	747	.	+	.	
+NODE_4_length_2521_cov_1.572422	exonerate:protein2genome:local	exon	1	747	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_4_length_2521_cov_1.572422	exonerate:protein2genome:local	similarity	1	747	1269	+	.	alignment_id 0 ; Query WP_006280296.1 ; Align 1 40 747
+NODE_344_length_711_cov_2.440063	exonerate:protein2genome:local	gene	3	710	1200	+	.	gene_id SDR_family_oxidoreductase_[Wolbachia] ; sequence WP_006280349.1 ; gene_orientation . ; identity 99.58 ; similarity 100.00
+NODE_344_length_711_cov_2.440063	exonerate:protein2genome:local	cds	3	710	.	+	.	
+NODE_344_length_711_cov_2.440063	exonerate:protein2genome:local	exon	3	710	.	+	.	insertions 0 ; deletions 0 ; identity 99.58 ; similarity 100.00
+NODE_344_length_711_cov_2.440063	exonerate:protein2genome:local	similarity	3	710	1200	+	.	alignment_id 0 ; Query WP_006280349.1 ; Align 3 22 708
+NODE_78_length_1163_cov_1.855433	exonerate:protein2genome:local	gene	441	1094	1086	-	.	gene_id DNA_repair_protein_RadC_[Wolbachia] ; sequence WP_006280787.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_78_length_1163_cov_1.855433	exonerate:protein2genome:local	cds	441	1094	.	-	.	
+NODE_78_length_1163_cov_1.855433	exonerate:protein2genome:local	exon	441	1094	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_78_length_1163_cov_1.855433	exonerate:protein2genome:local	similarity	441	1094	1086	-	.	alignment_id 0 ; Query WP_006280787.1 ; Align 1095 1 654
+NODE_959_length_430_cov_1.722380	exonerate:protein2genome:local	gene	125	322	328	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_007303020.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_959_length_430_cov_1.722380	exonerate:protein2genome:local	cds	125	322	.	-	.	
+NODE_959_length_430_cov_1.722380	exonerate:protein2genome:local	exon	125	322	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_959_length_430_cov_1.722380	exonerate:protein2genome:local	similarity	125	322	328	-	.	alignment_id 0 ; Query WP_007303020.1 ; Align 323 1 198
+NODE_820_length_470_cov_2.875318	exonerate:protein2genome:local	gene	266	397	213	-	.	gene_id IS3_family_transposase_[Wolbachia] ; sequence WP_007548354.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_820_length_470_cov_2.875318	exonerate:protein2genome:local	cds	266	397	.	-	.	
+NODE_820_length_470_cov_2.875318	exonerate:protein2genome:local	exon	266	397	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_820_length_470_cov_2.875318	exonerate:protein2genome:local	similarity	266	397	213	-	.	alignment_id 0 ; Query WP_007548354.1 ; Align 398 1 132
+NODE_74_length_1179_cov_1.328494	exonerate:protein2genome:local	gene	708	851	240	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_007548499.1 ; gene_orientation . ; identity 97.92 ; similarity 100.00
+NODE_74_length_1179_cov_1.328494	exonerate:protein2genome:local	cds	708	851	.	+	.	
+NODE_74_length_1179_cov_1.328494	exonerate:protein2genome:local	exon	708	851	.	+	.	insertions 0 ; deletions 0 ; identity 97.92 ; similarity 100.00
+NODE_74_length_1179_cov_1.328494	exonerate:protein2genome:local	similarity	708	851	240	+	.	alignment_id 0 ; Query WP_007548499.1 ; Align 708 1 144
+NODE_239_length_833_cov_2.645503	exonerate:protein2genome:local	gene	6	410	688	+	.	gene_id DNA-directed_RNA_polymerase_subunit_omega_[Wolbachia] ; sequence WP_007548528.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_239_length_833_cov_2.645503	exonerate:protein2genome:local	cds	6	410	.	+	.	
+NODE_239_length_833_cov_2.645503	exonerate:protein2genome:local	exon	6	410	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_239_length_833_cov_2.645503	exonerate:protein2genome:local	similarity	6	410	688	+	.	alignment_id 0 ; Query WP_007548528.1 ; Align 6 1 405
+NODE_576_length_569_cov_3.955285	exonerate:protein2genome:local	gene	195	521	575	-	.	gene_id transposase_[Wolbachia] ; sequence WP_007548762.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_576_length_569_cov_3.955285	exonerate:protein2genome:local	cds	195	521	.	-	.	
+NODE_576_length_569_cov_3.955285	exonerate:protein2genome:local	exon	195	521	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_576_length_569_cov_3.955285	exonerate:protein2genome:local	similarity	195	521	575	-	.	alignment_id 0 ; Query WP_007548762.1 ; Align 522 1 327
+NODE_1120_length_391_cov_3.283439	exonerate:protein2genome:local	gene	3	380	653	+	.	gene_id transposase_[Wolbachia] ; sequence WP_007548764.1 ; gene_orientation . ; identity 99.21 ; similarity 100.00
+NODE_1120_length_391_cov_3.283439	exonerate:protein2genome:local	cds	3	380	.	+	.	
+NODE_1120_length_391_cov_3.283439	exonerate:protein2genome:local	exon	3	380	.	+	.	insertions 0 ; deletions 0 ; identity 99.21 ; similarity 100.00
+NODE_1120_length_391_cov_3.283439	exonerate:protein2genome:local	similarity	3	380	653	+	.	alignment_id 0 ; Query WP_007548764.1 ; Align 3 10 378
+NODE_230_length_848_cov_1.070039	exonerate:protein2genome:local	gene	66	338	466	-	.	gene_id 30S_ribosomal_protein_S18_[Wolbachia] ; sequence WP_007548890.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_230_length_848_cov_1.070039	exonerate:protein2genome:local	cds	66	338	.	-	.	
+NODE_230_length_848_cov_1.070039	exonerate:protein2genome:local	exon	66	338	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_230_length_848_cov_1.070039	exonerate:protein2genome:local	similarity	66	338	466	-	.	alignment_id 0 ; Query WP_007548890.1 ; Align 339 1 273
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	gene	28	468	753	+	.	gene_id PD-(D/E)XK_nuclease_family_transposase_[Wolbachia] ; sequence WP_007549065.1 ; gene_orientation . ; identity 99.32 ; similarity 99.32
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	cds	28	468	.	+	.	
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	exon	28	468	.	+	.	insertions 0 ; deletions 0 ; identity 99.32 ; similarity 99.32
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	similarity	28	468	753	+	.	alignment_id 0 ; Query WP_007549065.1 ; Align 28 1 441
+NODE_60_length_1288_cov_2.786953	exonerate:protein2genome:local	gene	880	1248	653	-	.	gene_id IS630_transposase-related_protein_[Wolbachia] ; sequence WP_007549224.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_60_length_1288_cov_2.786953	exonerate:protein2genome:local	cds	880	1248	.	-	.	
+NODE_60_length_1288_cov_2.786953	exonerate:protein2genome:local	exon	880	1248	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_60_length_1288_cov_2.786953	exonerate:protein2genome:local	similarity	880	1248	653	-	.	alignment_id 0 ; Query WP_007549224.1 ; Align 1249 4 369
+NODE_549_length_578_cov_1.251497	exonerate:protein2genome:local	gene	66	545	827	+	.	gene_id transcription_antitermination_factor_NusB_[Wolbachia] ; sequence WP_007549265.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_549_length_578_cov_1.251497	exonerate:protein2genome:local	cds	66	545	.	+	.	
+NODE_549_length_578_cov_1.251497	exonerate:protein2genome:local	exon	66	545	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_549_length_578_cov_1.251497	exonerate:protein2genome:local	similarity	66	545	827	+	.	alignment_id 0 ; Query WP_007549265.1 ; Align 66 1 480
+NODE_765_length_488_cov_3.323601	exonerate:protein2genome:local	gene	247	390	241	-	.	gene_id IS5_family_transposase_[unclassified_Wolbachia] ; sequence WP_007549942.1 ; gene_orientation . ; identity 97.92 ; similarity 100.00
+NODE_765_length_488_cov_3.323601	exonerate:protein2genome:local	cds	247	390	.	-	.	
+NODE_765_length_488_cov_3.323601	exonerate:protein2genome:local	exon	247	390	.	-	.	insertions 0 ; deletions 0 ; identity 97.92 ; similarity 100.00
+NODE_765_length_488_cov_3.323601	exonerate:protein2genome:local	similarity	247	390	241	-	.	alignment_id 0 ; Query WP_007549942.1 ; Align 391 1 144
+NODE_37_length_1538_cov_1.470910	exonerate:protein2genome:local	gene	378	776	635	-	.	gene_id 50S_ribosomal_protein_L7/L12_[Wolbachia] ; sequence WP_007551887.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_37_length_1538_cov_1.470910	exonerate:protein2genome:local	cds	378	776	.	-	.	
+NODE_37_length_1538_cov_1.470910	exonerate:protein2genome:local	exon	378	776	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_37_length_1538_cov_1.470910	exonerate:protein2genome:local	similarity	378	776	635	-	.	alignment_id 0 ; Query WP_007551887.1 ; Align 777 1 399
+NODE_1267_length_360_cov_0.742049	exonerate:protein2genome:local	gene	1	288	482	-	.	gene_id GPW/gp25_family_protein_[Wolbachia] ; sequence WP_007552425.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_1267_length_360_cov_0.742049	exonerate:protein2genome:local	cds	1	288	.	-	.	
+NODE_1267_length_360_cov_0.742049	exonerate:protein2genome:local	exon	1	288	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_1267_length_360_cov_0.742049	exonerate:protein2genome:local	similarity	1	288	482	-	.	alignment_id 0 ; Query WP_007552425.1 ; Align 289 1 288
+NODE_1355_length_346_cov_1.947955	exonerate:protein2genome:local	gene	86	346	477	+	.	gene_id IS110_family_transposase_[Wolbachia] ; sequence WP_007552972.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_1355_length_346_cov_1.947955	exonerate:protein2genome:local	cds	86	346	.	+	.	
+NODE_1355_length_346_cov_1.947955	exonerate:protein2genome:local	exon	86	346	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_1355_length_346_cov_1.947955	exonerate:protein2genome:local	similarity	86	346	477	+	.	alignment_id 0 ; Query WP_007552972.1 ; Align 86 1 261
+NODE_929_length_439_cov_0.232044	exonerate:protein2genome:local	gene	204	353	245	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010081826.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_929_length_439_cov_0.232044	exonerate:protein2genome:local	cds	204	353	.	-	.	
+NODE_929_length_439_cov_0.232044	exonerate:protein2genome:local	exon	204	353	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_929_length_439_cov_0.232044	exonerate:protein2genome:local	similarity	204	353	245	-	.	alignment_id 0 ; Query WP_010081826.1 ; Align 354 1 150
+NODE_35_length_1572_cov_3.015385	exonerate:protein2genome:local	gene	810	1016	358	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010081834.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_35_length_1572_cov_3.015385	exonerate:protein2genome:local	cds	810	1016	.	-	.	
+NODE_35_length_1572_cov_3.015385	exonerate:protein2genome:local	exon	810	1016	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_35_length_1572_cov_3.015385	exonerate:protein2genome:local	similarity	810	1016	358	-	.	alignment_id 0 ; Query WP_010081834.1 ; Align 1017 1 207
+NODE_361_length_700_cov_2.173355	exonerate:protein2genome:local	gene	252	698	738	+	.	gene_id RDD_family_protein_[Wolbachia] ; sequence WP_010081931.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_361_length_700_cov_2.173355	exonerate:protein2genome:local	cds	252	698	.	+	.	
+NODE_361_length_700_cov_2.173355	exonerate:protein2genome:local	exon	252	698	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_361_length_700_cov_2.173355	exonerate:protein2genome:local	similarity	252	698	738	+	.	alignment_id 0 ; Query WP_010081931.1 ; Align 252 1 447
+NODE_120_length_1041_cov_2.321577	exonerate:protein2genome:local	gene	125	598	800	+	.	gene_id bacterioferritin_[Wolbachia] ; sequence WP_010081932.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_120_length_1041_cov_2.321577	exonerate:protein2genome:local	cds	125	598	.	+	.	
+NODE_120_length_1041_cov_2.321577	exonerate:protein2genome:local	exon	125	598	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_120_length_1041_cov_2.321577	exonerate:protein2genome:local	similarity	125	598	800	+	.	alignment_id 0 ; Query WP_010081932.1 ; Align 125 1 474
+NODE_96_length_1106_cov_1.424684	exonerate:protein2genome:local	gene	483	1106	1058	-	.	gene_id phosphoribosylaminoimidazolesuccinocarboxamide_synthase_[Wolbachia] ; sequence WP_010081959.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_96_length_1106_cov_1.424684	exonerate:protein2genome:local	cds	483	1106	.	-	.	
+NODE_96_length_1106_cov_1.424684	exonerate:protein2genome:local	exon	483	1106	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_96_length_1106_cov_1.424684	exonerate:protein2genome:local	similarity	483	1106	1058	-	.	alignment_id 0 ; Query WP_010081959.1 ; Align 1107 33 624
+NODE_711_length_507_cov_2.632558	exonerate:protein2genome:local	gene	142	408	435	+	.	gene_id 30S_ribosomal_protein_S20_[Wolbachia] ; sequence WP_010081981.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_711_length_507_cov_2.632558	exonerate:protein2genome:local	cds	142	408	.	+	.	
+NODE_711_length_507_cov_2.632558	exonerate:protein2genome:local	exon	142	408	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_711_length_507_cov_2.632558	exonerate:protein2genome:local	similarity	142	408	435	+	.	alignment_id 0 ; Query WP_010081981.1 ; Align 142 1 267
+NODE_901_length_445_cov_0.467391	exonerate:protein2genome:local	gene	167	397	376	-	.	gene_id hypothetical_protein_[Rickettsiales] ; sequence WP_010081986.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_901_length_445_cov_0.467391	exonerate:protein2genome:local	cds	167	397	.	-	.	
+NODE_901_length_445_cov_0.467391	exonerate:protein2genome:local	exon	167	397	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_901_length_445_cov_0.467391	exonerate:protein2genome:local	similarity	167	397	376	-	.	alignment_id 0 ; Query WP_010081986.1 ; Align 398 1 231
+NODE_534_length_589_cov_0.771484	exonerate:protein2genome:local	gene	24	587	1003	-	.	gene_id thioredoxin_family_protein_[Wolbachia] ; sequence WP_010081997.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_534_length_589_cov_0.771484	exonerate:protein2genome:local	cds	24	587	.	-	.	
+NODE_534_length_589_cov_0.771484	exonerate:protein2genome:local	exon	24	587	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_534_length_589_cov_0.771484	exonerate:protein2genome:local	similarity	24	587	1003	-	.	alignment_id 0 ; Query WP_010081997.1 ; Align 588 3 564
+NODE_404_length_666_cov_1.699491	exonerate:protein2genome:local	gene	2	454	774	-	.	gene_id cytochrome_b_[Wolbachia] ; sequence WP_010082022.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_404_length_666_cov_1.699491	exonerate:protein2genome:local	cds	2	454	.	-	.	
+NODE_404_length_666_cov_1.699491	exonerate:protein2genome:local	exon	2	454	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_404_length_666_cov_1.699491	exonerate:protein2genome:local	similarity	2	454	774	-	.	alignment_id 0 ; Query WP_010082022.1 ; Align 455 1 453
+NODE_111_length_1081_cov_0.586653	exonerate:protein2genome:local	gene	2	832	1446	-	.	gene_id FAD-dependent_thymidylate_synthase_[Wolbachia] ; sequence WP_010082033.1 ; gene_orientation . ; identity 99.64 ; similarity 100.00
+NODE_111_length_1081_cov_0.586653	exonerate:protein2genome:local	cds	2	832	.	-	.	
+NODE_111_length_1081_cov_0.586653	exonerate:protein2genome:local	exon	2	832	.	-	.	insertions 0 ; deletions 0 ; identity 99.64 ; similarity 100.00
+NODE_111_length_1081_cov_0.586653	exonerate:protein2genome:local	similarity	2	832	1446	-	.	alignment_id 0 ; Query WP_010082033.1 ; Align 833 1 831
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	gene	690	848	262	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010082071.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	cds	690	848	.	+	.	
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	exon	690	848	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	similarity	690	848	262	+	.	alignment_id 0 ; Query WP_010082071.1 ; Align 690 1 159
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	gene	844	1005	284	+	.	gene_id IS3_family_transposase_[Wolbachia] ; sequence WP_010082072.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	cds	844	1005	.	+	.	
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	exon	844	1005	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	similarity	844	1005	284	+	.	alignment_id 0 ; Query WP_010082072.1 ; Align 844 1 162
+NODE_116_length_1055_cov_1.905930	exonerate:protein2genome:local	gene	689	1012	537	+	.	gene_id cell_division_protein_ZapA_[Wolbachia] ; sequence WP_010082086.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_116_length_1055_cov_1.905930	exonerate:protein2genome:local	cds	689	1012	.	+	.	
+NODE_116_length_1055_cov_1.905930	exonerate:protein2genome:local	exon	689	1012	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_116_length_1055_cov_1.905930	exonerate:protein2genome:local	similarity	689	1012	537	+	.	alignment_id 0 ; Query WP_010082086.1 ; Align 689 1 324
+NODE_72_length_1181_cov_3.064312	exonerate:protein2genome:local	gene	610	1092	812	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010082090.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_72_length_1181_cov_3.064312	exonerate:protein2genome:local	cds	610	1092	.	+	.	
+NODE_72_length_1181_cov_3.064312	exonerate:protein2genome:local	exon	610	1092	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_72_length_1181_cov_3.064312	exonerate:protein2genome:local	similarity	610	1092	812	+	.	alignment_id 0 ; Query WP_010082090.1 ; Align 610 1 483
+NODE_121_length_1041_cov_1.974066	exonerate:protein2genome:local	gene	2	1039	1759	-	.	gene_id P-loop_NTPase_fold_protein_[Wolbachia] ; sequence WP_010082095.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_121_length_1041_cov_1.974066	exonerate:protein2genome:local	cds	2	1039	.	-	.	
+NODE_121_length_1041_cov_1.974066	exonerate:protein2genome:local	exon	2	1039	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_121_length_1041_cov_1.974066	exonerate:protein2genome:local	similarity	2	1039	1759	-	.	alignment_id 0 ; Query WP_010082095.1 ; Align 1040 26 1038
+NODE_437_length_642_cov_2.407080	exonerate:protein2genome:local	gene	348	572	292	+	.	gene_id gpW_family_head-tail_joining_protein_[Wolbachia] ; sequence WP_010082193.1 ; gene_orientation . ; identity 84.93 ; similarity 94.52
+NODE_437_length_642_cov_2.407080	exonerate:protein2genome:local	cds	348	572	.	+	.	
+NODE_437_length_642_cov_2.407080	exonerate:protein2genome:local	exon	348	572	.	+	.	insertions 6 ; deletions 0 ; identity 84.93 ; similarity 94.52
+NODE_437_length_642_cov_2.407080	exonerate:protein2genome:local	similarity	348	572	292	+	.	alignment_id 0 ; Query WP_010082193.1 ; Align 348 1 177 ; Align 531 60 42
+NODE_922_length_441_cov_0.961538	exonerate:protein2genome:local	gene	2	217	339	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010082195.1 ; gene_orientation . ; identity 93.06 ; similarity 100.00
+NODE_922_length_441_cov_0.961538	exonerate:protein2genome:local	cds	2	217	.	-	.	
+NODE_922_length_441_cov_0.961538	exonerate:protein2genome:local	exon	2	217	.	-	.	insertions 0 ; deletions 0 ; identity 93.06 ; similarity 100.00
+NODE_922_length_441_cov_0.961538	exonerate:protein2genome:local	similarity	2	217	339	-	.	alignment_id 0 ; Query WP_010082195.1 ; Align 218 1 216
+NODE_682_length_518_cov_1.691610	exonerate:protein2genome:local	gene	21	320	495	-	.	gene_id 50S_ribosomal_protein_L21_[Wolbachia] ; sequence WP_010082251.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_682_length_518_cov_1.691610	exonerate:protein2genome:local	cds	21	320	.	-	.	
+NODE_682_length_518_cov_1.691610	exonerate:protein2genome:local	exon	21	320	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_682_length_518_cov_1.691610	exonerate:protein2genome:local	similarity	21	320	495	-	.	alignment_id 0 ; Query WP_010082251.1 ; Align 321 1 300
+NODE_332_length_718_cov_1.725429	exonerate:protein2genome:local	gene	192	485	497	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010082258.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_332_length_718_cov_1.725429	exonerate:protein2genome:local	cds	192	485	.	-	.	
+NODE_332_length_718_cov_1.725429	exonerate:protein2genome:local	exon	192	485	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_332_length_718_cov_1.725429	exonerate:protein2genome:local	similarity	192	485	497	-	.	alignment_id 0 ; Query WP_010082258.1 ; Align 486 1 294
+NODE_536_length_588_cov_0.195695	exonerate:protein2genome:local	gene	3	587	939	-	.	gene_id membrane_protein_[Wolbachia] ; sequence WP_010082284.1 ; gene_orientation . ; identity 99.49 ; similarity 100.00
+NODE_536_length_588_cov_0.195695	exonerate:protein2genome:local	cds	3	587	.	-	.	
+NODE_536_length_588_cov_0.195695	exonerate:protein2genome:local	exon	3	587	.	-	.	insertions 0 ; deletions 0 ; identity 99.49 ; similarity 100.00
+NODE_536_length_588_cov_0.195695	exonerate:protein2genome:local	similarity	3	587	939	-	.	alignment_id 0 ; Query WP_010082284.1 ; Align 588 39 585
+NODE_157_length_958_cov_1.474461	exonerate:protein2genome:local	gene	300	671	631	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010082372.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_157_length_958_cov_1.474461	exonerate:protein2genome:local	cds	300	671	.	-	.	
+NODE_157_length_958_cov_1.474461	exonerate:protein2genome:local	exon	300	671	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_157_length_958_cov_1.474461	exonerate:protein2genome:local	similarity	300	671	631	-	.	alignment_id 0 ; Query WP_010082372.1 ; Align 672 1 372
+NODE_1853_length_277_cov_0.000000	exonerate:protein2genome:local	gene	2	277	497	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010082388.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_1853_length_277_cov_0.000000	exonerate:protein2genome:local	cds	2	277	.	+	.	
+NODE_1853_length_277_cov_0.000000	exonerate:protein2genome:local	exon	2	277	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_1853_length_277_cov_0.000000	exonerate:protein2genome:local	similarity	2	277	497	+	.	alignment_id 0 ; Query WP_010082388.1 ; Align 2 13 276
+NODE_32_length_1675_cov_1.237797	exonerate:protein2genome:local	gene	491	1120	1057	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010082417.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_32_length_1675_cov_1.237797	exonerate:protein2genome:local	cds	491	1120	.	-	.	
+NODE_32_length_1675_cov_1.237797	exonerate:protein2genome:local	exon	491	1120	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_32_length_1675_cov_1.237797	exonerate:protein2genome:local	similarity	491	1120	1057	-	.	alignment_id 0 ; Query WP_010082417.1 ; Align 1121 1 630
+NODE_10_length_2336_cov_2.030102	exonerate:protein2genome:local	gene	1181	1786	998	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010082450.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_10_length_2336_cov_2.030102	exonerate:protein2genome:local	cds	1181	1786	.	+	.	
+NODE_10_length_2336_cov_2.030102	exonerate:protein2genome:local	exon	1181	1786	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_10_length_2336_cov_2.030102	exonerate:protein2genome:local	similarity	1181	1786	998	+	.	alignment_id 0 ; Query WP_010082450.1 ; Align 1181 1 606
+NODE_174_length_924_cov_0.835891	exonerate:protein2genome:local	gene	3	779	1354	+	.	gene_id riboflavin_biosynthesis_protein_RibF_[Wolbachia] ; sequence WP_010082493.1 ; gene_orientation . ; identity 99.61 ; similarity 99.61
+NODE_174_length_924_cov_0.835891	exonerate:protein2genome:local	cds	3	779	.	+	.	
+NODE_174_length_924_cov_0.835891	exonerate:protein2genome:local	exon	3	779	.	+	.	insertions 0 ; deletions 0 ; identity 99.61 ; similarity 99.61
+NODE_174_length_924_cov_0.835891	exonerate:protein2genome:local	similarity	3	779	1354	+	.	alignment_id 0 ; Query WP_010082493.1 ; Align 3 52 777
+NODE_363_length_696_cov_2.995153	exonerate:protein2genome:local	gene	164	637	804	+	.	gene_id RDD_family_protein_[Wolbachia] ; sequence WP_010082496.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_363_length_696_cov_2.995153	exonerate:protein2genome:local	cds	164	637	.	+	.	
+NODE_363_length_696_cov_2.995153	exonerate:protein2genome:local	exon	164	637	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_363_length_696_cov_2.995153	exonerate:protein2genome:local	similarity	164	637	804	+	.	alignment_id 0 ; Query WP_010082496.1 ; Align 164 1 474
+NODE_607_length_552_cov_0.917895	exonerate:protein2genome:local	gene	2	550	873	-	.	gene_id endonuclease_III_[Wolbachia] ; sequence WP_010082499.1 ; gene_orientation . ; identity 92.90 ; similarity 97.27
+NODE_607_length_552_cov_0.917895	exonerate:protein2genome:local	cds	2	550	.	-	.	
+NODE_607_length_552_cov_0.917895	exonerate:protein2genome:local	exon	2	550	.	-	.	insertions 0 ; deletions 0 ; identity 92.90 ; similarity 97.27
+NODE_607_length_552_cov_0.917895	exonerate:protein2genome:local	similarity	2	550	873	-	.	alignment_id 0 ; Query WP_010082499.1 ; Align 551 4 549
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	gene	28	468	700	+	.	gene_id PD-(D/E)XK_nuclease_family_transposase_[Wolbachia] ; sequence WP_010082515.1 ; gene_orientation . ; identity 92.52 ; similarity 95.24
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	cds	28	468	.	+	.	
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	exon	28	468	.	+	.	insertions 0 ; deletions 0 ; identity 92.52 ; similarity 95.24
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	similarity	28	468	700	+	.	alignment_id 0 ; Query WP_010082515.1 ; Align 28 1 441
+NODE_877_length_452_cov_0.824000	exonerate:protein2genome:local	gene	54	341	504	-	.	gene_id GIY-YIG_nuclease_family_protein_[Wolbachia] ; sequence WP_010082530.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_877_length_452_cov_0.824000	exonerate:protein2genome:local	cds	54	341	.	-	.	
+NODE_877_length_452_cov_0.824000	exonerate:protein2genome:local	exon	54	341	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_877_length_452_cov_0.824000	exonerate:protein2genome:local	similarity	54	341	504	-	.	alignment_id 0 ; Query WP_010082530.1 ; Align 342 1 288
+NODE_215_length_872_cov_1.081761	exonerate:protein2genome:local	gene	88	759	1107	-	.	gene_id orotidine-5'-phosphate_decarboxylase_[Wolbachia] ; sequence WP_010082622.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_215_length_872_cov_1.081761	exonerate:protein2genome:local	cds	88	759	.	-	.	
+NODE_215_length_872_cov_1.081761	exonerate:protein2genome:local	exon	88	759	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_215_length_872_cov_1.081761	exonerate:protein2genome:local	similarity	88	759	1107	-	.	alignment_id 0 ; Query WP_010082622.1 ; Align 760 1 672
+NODE_292_length_754_cov_1.293944	exonerate:protein2genome:local	gene	219	416	330	+	.	gene_id 50S_ribosomal_protein_L33_[Wolbachia] ; sequence WP_010082633.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_292_length_754_cov_1.293944	exonerate:protein2genome:local	cds	219	416	.	+	.	
+NODE_292_length_754_cov_1.293944	exonerate:protein2genome:local	exon	219	416	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_292_length_754_cov_1.293944	exonerate:protein2genome:local	similarity	219	416	330	+	.	alignment_id 0 ; Query WP_010082633.1 ; Align 219 1 198
+NODE_542_length_581_cov_0.452381	exonerate:protein2genome:local	gene	5	385	688	+	.	gene_id ribonuclease_HI_[Wolbachia] ; sequence WP_010082655.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_542_length_581_cov_0.452381	exonerate:protein2genome:local	cds	5	385	.	+	.	
+NODE_542_length_581_cov_0.452381	exonerate:protein2genome:local	exon	5	385	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_542_length_581_cov_0.452381	exonerate:protein2genome:local	similarity	5	385	688	+	.	alignment_id 0 ; Query WP_010082655.1 ; Align 5 19 381
+NODE_151_length_968_cov_2.406285	exonerate:protein2genome:local	gene	610	777	288	+	.	gene_id DnaJ_domain-containing_protein_[Wolbachia] ; sequence WP_010082675.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_151_length_968_cov_2.406285	exonerate:protein2genome:local	cds	610	777	.	+	.	
+NODE_151_length_968_cov_2.406285	exonerate:protein2genome:local	exon	610	777	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_151_length_968_cov_2.406285	exonerate:protein2genome:local	similarity	610	777	288	+	.	alignment_id 0 ; Query WP_010082675.1 ; Align 610 1 168
+NODE_97_length_1106_cov_1.413022	exonerate:protein2genome:local	gene	103	1104	1716	+	.	gene_id elongation_factor_Tu_[Wolbachia] ; sequence WP_010962309.1 ; gene_orientation . ; identity 99.70 ; similarity 100.00
+NODE_97_length_1106_cov_1.413022	exonerate:protein2genome:local	cds	103	1104	.	+	.	
+NODE_97_length_1106_cov_1.413022	exonerate:protein2genome:local	exon	103	1104	.	+	.	insertions 0 ; deletions 0 ; identity 99.70 ; similarity 100.00
+NODE_97_length_1106_cov_1.413022	exonerate:protein2genome:local	similarity	103	1104	1716	+	.	alignment_id 0 ; Query WP_010962309.1 ; Align 103 1 1002
+NODE_4_length_2521_cov_1.572422	exonerate:protein2genome:local	gene	1054	1977	1523	+	.	gene_id ribose-phosphate_diphosphokinase_[Wolbachia] ; sequence WP_010962322.1 ; gene_orientation . ; identity 99.68 ; similarity 100.00
+NODE_4_length_2521_cov_1.572422	exonerate:protein2genome:local	cds	1054	1977	.	+	.	
+NODE_4_length_2521_cov_1.572422	exonerate:protein2genome:local	exon	1054	1977	.	+	.	insertions 0 ; deletions 0 ; identity 99.68 ; similarity 100.00
+NODE_4_length_2521_cov_1.572422	exonerate:protein2genome:local	similarity	1054	1977	1523	+	.	alignment_id 0 ; Query WP_010962322.1 ; Align 1054 1 924
+NODE_4_length_2521_cov_1.572422	exonerate:protein2genome:local	gene	1970	2320	594	+	.	gene_id Asp-tRNA(Asn)/Glu-tRNA(Gln)_amidotransferase_subunit_GatC_[Wolbachia] ; sequence WP_010962323.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_4_length_2521_cov_1.572422	exonerate:protein2genome:local	cds	1970	2320	.	+	.	
+NODE_4_length_2521_cov_1.572422	exonerate:protein2genome:local	exon	1970	2320	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_4_length_2521_cov_1.572422	exonerate:protein2genome:local	similarity	1970	2320	594	+	.	alignment_id 0 ; Query WP_010962323.1 ; Align 1970 1 351
+NODE_521_length_598_cov_1.938580	exonerate:protein2genome:local	gene	133	540	706	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962350.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_521_length_598_cov_1.938580	exonerate:protein2genome:local	cds	133	540	.	-	.	
+NODE_521_length_598_cov_1.938580	exonerate:protein2genome:local	exon	133	540	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_521_length_598_cov_1.938580	exonerate:protein2genome:local	similarity	133	540	706	-	.	alignment_id 0 ; Query WP_010962350.1 ; Align 541 1 408
+NODE_159_length_954_cov_0.344356	exonerate:protein2genome:local	gene	174	818	1070	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962361.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_159_length_954_cov_0.344356	exonerate:protein2genome:local	cds	174	818	.	-	.	
+NODE_159_length_954_cov_0.344356	exonerate:protein2genome:local	exon	174	818	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_159_length_954_cov_0.344356	exonerate:protein2genome:local	similarity	174	818	1070	-	.	alignment_id 0 ; Query WP_010962361.1 ; Align 819 1 645
+NODE_341_length_714_cov_2.657771	exonerate:protein2genome:local	gene	3	671	1167	+	.	gene_id FtsQ-type_POTRA_domain-containing_protein_[Wolbachia] ; sequence WP_010962363.1 ; gene_orientation . ; identity 99.55 ; similarity 99.55
+NODE_341_length_714_cov_2.657771	exonerate:protein2genome:local	cds	3	671	.	+	.	
+NODE_341_length_714_cov_2.657771	exonerate:protein2genome:local	exon	3	671	.	+	.	insertions 0 ; deletions 0 ; identity 99.55 ; similarity 99.55
+NODE_341_length_714_cov_2.657771	exonerate:protein2genome:local	similarity	3	671	1167	+	.	alignment_id 0 ; Query WP_010962363.1 ; Align 3 30 669
+NODE_29_length_1778_cov_4.883010	exonerate:protein2genome:local	gene	194	1519	2229	+	.	gene_id IS4-like_element_ISWen1_family_transposase_[Wolbachia] ; sequence WP_010962373.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_29_length_1778_cov_4.883010	exonerate:protein2genome:local	cds	194	1519	.	+	.	
+NODE_29_length_1778_cov_4.883010	exonerate:protein2genome:local	exon	194	1519	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_29_length_1778_cov_4.883010	exonerate:protein2genome:local	similarity	194	1519	2229	+	.	alignment_id 0 ; Query WP_010962373.1 ; Align 194 1 1326
+NODE_212_length_873_cov_2.062814	exonerate:protein2genome:local	gene	435	872	731	+	.	gene_id crossover_junction_endodeoxyribonuclease_RuvC_[Wolbachia] ; sequence WP_010962392.1 ; gene_orientation . ; identity 98.63 ; similarity 100.00
+NODE_212_length_873_cov_2.062814	exonerate:protein2genome:local	cds	435	872	.	+	.	
+NODE_212_length_873_cov_2.062814	exonerate:protein2genome:local	exon	435	872	.	+	.	insertions 0 ; deletions 0 ; identity 98.63 ; similarity 100.00
+NODE_212_length_873_cov_2.062814	exonerate:protein2genome:local	similarity	435	872	731	+	.	alignment_id 0 ; Query WP_010962392.1 ; Align 435 1 438
+NODE_2_length_2785_cov_0.924668	exonerate:protein2genome:local	gene	1022	2782	3000	+	.	gene_id excinuclease_ABC_subunit_UvrC_[Wolbachia] ; sequence WP_010962398.1 ; gene_orientation . ; identity 99.83 ; similarity 99.83
+NODE_2_length_2785_cov_0.924668	exonerate:protein2genome:local	cds	1022	2782	.	+	.	
+NODE_2_length_2785_cov_0.924668	exonerate:protein2genome:local	exon	1022	2782	.	+	.	insertions 0 ; deletions 0 ; identity 99.83 ; similarity 99.83
+NODE_2_length_2785_cov_0.924668	exonerate:protein2genome:local	similarity	1022	2782	3000	+	.	alignment_id 0 ; Query WP_010962398.1 ; Align 1022 1 1761
+NODE_246_length_816_cov_2.112314	exonerate:protein2genome:local	gene	3	299	476	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962410.1 ; gene_orientation . ; identity 98.99 ; similarity 100.00
+NODE_246_length_816_cov_2.112314	exonerate:protein2genome:local	cds	3	299	.	-	.	
+NODE_246_length_816_cov_2.112314	exonerate:protein2genome:local	exon	3	299	.	-	.	insertions 0 ; deletions 0 ; identity 98.99 ; similarity 100.00
+NODE_246_length_816_cov_2.112314	exonerate:protein2genome:local	similarity	3	299	476	-	.	alignment_id 0 ; Query WP_010962410.1 ; Align 300 1 297
+NODE_102_length_1099_cov_1.327789	exonerate:protein2genome:local	gene	296	841	952	-	.	gene_id aminoacyl-tRNA_hydrolase_[Wolbachia] ; sequence WP_010962413.1 ; gene_orientation . ; identity 99.45 ; similarity 100.00
+NODE_102_length_1099_cov_1.327789	exonerate:protein2genome:local	cds	296	841	.	-	.	
+NODE_102_length_1099_cov_1.327789	exonerate:protein2genome:local	exon	296	841	.	-	.	insertions 0 ; deletions 0 ; identity 99.45 ; similarity 100.00
+NODE_102_length_1099_cov_1.327789	exonerate:protein2genome:local	similarity	296	841	952	-	.	alignment_id 0 ; Query WP_010962413.1 ; Align 842 1 546
+NODE_221_length_859_cov_1.608696	exonerate:protein2genome:local	gene	355	858	890	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962416.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_221_length_859_cov_1.608696	exonerate:protein2genome:local	cds	355	858	.	-	.	
+NODE_221_length_859_cov_1.608696	exonerate:protein2genome:local	exon	355	858	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_221_length_859_cov_1.608696	exonerate:protein2genome:local	similarity	355	858	890	-	.	alignment_id 0 ; Query WP_010962416.1 ; Align 859 7 504
+NODE_801_length_477_cov_2.140000	exonerate:protein2genome:local	gene	15	146	224	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962423.1 ; gene_orientation . ; identity 97.73 ; similarity 100.00
+NODE_801_length_477_cov_2.140000	exonerate:protein2genome:local	cds	15	146	.	+	.	
+NODE_801_length_477_cov_2.140000	exonerate:protein2genome:local	exon	15	146	.	+	.	insertions 0 ; deletions 0 ; identity 97.73 ; similarity 100.00
+NODE_801_length_477_cov_2.140000	exonerate:protein2genome:local	similarity	15	146	224	+	.	alignment_id 0 ; Query WP_010962423.1 ; Align 15 1 132
+NODE_42_length_1456_cov_2.092821	exonerate:protein2genome:local	gene	111	371	457	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962430.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_42_length_1456_cov_2.092821	exonerate:protein2genome:local	cds	111	371	.	-	.	
+NODE_42_length_1456_cov_2.092821	exonerate:protein2genome:local	exon	111	371	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_42_length_1456_cov_2.092821	exonerate:protein2genome:local	similarity	111	371	457	-	.	alignment_id 0 ; Query WP_010962430.1 ; Align 372 1 261
+NODE_201_length_884_cov_2.698885	exonerate:protein2genome:local	gene	640	855	349	+	.	gene_id ankyrin_repeat_domain-containing_protein_[Wolbachia] ; sequence WP_010962434.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_201_length_884_cov_2.698885	exonerate:protein2genome:local	cds	640	855	.	+	.	
+NODE_201_length_884_cov_2.698885	exonerate:protein2genome:local	exon	640	855	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_201_length_884_cov_2.698885	exonerate:protein2genome:local	similarity	640	855	349	+	.	alignment_id 0 ; Query WP_010962434.1 ; Align 640 1 216
+NODE_24_length_1943_cov_0.718114	exonerate:protein2genome:local	gene	442	930	800	+	.	gene_id MarR_family_transcriptional_regulator_[Wolbachia] ; sequence WP_010962472.1 ; gene_orientation . ; identity 99.39 ; similarity 100.00
+NODE_24_length_1943_cov_0.718114	exonerate:protein2genome:local	cds	442	930	.	+	.	
+NODE_24_length_1943_cov_0.718114	exonerate:protein2genome:local	exon	442	930	.	+	.	insertions 0 ; deletions 0 ; identity 99.39 ; similarity 100.00
+NODE_24_length_1943_cov_0.718114	exonerate:protein2genome:local	similarity	442	930	800	+	.	alignment_id 0 ; Query WP_010962472.1 ; Align 442 1 489
+NODE_1180_length_378_cov_1.026578	exonerate:protein2genome:local	gene	90	230	241	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962488.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_1180_length_378_cov_1.026578	exonerate:protein2genome:local	cds	90	230	.	-	.	
+NODE_1180_length_378_cov_1.026578	exonerate:protein2genome:local	exon	90	230	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_1180_length_378_cov_1.026578	exonerate:protein2genome:local	similarity	90	230	241	-	.	alignment_id 0 ; Query WP_010962488.1 ; Align 231 1 141
+NODE_58_length_1301_cov_2.303105	exonerate:protein2genome:local	gene	962	1273	499	+	.	gene_id septum_formation_initiator_family_protein_[Wolbachia] ; sequence WP_010962526.1 ; gene_orientation . ; identity 99.04 ; similarity 100.00
+NODE_58_length_1301_cov_2.303105	exonerate:protein2genome:local	cds	962	1273	.	+	.	
+NODE_58_length_1301_cov_2.303105	exonerate:protein2genome:local	exon	962	1273	.	+	.	insertions 0 ; deletions 0 ; identity 99.04 ; similarity 100.00
+NODE_58_length_1301_cov_2.303105	exonerate:protein2genome:local	similarity	962	1273	499	+	.	alignment_id 0 ; Query WP_010962526.1 ; Align 962 1 312
+NODE_19_length_2039_cov_2.191641	exonerate:protein2genome:local	gene	3	1226	2013	-	.	gene_id magnesium_transporter_[Wolbachia] ; sequence WP_010962545.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_19_length_2039_cov_2.191641	exonerate:protein2genome:local	cds	3	1226	.	-	.	
+NODE_19_length_2039_cov_2.191641	exonerate:protein2genome:local	exon	3	1226	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_19_length_2039_cov_2.191641	exonerate:protein2genome:local	similarity	3	1226	2013	-	.	alignment_id 0 ; Query WP_010962545.1 ; Align 1227 1 1224
+NODE_414_length_662_cov_0.858120	exonerate:protein2genome:local	gene	153	662	840	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962548.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_414_length_662_cov_0.858120	exonerate:protein2genome:local	cds	153	662	.	-	.	
+NODE_414_length_662_cov_0.858120	exonerate:protein2genome:local	exon	153	662	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_414_length_662_cov_0.858120	exonerate:protein2genome:local	similarity	153	662	840	-	.	alignment_id 0 ; Query WP_010962548.1 ; Align 663 20 510
+NODE_2009_length_261_cov_0.858696	exonerate:protein2genome:local	gene	49	246	335	+	.	gene_id Fe-S_cluster_assembly_protein_IscX_[Wolbachia] ; sequence WP_010962556.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_2009_length_261_cov_0.858696	exonerate:protein2genome:local	cds	49	246	.	+	.	
+NODE_2009_length_261_cov_0.858696	exonerate:protein2genome:local	exon	49	246	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_2009_length_261_cov_0.858696	exonerate:protein2genome:local	similarity	49	246	335	+	.	alignment_id 0 ; Query WP_010962556.1 ; Align 49 1 198
+NODE_423_length_655_cov_0.318339	exonerate:protein2genome:local	gene	81	653	994	-	.	gene_id bifunctional_demethylmenaquinone_methyltransferase/2-methoxy-6-polyprenyl-1,4-benzoquinol_methylase_UbiE_[Wolbachia] ; sequence WP_010962557.1 ; gene_orientation . ; identity 99.48 ; similarity 99.48
+NODE_423_length_655_cov_0.318339	exonerate:protein2genome:local	cds	81	653	.	-	.	
+NODE_423_length_655_cov_0.318339	exonerate:protein2genome:local	exon	81	653	.	-	.	insertions 0 ; deletions 0 ; identity 99.48 ; similarity 99.48
+NODE_423_length_655_cov_0.318339	exonerate:protein2genome:local	similarity	81	653	994	-	.	alignment_id 0 ; Query WP_010962557.1 ; Align 654 48 573
+NODE_610_length_551_cov_0.968354	exonerate:protein2genome:local	gene	214	435	371	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962565.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_610_length_551_cov_0.968354	exonerate:protein2genome:local	cds	214	435	.	+	.	
+NODE_610_length_551_cov_0.968354	exonerate:protein2genome:local	exon	214	435	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_610_length_551_cov_0.968354	exonerate:protein2genome:local	similarity	214	435	371	+	.	alignment_id 0 ; Query WP_010962565.1 ; Align 214 1 222
+NODE_721_length_505_cov_0.191589	exonerate:protein2genome:local	gene	103	504	676	-	.	gene_id protoporphyrinogen_oxidase_HemJ_[Wolbachia] ; sequence WP_010962574.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_721_length_505_cov_0.191589	exonerate:protein2genome:local	cds	103	504	.	-	.	
+NODE_721_length_505_cov_0.191589	exonerate:protein2genome:local	exon	103	504	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_721_length_505_cov_0.191589	exonerate:protein2genome:local	similarity	103	504	676	-	.	alignment_id 0 ; Query WP_010962574.1 ; Align 505 9 402
+NODE_22_length_2001_cov_1.505717	exonerate:protein2genome:local	gene	291	2000	2902	-	.	gene_id pentapeptide_repeat-containing_protein_[Wolbachia] ; sequence WP_010962595.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_22_length_2001_cov_1.505717	exonerate:protein2genome:local	cds	291	2000	.	-	.	
+NODE_22_length_2001_cov_1.505717	exonerate:protein2genome:local	exon	291	2000	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_22_length_2001_cov_1.505717	exonerate:protein2genome:local	similarity	291	2000	2902	-	.	alignment_id 0 ; Query WP_010962595.1 ; Align 2001 32 1710
+NODE_88_length_1133_cov_2.048295	exonerate:protein2genome:local	gene	243	773	890	+	.	gene_id CDP-diacylglycerol--glycerol-3-phosphate_3-phosphatidyltransferase_[Wolbachia] ; sequence WP_010962629.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_88_length_1133_cov_2.048295	exonerate:protein2genome:local	cds	243	773	.	+	.	
+NODE_88_length_1133_cov_2.048295	exonerate:protein2genome:local	exon	243	773	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_88_length_1133_cov_2.048295	exonerate:protein2genome:local	similarity	243	773	890	+	.	alignment_id 0 ; Query WP_010962629.1 ; Align 243 1 531
+NODE_61_length_1253_cov_1.113946	exonerate:protein2genome:local	gene	145	1149	1728	+	.	gene_id ankyrin_repeat_domain-containing_protein_[Wolbachia] ; sequence WP_010962637.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_61_length_1253_cov_1.113946	exonerate:protein2genome:local	cds	145	1149	.	+	.	
+NODE_61_length_1253_cov_1.113946	exonerate:protein2genome:local	exon	145	1149	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_61_length_1253_cov_1.113946	exonerate:protein2genome:local	similarity	145	1149	1728	+	.	alignment_id 0 ; Query WP_010962637.1 ; Align 145 1 1005
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	gene	116	466	618	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962651.1 ; gene_orientation . ; identity 98.29 ; similarity 99.15
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	cds	116	466	.	-	.	
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	exon	116	466	.	-	.	insertions 0 ; deletions 0 ; identity 98.29 ; similarity 99.15
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	similarity	116	466	618	-	.	alignment_id 0 ; Query WP_010962651.1 ; Align 467 10 351
+NODE_545_length_580_cov_1.697813	exonerate:protein2genome:local	gene	10	549	924	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962652.1 ; gene_orientation . ; identity 99.44 ; similarity 100.00
+NODE_545_length_580_cov_1.697813	exonerate:protein2genome:local	cds	10	549	.	-	.	
+NODE_545_length_580_cov_1.697813	exonerate:protein2genome:local	exon	10	549	.	-	.	insertions 0 ; deletions 0 ; identity 99.44 ; similarity 100.00
+NODE_545_length_580_cov_1.697813	exonerate:protein2genome:local	similarity	10	549	924	-	.	alignment_id 0 ; Query WP_010962652.1 ; Align 550 1 540
+NODE_161_length_951_cov_2.550343	exonerate:protein2genome:local	gene	3	753	1212	+	.	gene_id translation_elongation_factor_Ts_[Wolbachia] ; sequence WP_010962660.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_161_length_951_cov_2.550343	exonerate:protein2genome:local	cds	3	753	.	+	.	
+NODE_161_length_951_cov_2.550343	exonerate:protein2genome:local	exon	3	753	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00 ; frameshifts 1
+NODE_161_length_951_cov_2.550343	exonerate:protein2genome:local	similarity	3	753	1212	+	.	alignment_id 0 ; Query WP_010962660.1 ; Align 3 37 171 ; Align 175 94 579
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	gene	28	468	667	+	.	gene_id PD-(D/E)XK_nuclease_family_transposase_[Wolbachia] ; sequence WP_010962663.1 ; gene_orientation . ; identity 89.12 ; similarity 92.52
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	cds	28	468	.	+	.	
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	exon	28	468	.	+	.	insertions 0 ; deletions 0 ; identity 89.12 ; similarity 92.52
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	similarity	28	468	667	+	.	alignment_id 0 ; Query WP_010962663.1 ; Align 28 1 441
+NODE_304_length_743_cov_2.782282	exonerate:protein2genome:local	gene	523	702	295	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962665.1 ; gene_orientation . ; identity 98.33 ; similarity 100.00
+NODE_304_length_743_cov_2.782282	exonerate:protein2genome:local	cds	523	702	.	+	.	
+NODE_304_length_743_cov_2.782282	exonerate:protein2genome:local	exon	523	702	.	+	.	insertions 0 ; deletions 0 ; identity 98.33 ; similarity 100.00
+NODE_304_length_743_cov_2.782282	exonerate:protein2genome:local	similarity	523	702	295	+	.	alignment_id 0 ; Query WP_010962665.1 ; Align 523 1 180
+NODE_214_length_872_cov_1.089308	exonerate:protein2genome:local	gene	38	676	1087	-	.	gene_id fructose-6-phosphate_aldolase_[Wolbachia] ; sequence WP_010962671.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_214_length_872_cov_1.089308	exonerate:protein2genome:local	cds	38	676	.	-	.	
+NODE_214_length_872_cov_1.089308	exonerate:protein2genome:local	exon	38	676	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_214_length_872_cov_1.089308	exonerate:protein2genome:local	similarity	38	676	1087	-	.	alignment_id 0 ; Query WP_010962671.1 ; Align 677 1 639
+NODE_145_length_990_cov_2.818182	exonerate:protein2genome:local	gene	3	872	1493	+	.	gene_id patatin-like_phospholipase_family_protein_[Wolbachia] ; sequence WP_010962679.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_145_length_990_cov_2.818182	exonerate:protein2genome:local	cds	3	872	.	+	.	
+NODE_145_length_990_cov_2.818182	exonerate:protein2genome:local	exon	3	872	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_145_length_990_cov_2.818182	exonerate:protein2genome:local	similarity	3	872	1493	+	.	alignment_id 0 ; Query WP_010962679.1 ; Align 3 13 870
+NODE_299_length_746_cov_2.266069	exonerate:protein2genome:local	gene	303	512	344	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962684.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_299_length_746_cov_2.266069	exonerate:protein2genome:local	cds	303	512	.	-	.	
+NODE_299_length_746_cov_2.266069	exonerate:protein2genome:local	exon	303	512	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_299_length_746_cov_2.266069	exonerate:protein2genome:local	similarity	303	512	344	-	.	alignment_id 0 ; Query WP_010962684.1 ; Align 513 1 210
+NODE_265_length_790_cov_2.179523	exonerate:protein2genome:local	gene	47	595	944	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962686.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_265_length_790_cov_2.179523	exonerate:protein2genome:local	cds	47	595	.	+	.	
+NODE_265_length_790_cov_2.179523	exonerate:protein2genome:local	exon	47	595	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_265_length_790_cov_2.179523	exonerate:protein2genome:local	similarity	47	595	944	+	.	alignment_id 0 ; Query WP_010962686.1 ; Align 47 1 549
+NODE_532_length_589_cov_2.123047	exonerate:protein2genome:local	gene	306	496	291	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962688.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_532_length_589_cov_2.123047	exonerate:protein2genome:local	cds	306	496	.	-	.	
+NODE_532_length_589_cov_2.123047	exonerate:protein2genome:local	exon	306	496	.	-	.	insertions 0 ; deletions 1 ; identity 100.00 ; similarity 100.00 ; frameshifts 2
+NODE_532_length_589_cov_2.123047	exonerate:protein2genome:local	similarity	306	496	291	-	.	alignment_id 0 ; Query WP_010962688.1 ; Align 497 1 39 ; Align 456 15 150
+NODE_98_length_1105_cov_1.295720	exonerate:protein2genome:local	gene	555	977	734	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962694.1 ; gene_orientation . ; identity 99.29 ; similarity 100.00
+NODE_98_length_1105_cov_1.295720	exonerate:protein2genome:local	cds	555	977	.	+	.	
+NODE_98_length_1105_cov_1.295720	exonerate:protein2genome:local	exon	555	977	.	+	.	insertions 0 ; deletions 0 ; identity 99.29 ; similarity 100.00
+NODE_98_length_1105_cov_1.295720	exonerate:protein2genome:local	similarity	555	977	734	+	.	alignment_id 0 ; Query WP_010962694.1 ; Align 555 1 423
+NODE_98_length_1105_cov_1.295720	exonerate:protein2genome:local	gene	70	567	863	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962695.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_98_length_1105_cov_1.295720	exonerate:protein2genome:local	cds	70	567	.	+	.	
+NODE_98_length_1105_cov_1.295720	exonerate:protein2genome:local	exon	70	567	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_98_length_1105_cov_1.295720	exonerate:protein2genome:local	similarity	70	567	863	+	.	alignment_id 0 ; Query WP_010962695.1 ; Align 70 1 498
+NODE_197_length_891_cov_1.744472	exonerate:protein2genome:local	gene	252	743	838	+	.	gene_id sigma-70_family_RNA_polymerase_sigma_factor_[Wolbachia] ; sequence WP_010962699.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_197_length_891_cov_1.744472	exonerate:protein2genome:local	cds	252	743	.	+	.	
+NODE_197_length_891_cov_1.744472	exonerate:protein2genome:local	exon	252	743	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_197_length_891_cov_1.744472	exonerate:protein2genome:local	similarity	252	743	838	+	.	alignment_id 0 ; Query WP_010962699.1 ; Align 252 1 492
+NODE_437_length_642_cov_2.407080	exonerate:protein2genome:local	gene	348	578	382	+	.	gene_id gpW_family_head-tail_joining_protein_[Wolbachia] ; sequence WP_010962704.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_437_length_642_cov_2.407080	exonerate:protein2genome:local	cds	348	578	.	+	.	
+NODE_437_length_642_cov_2.407080	exonerate:protein2genome:local	exon	348	578	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_437_length_642_cov_2.407080	exonerate:protein2genome:local	similarity	348	578	382	+	.	alignment_id 0 ; Query WP_010962704.1 ; Align 348 1 231
+NODE_419_length_659_cov_4.168385	exonerate:protein2genome:local	gene	3	659	1058	-	.	gene_id baseplate_J/gp47_family_protein_[Wolbachia] ; sequence WP_010962729.1 ; gene_orientation . ; identity 96.35 ; similarity 98.63
+NODE_419_length_659_cov_4.168385	exonerate:protein2genome:local	cds	3	659	.	-	.	
+NODE_419_length_659_cov_4.168385	exonerate:protein2genome:local	exon	3	659	.	-	.	insertions 0 ; deletions 0 ; identity 96.35 ; similarity 98.63
+NODE_419_length_659_cov_4.168385	exonerate:protein2genome:local	similarity	3	659	1058	-	.	alignment_id 0 ; Query WP_010962729.1 ; Align 660 31 657
+NODE_84_length_1145_cov_2.321161	exonerate:protein2genome:local	gene	599	964	626	+	.	gene_id 30S_ribosomal_protein_S13_[Wolbachia] ; sequence WP_010962745.1 ; gene_orientation . ; identity 99.18 ; similarity 100.00
+NODE_84_length_1145_cov_2.321161	exonerate:protein2genome:local	cds	599	964	.	+	.	
+NODE_84_length_1145_cov_2.321161	exonerate:protein2genome:local	exon	599	964	.	+	.	insertions 0 ; deletions 0 ; identity 99.18 ; similarity 100.00
+NODE_84_length_1145_cov_2.321161	exonerate:protein2genome:local	similarity	599	964	626	+	.	alignment_id 0 ; Query WP_010962745.1 ; Align 599 1 366
+NODE_84_length_1145_cov_2.321161	exonerate:protein2genome:local	gene	3	536	902	+	.	gene_id nucleoside_monophosphate_kinase_[Wolbachia] ; sequence WP_010962746.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_84_length_1145_cov_2.321161	exonerate:protein2genome:local	cds	3	536	.	+	.	
+NODE_84_length_1145_cov_2.321161	exonerate:protein2genome:local	exon	3	536	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_84_length_1145_cov_2.321161	exonerate:protein2genome:local	similarity	3	536	902	+	.	alignment_id 0 ; Query WP_010962746.1 ; Align 3 36 534
+NODE_387_length_674_cov_2.358459	exonerate:protein2genome:local	gene	240	674	766	-	.	gene_id 50S_ribosomal_protein_L6_[Wolbachia] ; sequence WP_010962749.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_387_length_674_cov_2.358459	exonerate:protein2genome:local	cds	240	674	.	-	.	
+NODE_387_length_674_cov_2.358459	exonerate:protein2genome:local	exon	240	674	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_387_length_674_cov_2.358459	exonerate:protein2genome:local	similarity	240	674	766	-	.	alignment_id 0 ; Query WP_010962749.1 ; Align 675 37 435
+NODE_416_length_661_cov_1.402397	exonerate:protein2genome:local	gene	2	439	741	+	.	gene_id 50S_ribosomal_protein_L5_[Rickettsiales] ; sequence WP_010962750.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_416_length_661_cov_1.402397	exonerate:protein2genome:local	cds	2	439	.	+	.	
+NODE_416_length_661_cov_1.402397	exonerate:protein2genome:local	exon	2	439	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_416_length_661_cov_1.402397	exonerate:protein2genome:local	similarity	2	439	741	+	.	alignment_id 0 ; Query WP_010962750.1 ; Align 2 32 438
+NODE_244_length_819_cov_0.809973	exonerate:protein2genome:local	gene	60	260	325	-	.	gene_id 50S_ribosomal_protein_L29_[Wolbachia] ; sequence WP_010962751.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_244_length_819_cov_0.809973	exonerate:protein2genome:local	cds	60	260	.	-	.	
+NODE_244_length_819_cov_0.809973	exonerate:protein2genome:local	exon	60	260	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_244_length_819_cov_0.809973	exonerate:protein2genome:local	similarity	60	260	325	-	.	alignment_id 0 ; Query WP_010962751.1 ; Align 261 1 201
+NODE_244_length_819_cov_0.809973	exonerate:protein2genome:local	gene	275	685	710	-	.	gene_id 50S_ribosomal_protein_L16_[Wolbachia] ; sequence WP_010962752.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_244_length_819_cov_0.809973	exonerate:protein2genome:local	cds	275	685	.	-	.	
+NODE_244_length_819_cov_0.809973	exonerate:protein2genome:local	exon	275	685	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_244_length_819_cov_0.809973	exonerate:protein2genome:local	similarity	275	685	710	-	.	alignment_id 0 ; Query WP_010962752.1 ; Align 686 1 411
+NODE_497_length_612_cov_1.089720	exonerate:protein2genome:local	gene	102	611	856	+	.	gene_id 30S_ribosomal_protein_S3_[Wolbachia] ; sequence WP_010962753.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_497_length_612_cov_1.089720	exonerate:protein2genome:local	cds	102	611	.	+	.	
+NODE_497_length_612_cov_1.089720	exonerate:protein2genome:local	exon	102	611	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_497_length_612_cov_1.089720	exonerate:protein2genome:local	similarity	102	611	856	+	.	alignment_id 0 ; Query WP_010962753.1 ; Align 102 1 510
+NODE_266_length_790_cov_1.597475	exonerate:protein2genome:local	gene	338	622	471	+	.	gene_id 50S_ribosomal_protein_L23_[Wolbachia] ; sequence WP_010962755.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_266_length_790_cov_1.597475	exonerate:protein2genome:local	cds	338	622	.	+	.	
+NODE_266_length_790_cov_1.597475	exonerate:protein2genome:local	exon	338	622	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_266_length_790_cov_1.597475	exonerate:protein2genome:local	similarity	338	622	471	+	.	alignment_id 0 ; Query WP_010962755.1 ; Align 338 1 285
+NODE_97_length_1106_cov_1.413022	exonerate:protein2genome:local	gene	103	1104	1715	+	.	gene_id elongation_factor_Tu_[Wolbachia] ; sequence WP_010962759.1 ; gene_orientation . ; identity 99.40 ; similarity 100.00
+NODE_97_length_1106_cov_1.413022	exonerate:protein2genome:local	cds	103	1104	.	+	.	
+NODE_97_length_1106_cov_1.413022	exonerate:protein2genome:local	exon	103	1104	.	+	.	insertions 0 ; deletions 0 ; identity 99.40 ; similarity 100.00
+NODE_97_length_1106_cov_1.413022	exonerate:protein2genome:local	similarity	103	1104	1715	+	.	alignment_id 0 ; Query WP_010962759.1 ; Align 103 1 1002
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	gene	28	468	670	+	.	gene_id PD-(D/E)XK_nuclease_family_transposase_[Wolbachia] ; sequence WP_010962766.1 ; gene_orientation . ; identity 86.39 ; similarity 94.56
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	cds	28	468	.	+	.	
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	exon	28	468	.	+	.	insertions 0 ; deletions 0 ; identity 86.39 ; similarity 94.56
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	similarity	28	468	670	+	.	alignment_id 0 ; Query WP_010962766.1 ; Align 28 1 441
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	gene	901	2271	2385	+	.	gene_id group_II_intron_reverse_transcriptase/maturase_[Wolbachia] ; sequence WP_010962767.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	cds	901	2271	.	+	.	
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	exon	901	2271	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	similarity	901	2271	2385	+	.	alignment_id 0 ; Query WP_010962767.1 ; Align 901 1 1371
+NODE_110_length_1086_cov_1.138751	exonerate:protein2genome:local	gene	513	1085	951	-	.	gene_id ABC_transporter_ATP-binding_protein_[Wolbachia] ; sequence WP_010962776.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_110_length_1086_cov_1.138751	exonerate:protein2genome:local	cds	513	1085	.	-	.	
+NODE_110_length_1086_cov_1.138751	exonerate:protein2genome:local	exon	513	1085	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_110_length_1086_cov_1.138751	exonerate:protein2genome:local	similarity	513	1085	951	-	.	alignment_id 0 ; Query WP_010962776.1 ; Align 1086 34 573
+NODE_152_length_967_cov_0.596629	exonerate:protein2genome:local	gene	465	890	742	-	.	gene_id zinc-ribbon_domain-containing_protein_[Wolbachia] ; sequence WP_010962781.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_152_length_967_cov_0.596629	exonerate:protein2genome:local	cds	465	890	.	-	.	
+NODE_152_length_967_cov_0.596629	exonerate:protein2genome:local	exon	465	890	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_152_length_967_cov_0.596629	exonerate:protein2genome:local	similarity	465	890	742	-	.	alignment_id 0 ; Query WP_010962781.1 ; Align 891 1 426
+NODE_204_length_881_cov_2.247512	exonerate:protein2genome:local	gene	11	814	1391	+	.	gene_id DUF2163_domain-containing_protein_[Wolbachia] ; sequence WP_010962809.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_204_length_881_cov_2.247512	exonerate:protein2genome:local	cds	11	814	.	+	.	
+NODE_204_length_881_cov_2.247512	exonerate:protein2genome:local	exon	11	814	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_204_length_881_cov_2.247512	exonerate:protein2genome:local	similarity	11	814	1391	+	.	alignment_id 0 ; Query WP_010962809.1 ; Align 11 1 804
+NODE_498_length_611_cov_0.765918	exonerate:protein2genome:local	gene	174	512	580	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962820.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_498_length_611_cov_0.765918	exonerate:protein2genome:local	cds	174	512	.	+	.	
+NODE_498_length_611_cov_0.765918	exonerate:protein2genome:local	exon	174	512	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_498_length_611_cov_0.765918	exonerate:protein2genome:local	similarity	174	512	580	+	.	alignment_id 0 ; Query WP_010962820.1 ; Align 174 1 339
+NODE_502_length_607_cov_3.690566	exonerate:protein2genome:local	gene	446	607	280	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962847.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_502_length_607_cov_3.690566	exonerate:protein2genome:local	cds	446	607	.	-	.	
+NODE_502_length_607_cov_3.690566	exonerate:protein2genome:local	exon	446	607	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_502_length_607_cov_3.690566	exonerate:protein2genome:local	similarity	446	607	280	-	.	alignment_id 0 ; Query WP_010962847.1 ; Align 608 3 162
+NODE_146_length_986_cov_1.839384	exonerate:protein2genome:local	gene	106	390	503	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962862.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_146_length_986_cov_1.839384	exonerate:protein2genome:local	cds	106	390	.	+	.	
+NODE_146_length_986_cov_1.839384	exonerate:protein2genome:local	exon	106	390	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_146_length_986_cov_1.839384	exonerate:protein2genome:local	similarity	106	390	503	+	.	alignment_id 0 ; Query WP_010962862.1 ; Align 106 1 285
+NODE_1124_length_391_cov_1.515924	exonerate:protein2genome:local	gene	1	258	438	-	.	gene_id type_IV_secretion_system_protein_VirB3_[Wolbachia] ; sequence WP_010962887.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_1124_length_391_cov_1.515924	exonerate:protein2genome:local	cds	1	258	.	-	.	
+NODE_1124_length_391_cov_1.515924	exonerate:protein2genome:local	exon	1	258	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_1124_length_391_cov_1.515924	exonerate:protein2genome:local	similarity	1	258	438	-	.	alignment_id 0 ; Query WP_010962887.1 ; Align 259 1 258
+NODE_53_length_1347_cov_2.290551	exonerate:protein2genome:local	gene	573	1346	1326	-	.	gene_id methionyl-tRNA_formyltransferase_[Wolbachia] ; sequence WP_010962892.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_53_length_1347_cov_2.290551	exonerate:protein2genome:local	cds	573	1346	.	-	.	
+NODE_53_length_1347_cov_2.290551	exonerate:protein2genome:local	exon	573	1346	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_53_length_1347_cov_2.290551	exonerate:protein2genome:local	similarity	573	1346	1326	-	.	alignment_id 0 ; Query WP_010962892.1 ; Align 1347 42 774
+NODE_318_length_733_cov_1.147866	exonerate:protein2genome:local	gene	3	644	1122	+	.	gene_id NAD_kinase_[Wolbachia] ; sequence WP_010962895.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_318_length_733_cov_1.147866	exonerate:protein2genome:local	cds	3	644	.	+	.	
+NODE_318_length_733_cov_1.147866	exonerate:protein2genome:local	exon	3	644	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_318_length_733_cov_1.147866	exonerate:protein2genome:local	similarity	3	644	1122	+	.	alignment_id 0 ; Query WP_010962895.1 ; Align 3 51 642
+NODE_465_length_624_cov_5.577697	exonerate:protein2genome:local	gene	211	531	569	+	.	gene_id thioredoxin_[Wolbachia] ; sequence WP_010962901.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_465_length_624_cov_5.577697	exonerate:protein2genome:local	cds	211	531	.	+	.	
+NODE_465_length_624_cov_5.577697	exonerate:protein2genome:local	exon	211	531	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_465_length_624_cov_5.577697	exonerate:protein2genome:local	similarity	211	531	569	+	.	alignment_id 0 ; Query WP_010962901.1 ; Align 211 1 321
+NODE_25_length_1919_cov_1.010858	exonerate:protein2genome:local	gene	1012	1488	835	+	.	gene_id dihydrofolate_reductase_[Wolbachia] ; sequence WP_010962904.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_25_length_1919_cov_1.010858	exonerate:protein2genome:local	cds	1012	1488	.	+	.	
+NODE_25_length_1919_cov_1.010858	exonerate:protein2genome:local	exon	1012	1488	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_25_length_1919_cov_1.010858	exonerate:protein2genome:local	similarity	1012	1488	835	+	.	alignment_id 0 ; Query WP_010962904.1 ; Align 1012 1 477
+NODE_150_length_971_cov_3.762864	exonerate:protein2genome:local	gene	260	529	462	+	.	gene_id 30S_ribosomal_protein_S15_[Wolbachia] ; sequence WP_010962917.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_150_length_971_cov_3.762864	exonerate:protein2genome:local	cds	260	529	.	+	.	
+NODE_150_length_971_cov_3.762864	exonerate:protein2genome:local	exon	260	529	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_150_length_971_cov_3.762864	exonerate:protein2genome:local	similarity	260	529	462	+	.	alignment_id 0 ; Query WP_010962917.1 ; Align 260 1 270
+NODE_256_length_805_cov_0.414835	exonerate:protein2genome:local	gene	1	237	389	-	.	gene_id BolA_family_protein_[Wolbachia] ; sequence WP_010962929.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_256_length_805_cov_0.414835	exonerate:protein2genome:local	cds	1	237	.	-	.	
+NODE_256_length_805_cov_0.414835	exonerate:protein2genome:local	exon	1	237	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_256_length_805_cov_0.414835	exonerate:protein2genome:local	similarity	1	237	389	-	.	alignment_id 0 ; Query WP_010962929.1 ; Align 238 1 237
+NODE_292_length_754_cov_1.293944	exonerate:protein2genome:local	gene	445	717	444	+	.	gene_id XRE_family_transcriptional_regulator_[Wolbachia] ; sequence WP_010962932.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_292_length_754_cov_1.293944	exonerate:protein2genome:local	cds	445	717	.	+	.	
+NODE_292_length_754_cov_1.293944	exonerate:protein2genome:local	exon	445	717	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_292_length_754_cov_1.293944	exonerate:protein2genome:local	similarity	445	717	444	+	.	alignment_id 0 ; Query WP_010962932.1 ; Align 445 1 273
+NODE_1120_length_391_cov_3.283439	exonerate:protein2genome:local	gene	3	380	657	+	.	gene_id transposase_[Wolbachia] ; sequence WP_010962940.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_1120_length_391_cov_3.283439	exonerate:protein2genome:local	cds	3	380	.	+	.	
+NODE_1120_length_391_cov_3.283439	exonerate:protein2genome:local	exon	3	380	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_1120_length_391_cov_3.283439	exonerate:protein2genome:local	similarity	3	380	657	+	.	alignment_id 0 ; Query WP_010962940.1 ; Align 3 10 378
+NODE_67_length_1217_cov_1.945614	exonerate:protein2genome:local	gene	856	1161	489	-	.	gene_id NADH-quinone_oxidoreductase_subunit_NuoK_[Wolbachia] ; sequence WP_010962953.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_67_length_1217_cov_1.945614	exonerate:protein2genome:local	cds	856	1161	.	-	.	
+NODE_67_length_1217_cov_1.945614	exonerate:protein2genome:local	exon	856	1161	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_67_length_1217_cov_1.945614	exonerate:protein2genome:local	similarity	856	1161	489	-	.	alignment_id 0 ; Query WP_010962953.1 ; Align 1162 1 306
+NODE_166_length_941_cov_1.410880	exonerate:protein2genome:local	gene	636	770	227	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962957.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_166_length_941_cov_1.410880	exonerate:protein2genome:local	cds	636	770	.	+	.	
+NODE_166_length_941_cov_1.410880	exonerate:protein2genome:local	exon	636	770	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_166_length_941_cov_1.410880	exonerate:protein2genome:local	similarity	636	770	227	+	.	alignment_id 0 ; Query WP_010962957.1 ; Align 636 1 135
+NODE_155_length_965_cov_0.632883	exonerate:protein2genome:local	gene	4	453	808	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010962969.1 ; gene_orientation . ; identity 99.33 ; similarity 99.33
+NODE_155_length_965_cov_0.632883	exonerate:protein2genome:local	cds	4	453	.	+	.	
+NODE_155_length_965_cov_0.632883	exonerate:protein2genome:local	exon	4	453	.	+	.	insertions 0 ; deletions 0 ; identity 99.33 ; similarity 99.33
+NODE_155_length_965_cov_0.632883	exonerate:protein2genome:local	similarity	4	453	808	+	.	alignment_id 0 ; Query WP_010962969.1 ; Align 4 16 450
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	gene	28	468	700	+	.	gene_id PD-(D/E)XK_nuclease_family_transposase_[Wolbachia] ; sequence WP_010962971.1 ; gene_orientation . ; identity 92.52 ; similarity 95.24
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	cds	28	468	.	+	.	
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	exon	28	468	.	+	.	insertions 0 ; deletions 0 ; identity 92.52 ; similarity 95.24
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	similarity	28	468	700	+	.	alignment_id 0 ; Query WP_010962971.1 ; Align 28 1 441
+NODE_196_length_891_cov_1.796069	exonerate:protein2genome:local	gene	2	760	1310	+	.	gene_id CDP-alcohol_phosphatidyltransferase_family_protein_[Wolbachia] ; sequence WP_010963007.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_196_length_891_cov_1.796069	exonerate:protein2genome:local	cds	2	760	.	+	.	
+NODE_196_length_891_cov_1.796069	exonerate:protein2genome:local	exon	2	760	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_196_length_891_cov_1.796069	exonerate:protein2genome:local	similarity	2	760	1310	+	.	alignment_id 0 ; Query WP_010963007.1 ; Align 2 4 759
+NODE_282_length_766_cov_0.362845	exonerate:protein2genome:local	gene	335	766	750	-	.	gene_id type_II_toxin-antitoxin_system_RatA_family_toxin_[Wolbachia] ; sequence WP_010963012.1 ; gene_orientation . ; identity 99.31 ; similarity 100.00
+NODE_282_length_766_cov_0.362845	exonerate:protein2genome:local	cds	335	766	.	-	.	
+NODE_282_length_766_cov_0.362845	exonerate:protein2genome:local	exon	335	766	.	-	.	insertions 0 ; deletions 0 ; identity 99.31 ; similarity 100.00
+NODE_282_length_766_cov_0.362845	exonerate:protein2genome:local	similarity	335	766	750	-	.	alignment_id 0 ; Query WP_010963012.1 ; Align 767 10 432
+NODE_328_length_721_cov_1.240683	exonerate:protein2genome:local	gene	442	717	469	-	.	gene_id DUF2671_domain-containing_protein_[Wolbachia] ; sequence WP_010963014.1 ; gene_orientation . ; identity 97.83 ; similarity 98.91
+NODE_328_length_721_cov_1.240683	exonerate:protein2genome:local	cds	442	717	.	-	.	
+NODE_328_length_721_cov_1.240683	exonerate:protein2genome:local	exon	442	717	.	-	.	insertions 0 ; deletions 0 ; identity 97.83 ; similarity 98.91
+NODE_328_length_721_cov_1.240683	exonerate:protein2genome:local	similarity	442	717	469	-	.	alignment_id 0 ; Query WP_010963014.1 ; Align 718 1 276
+NODE_617_length_548_cov_2.199575	exonerate:protein2genome:local	gene	160	489	539	-	.	gene_id YbaB/EbfC_family_nucleoid-associated_protein_[Wolbachia] ; sequence WP_010963017.1 ; gene_orientation . ; identity 99.09 ; similarity 100.00
+NODE_617_length_548_cov_2.199575	exonerate:protein2genome:local	cds	160	489	.	-	.	
+NODE_617_length_548_cov_2.199575	exonerate:protein2genome:local	exon	160	489	.	-	.	insertions 0 ; deletions 0 ; identity 99.09 ; similarity 100.00
+NODE_617_length_548_cov_2.199575	exonerate:protein2genome:local	similarity	160	489	539	-	.	alignment_id 0 ; Query WP_010963017.1 ; Align 490 1 330
+NODE_116_length_1055_cov_1.905930	exonerate:protein2genome:local	gene	338	613	463	+	.	gene_id HU_family_DNA-binding_protein_[Wolbachia] ; sequence WP_010963035.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_116_length_1055_cov_1.905930	exonerate:protein2genome:local	cds	338	613	.	+	.	
+NODE_116_length_1055_cov_1.905930	exonerate:protein2genome:local	exon	338	613	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_116_length_1055_cov_1.905930	exonerate:protein2genome:local	similarity	338	613	463	+	.	alignment_id 0 ; Query WP_010963035.1 ; Align 338 1 276
+NODE_154_length_965_cov_3.279279	exonerate:protein2genome:local	gene	148	810	1156	-	.	gene_id tRNA_(guanosine(46)-N7)-methyltransferase_TrmB_[Wolbachia] ; sequence WP_010963037.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_154_length_965_cov_3.279279	exonerate:protein2genome:local	cds	148	810	.	-	.	
+NODE_154_length_965_cov_3.279279	exonerate:protein2genome:local	exon	148	810	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_154_length_965_cov_3.279279	exonerate:protein2genome:local	similarity	148	810	1156	-	.	alignment_id 0 ; Query WP_010963037.1 ; Align 811 1 663
+NODE_474_length_621_cov_2.573529	exonerate:protein2genome:local	gene	34	423	668	-	.	gene_id TraR/DksA_C4-type_zinc_finger_protein_[Wolbachia] ; sequence WP_010963040.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_474_length_621_cov_2.573529	exonerate:protein2genome:local	cds	34	423	.	-	.	
+NODE_474_length_621_cov_2.573529	exonerate:protein2genome:local	exon	34	423	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_474_length_621_cov_2.573529	exonerate:protein2genome:local	similarity	34	423	668	-	.	alignment_id 0 ; Query WP_010963040.1 ; Align 424 1 390
+NODE_100_length_1103_cov_0.764133	exonerate:protein2genome:local	gene	31	1008	1645	-	.	gene_id phospho-N-acetylmuramoyl-pentapeptide-transferase_[Wolbachia] ; sequence WP_010963043.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_100_length_1103_cov_0.764133	exonerate:protein2genome:local	cds	31	1008	.	-	.	
+NODE_100_length_1103_cov_0.764133	exonerate:protein2genome:local	exon	31	1008	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_100_length_1103_cov_0.764133	exonerate:protein2genome:local	similarity	31	1008	1645	-	.	alignment_id 0 ; Query WP_010963043.1 ; Align 1009 1 978
+NODE_378_length_682_cov_3.874380	exonerate:protein2genome:local	gene	7	291	480	-	.	gene_id hypothetical_protein_[unclassified_Wolbachia] ; sequence WP_010963065.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_378_length_682_cov_3.874380	exonerate:protein2genome:local	cds	7	291	.	-	.	
+NODE_378_length_682_cov_3.874380	exonerate:protein2genome:local	exon	7	291	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_378_length_682_cov_3.874380	exonerate:protein2genome:local	similarity	7	291	480	-	.	alignment_id 0 ; Query WP_010963065.1 ; Align 292 1 285
+NODE_1028_length_413_cov_1.863095	exonerate:protein2genome:local	gene	4	303	504	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010963066.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_1028_length_413_cov_1.863095	exonerate:protein2genome:local	cds	4	303	.	-	.	
+NODE_1028_length_413_cov_1.863095	exonerate:protein2genome:local	exon	4	303	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_1028_length_413_cov_1.863095	exonerate:protein2genome:local	similarity	4	303	504	-	.	alignment_id 0 ; Query WP_010963066.1 ; Align 304 1 300
+NODE_48_length_1377_cov_1.734615	exonerate:protein2genome:local	gene	462	770	531	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010963082.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_48_length_1377_cov_1.734615	exonerate:protein2genome:local	cds	462	770	.	+	.	
+NODE_48_length_1377_cov_1.734615	exonerate:protein2genome:local	exon	462	770	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_48_length_1377_cov_1.734615	exonerate:protein2genome:local	similarity	462	770	531	+	.	alignment_id 0 ; Query WP_010963082.1 ; Align 462 1 309
+NODE_48_length_1377_cov_1.734615	exonerate:protein2genome:local	gene	798	1274	806	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010963083.1 ; gene_orientation . ; identity 98.74 ; similarity 98.74
+NODE_48_length_1377_cov_1.734615	exonerate:protein2genome:local	cds	798	1274	.	+	.	
+NODE_48_length_1377_cov_1.734615	exonerate:protein2genome:local	exon	798	1274	.	+	.	insertions 0 ; deletions 0 ; identity 98.74 ; similarity 98.74
+NODE_48_length_1377_cov_1.734615	exonerate:protein2genome:local	similarity	798	1274	806	+	.	alignment_id 0 ; Query WP_010963083.1 ; Align 798 1 477
+NODE_117_length_1051_cov_1.321355	exonerate:protein2genome:local	gene	230	1042	1384	+	.	gene_id tetratricopeptide_repeat_protein_[Wolbachia] ; sequence WP_010963098.1 ; gene_orientation . ; identity 99.63 ; similarity 100.00
+NODE_117_length_1051_cov_1.321355	exonerate:protein2genome:local	cds	230	1042	.	+	.	
+NODE_117_length_1051_cov_1.321355	exonerate:protein2genome:local	exon	230	1042	.	+	.	insertions 0 ; deletions 0 ; identity 99.63 ; similarity 100.00
+NODE_117_length_1051_cov_1.321355	exonerate:protein2genome:local	similarity	230	1042	1384	+	.	alignment_id 0 ; Query WP_010963098.1 ; Align 230 1 813
+NODE_191_length_897_cov_1.386585	exonerate:protein2genome:local	gene	68	592	872	-	.	gene_id biotin_transporter_BioY_[Wolbachia] ; sequence WP_010963099.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_191_length_897_cov_1.386585	exonerate:protein2genome:local	cds	68	592	.	-	.	
+NODE_191_length_897_cov_1.386585	exonerate:protein2genome:local	exon	68	592	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_191_length_897_cov_1.386585	exonerate:protein2genome:local	similarity	68	592	872	-	.	alignment_id 0 ; Query WP_010963099.1 ; Align 593 1 525
+NODE_1032_length_412_cov_0.961194	exonerate:protein2genome:local	gene	125	322	344	+	.	gene_id 30S_ribosomal_protein_S21_[Wolbachia] ; sequence WP_010963104.1 ; gene_orientation . ; identity 98.48 ; similarity 100.00
+NODE_1032_length_412_cov_0.961194	exonerate:protein2genome:local	cds	125	322	.	+	.	
+NODE_1032_length_412_cov_0.961194	exonerate:protein2genome:local	exon	125	322	.	+	.	insertions 0 ; deletions 0 ; identity 98.48 ; similarity 100.00
+NODE_1032_length_412_cov_0.961194	exonerate:protein2genome:local	similarity	125	322	344	+	.	alignment_id 0 ; Query WP_010963104.1 ; Align 125 1 198
+NODE_720_length_505_cov_1.299065	exonerate:protein2genome:local	gene	1	492	836	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010963111.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_720_length_505_cov_1.299065	exonerate:protein2genome:local	cds	1	492	.	+	.	
+NODE_720_length_505_cov_1.299065	exonerate:protein2genome:local	exon	1	492	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_720_length_505_cov_1.299065	exonerate:protein2genome:local	similarity	1	492	836	+	.	alignment_id 0 ; Query WP_010963111.1 ; Align 1 41 492
+NODE_63_length_1240_cov_2.377472	exonerate:protein2genome:local	gene	495	872	614	+	.	gene_id hypothetical_protein_[unclassified_Wolbachia] ; sequence WP_010963120.1 ; gene_orientation . ; identity 98.41 ; similarity 98.41
+NODE_63_length_1240_cov_2.377472	exonerate:protein2genome:local	cds	495	872	.	+	.	
+NODE_63_length_1240_cov_2.377472	exonerate:protein2genome:local	exon	495	872	.	+	.	insertions 0 ; deletions 0 ; identity 98.41 ; similarity 98.41
+NODE_63_length_1240_cov_2.377472	exonerate:protein2genome:local	similarity	495	872	614	+	.	alignment_id 0 ; Query WP_010963120.1 ; Align 495 1 378
+NODE_625_length_543_cov_0.566524	exonerate:protein2genome:local	gene	51	542	850	+	.	gene_id phospholipase_D_family_protein_[Wolbachia] ; sequence WP_010963125.1 ; gene_orientation . ; identity 99.39 ; similarity 100.00
+NODE_625_length_543_cov_0.566524	exonerate:protein2genome:local	cds	51	542	.	+	.	
+NODE_625_length_543_cov_0.566524	exonerate:protein2genome:local	exon	51	542	.	+	.	insertions 0 ; deletions 0 ; identity 99.39 ; similarity 100.00
+NODE_625_length_543_cov_0.566524	exonerate:protein2genome:local	similarity	51	542	850	+	.	alignment_id 0 ; Query WP_010963125.1 ; Align 51 1 492
+NODE_517_length_600_cov_0.925430	exonerate:protein2genome:local	gene	1	501	846	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010963132.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_517_length_600_cov_0.925430	exonerate:protein2genome:local	cds	1	501	.	+	.	
+NODE_517_length_600_cov_0.925430	exonerate:protein2genome:local	exon	1	501	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_517_length_600_cov_0.925430	exonerate:protein2genome:local	similarity	1	501	846	+	.	alignment_id 0 ; Query WP_010963132.1 ; Align 1 31 501
+NODE_1122_length_391_cov_2.875796	exonerate:protein2genome:local	gene	101	391	494	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_010963138.1 ; gene_orientation . ; identity 98.97 ; similarity 98.97
+NODE_1122_length_391_cov_2.875796	exonerate:protein2genome:local	cds	101	391	.	-	.	
+NODE_1122_length_391_cov_2.875796	exonerate:protein2genome:local	exon	101	391	.	-	.	insertions 0 ; deletions 0 ; identity 98.97 ; similarity 98.97
+NODE_1122_length_391_cov_2.875796	exonerate:protein2genome:local	similarity	101	391	494	-	.	alignment_id 0 ; Query WP_010963138.1 ; Align 392 20 291
+NODE_86_length_1136_cov_1.214353	exonerate:protein2genome:local	gene	66	878	1361	-	.	gene_id YihY/virulence_factor_BrkB_family_protein_[Wolbachia] ; sequence WP_010963163.1 ; gene_orientation . ; identity 99.26 ; similarity 99.63
+NODE_86_length_1136_cov_1.214353	exonerate:protein2genome:local	cds	66	878	.	-	.	
+NODE_86_length_1136_cov_1.214353	exonerate:protein2genome:local	exon	66	878	.	-	.	insertions 0 ; deletions 0 ; identity 99.26 ; similarity 99.63
+NODE_86_length_1136_cov_1.214353	exonerate:protein2genome:local	similarity	66	878	1361	-	.	alignment_id 0 ; Query WP_010963163.1 ; Align 879 1 813
+NODE_39_length_1513_cov_2.805710	exonerate:protein2genome:local	gene	173	1150	1707	+	.	gene_id SGNH/GDSL_hydrolase_family_protein_[Wolbachia] ; sequence WP_010963165.1 ; gene_orientation . ; identity 99.69 ; similarity 99.69
+NODE_39_length_1513_cov_2.805710	exonerate:protein2genome:local	cds	173	1150	.	+	.	
+NODE_39_length_1513_cov_2.805710	exonerate:protein2genome:local	exon	173	1150	.	+	.	insertions 0 ; deletions 0 ; identity 99.69 ; similarity 99.69
+NODE_39_length_1513_cov_2.805710	exonerate:protein2genome:local	similarity	173	1150	1707	+	.	alignment_id 0 ; Query WP_010963165.1 ; Align 173 1 978
+NODE_2156_length_247_cov_1.094118	exonerate:protein2genome:local	gene	3	227	374	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_012673197.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_2156_length_247_cov_1.094118	exonerate:protein2genome:local	cds	3	227	.	+	.	
+NODE_2156_length_247_cov_1.094118	exonerate:protein2genome:local	exon	3	227	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_2156_length_247_cov_1.094118	exonerate:protein2genome:local	similarity	3	227	374	+	.	alignment_id 0 ; Query WP_012673197.1 ; Align 3 12 225
+NODE_262_length_791_cov_2.161064	exonerate:protein2genome:local	gene	327	635	511	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_015588824.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_262_length_791_cov_2.161064	exonerate:protein2genome:local	cds	327	635	.	+	.	
+NODE_262_length_791_cov_2.161064	exonerate:protein2genome:local	exon	327	635	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_262_length_791_cov_2.161064	exonerate:protein2genome:local	similarity	327	635	511	+	.	alignment_id 0 ; Query WP_015588824.1 ; Align 327 1 309
+NODE_110_length_1086_cov_1.138751	exonerate:protein2genome:local	gene	324	485	283	+	.	gene_id lipoprotein_[Wolbachia] ; sequence WP_015589158.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_110_length_1086_cov_1.138751	exonerate:protein2genome:local	cds	324	485	.	+	.	
+NODE_110_length_1086_cov_1.138751	exonerate:protein2genome:local	exon	324	485	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_110_length_1086_cov_1.138751	exonerate:protein2genome:local	similarity	324	485	283	+	.	alignment_id 0 ; Query WP_015589158.1 ; Align 324 1 162
+NODE_670_length_521_cov_3.635135	exonerate:protein2genome:local	gene	2	508	848	-	.	gene_id pyridoxamine_5'-phosphate_oxidase_[Wolbachia] ; sequence WP_022626142.1 ; gene_orientation . ; identity 97.63 ; similarity 98.22
+NODE_670_length_521_cov_3.635135	exonerate:protein2genome:local	cds	2	508	.	-	.	
+NODE_670_length_521_cov_3.635135	exonerate:protein2genome:local	exon	2	508	.	-	.	insertions 0 ; deletions 3 ; identity 97.63 ; similarity 98.22
+NODE_670_length_521_cov_3.635135	exonerate:protein2genome:local	similarity	2	508	848	-	.	alignment_id 0 ; Query WP_022626142.1 ; Align 509 6 57 ; Align 452 28 450
+NODE_855_length_458_cov_3.440945	exonerate:protein2genome:local	gene	2	295	537	-	.	gene_id EndoU_domain-containing_protein_[Wolbachia] ; sequence WP_022626143.1 ; gene_orientation . ; identity 98.98 ; similarity 100.00
+NODE_855_length_458_cov_3.440945	exonerate:protein2genome:local	cds	2	295	.	-	.	
+NODE_855_length_458_cov_3.440945	exonerate:protein2genome:local	exon	2	295	.	-	.	insertions 0 ; deletions 0 ; identity 98.98 ; similarity 100.00
+NODE_855_length_458_cov_3.440945	exonerate:protein2genome:local	similarity	2	295	537	-	.	alignment_id 0 ; Query WP_022626143.1 ; Align 296 1 294
+NODE_79_length_1163_cov_1.433702	exonerate:protein2genome:local	gene	2	601	1014	-	.	gene_id TRP75-related_protein_[Wolbachia] ; sequence WP_022626207.1 ; gene_orientation . ; identity 99.50 ; similarity 100.00
+NODE_79_length_1163_cov_1.433702	exonerate:protein2genome:local	cds	2	601	.	-	.	
+NODE_79_length_1163_cov_1.433702	exonerate:protein2genome:local	exon	2	601	.	-	.	insertions 0 ; deletions 0 ; identity 99.50 ; similarity 100.00
+NODE_79_length_1163_cov_1.433702	exonerate:protein2genome:local	similarity	2	601	1014	-	.	alignment_id 0 ; Query WP_022626207.1 ; Align 602 1 600
+NODE_922_length_441_cov_0.961538	exonerate:protein2genome:local	gene	2	217	331	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_022626208.1 ; gene_orientation . ; identity 91.67 ; similarity 100.00
+NODE_922_length_441_cov_0.961538	exonerate:protein2genome:local	cds	2	217	.	-	.	
+NODE_922_length_441_cov_0.961538	exonerate:protein2genome:local	exon	2	217	.	-	.	insertions 0 ; deletions 0 ; identity 91.67 ; similarity 100.00
+NODE_922_length_441_cov_0.961538	exonerate:protein2genome:local	similarity	2	217	331	-	.	alignment_id 0 ; Query WP_022626208.1 ; Align 218 1 216
+NODE_648_length_531_cov_1.180617	exonerate:protein2genome:local	gene	316	501	310	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_022626229.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_648_length_531_cov_1.180617	exonerate:protein2genome:local	cds	316	501	.	-	.	
+NODE_648_length_531_cov_1.180617	exonerate:protein2genome:local	exon	316	501	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_648_length_531_cov_1.180617	exonerate:protein2genome:local	similarity	316	501	310	-	.	alignment_id 0 ; Query WP_022626229.1 ; Align 502 1 186
+NODE_1181_length_378_cov_0.823920	exonerate:protein2genome:local	gene	56	235	300	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_022626245.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_1181_length_378_cov_0.823920	exonerate:protein2genome:local	cds	56	235	.	-	.	
+NODE_1181_length_378_cov_0.823920	exonerate:protein2genome:local	exon	56	235	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_1181_length_378_cov_0.823920	exonerate:protein2genome:local	similarity	56	235	300	-	.	alignment_id 0 ; Query WP_022626245.1 ; Align 236 1 180
+NODE_93_length_1118_cov_2.590778	exonerate:protein2genome:local	gene	898	1116	369	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_022626274.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_93_length_1118_cov_2.590778	exonerate:protein2genome:local	cds	898	1116	.	+	.	
+NODE_93_length_1118_cov_2.590778	exonerate:protein2genome:local	exon	898	1116	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_93_length_1118_cov_2.590778	exonerate:protein2genome:local	similarity	898	1116	369	+	.	alignment_id 0 ; Query WP_022626274.1 ; Align 898 1 219
+NODE_18_length_2058_cov_3.025240	exonerate:protein2genome:local	gene	874	1113	422	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_022626278.1 ; gene_orientation . ; identity 98.75 ; similarity 100.00
+NODE_18_length_2058_cov_3.025240	exonerate:protein2genome:local	cds	874	1113	.	-	.	
+NODE_18_length_2058_cov_3.025240	exonerate:protein2genome:local	exon	874	1113	.	-	.	insertions 0 ; deletions 0 ; identity 98.75 ; similarity 100.00
+NODE_18_length_2058_cov_3.025240	exonerate:protein2genome:local	similarity	874	1113	422	-	.	alignment_id 0 ; Query WP_022626278.1 ; Align 1114 1 240
+NODE_101_length_1099_cov_1.992172	exonerate:protein2genome:local	gene	1	936	1576	+	.	gene_id COX15/CtaA_family_protein_[Wolbachia] ; sequence WP_022626285.1 ; gene_orientation . ; identity 99.68 ; similarity 99.68
+NODE_101_length_1099_cov_1.992172	exonerate:protein2genome:local	cds	1	936	.	+	.	
+NODE_101_length_1099_cov_1.992172	exonerate:protein2genome:local	exon	1	936	.	+	.	insertions 0 ; deletions 0 ; identity 99.68 ; similarity 99.68
+NODE_101_length_1099_cov_1.992172	exonerate:protein2genome:local	similarity	1	936	1576	+	.	alignment_id 0 ; Query WP_022626285.1 ; Align 1 31 936
+NODE_1451_length_330_cov_0.474308	exonerate:protein2genome:local	gene	49	261	358	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_022626301.1 ; gene_orientation . ; identity 98.59 ; similarity 100.00
+NODE_1451_length_330_cov_0.474308	exonerate:protein2genome:local	cds	49	261	.	+	.	
+NODE_1451_length_330_cov_0.474308	exonerate:protein2genome:local	exon	49	261	.	+	.	insertions 0 ; deletions 0 ; identity 98.59 ; similarity 100.00
+NODE_1451_length_330_cov_0.474308	exonerate:protein2genome:local	similarity	49	261	358	+	.	alignment_id 0 ; Query WP_022626301.1 ; Align 49 1 213
+NODE_428_length_650_cov_3.881326	exonerate:protein2genome:local	gene	203	547	593	+	.	gene_id phage_tail_protein_[Wolbachia] ; sequence WP_022626303.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_428_length_650_cov_3.881326	exonerate:protein2genome:local	cds	203	547	.	+	.	
+NODE_428_length_650_cov_3.881326	exonerate:protein2genome:local	exon	203	547	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_428_length_650_cov_3.881326	exonerate:protein2genome:local	similarity	203	547	593	+	.	alignment_id 0 ; Query WP_022626303.1 ; Align 203 1 345
+NODE_112_length_1080_cov_1.452642	exonerate:protein2genome:local	gene	491	838	594	-	.	gene_id YraN_family_protein_[Wolbachia] ; sequence WP_022626322.1 ; gene_orientation . ; identity 99.14 ; similarity 100.00
+NODE_112_length_1080_cov_1.452642	exonerate:protein2genome:local	cds	491	838	.	-	.	
+NODE_112_length_1080_cov_1.452642	exonerate:protein2genome:local	exon	491	838	.	-	.	insertions 0 ; deletions 0 ; identity 99.14 ; similarity 100.00
+NODE_112_length_1080_cov_1.452642	exonerate:protein2genome:local	similarity	491	838	594	-	.	alignment_id 0 ; Query WP_022626322.1 ; Align 839 1 348
+NODE_988_length_423_cov_2.601156	exonerate:protein2genome:local	gene	168	422	439	-	.	gene_id transposase_[Wolbachia] ; sequence WP_022626340.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_988_length_423_cov_2.601156	exonerate:protein2genome:local	cds	168	422	.	-	.	
+NODE_988_length_423_cov_2.601156	exonerate:protein2genome:local	exon	168	422	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_988_length_423_cov_2.601156	exonerate:protein2genome:local	similarity	168	422	439	-	.	alignment_id 0 ; Query WP_022626340.1 ; Align 423 13 255
+NODE_107_length_1091_cov_1.188363	exonerate:protein2genome:local	gene	66	857	1397	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_022626354.1 ; gene_orientation . ; identity 99.62 ; similarity 100.00
+NODE_107_length_1091_cov_1.188363	exonerate:protein2genome:local	cds	66	857	.	-	.	
+NODE_107_length_1091_cov_1.188363	exonerate:protein2genome:local	exon	66	857	.	-	.	insertions 0 ; deletions 0 ; identity 99.62 ; similarity 100.00
+NODE_107_length_1091_cov_1.188363	exonerate:protein2genome:local	similarity	66	857	1397	-	.	alignment_id 0 ; Query WP_022626354.1 ; Align 858 1 792
+NODE_146_length_986_cov_1.839384	exonerate:protein2genome:local	gene	412	867	808	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_022626355.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_146_length_986_cov_1.839384	exonerate:protein2genome:local	cds	412	867	.	-	.	
+NODE_146_length_986_cov_1.839384	exonerate:protein2genome:local	exon	412	867	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_146_length_986_cov_1.839384	exonerate:protein2genome:local	similarity	412	867	808	-	.	alignment_id 0 ; Query WP_022626355.1 ; Align 868 1 456
+NODE_322_length_726_cov_4.926040	exonerate:protein2genome:local	gene	81	326	432	+	.	gene_id IS110_family_transposase_[Wolbachia] ; sequence WP_022626363.1 ; gene_orientation . ; identity 98.78 ; similarity 100.00
+NODE_322_length_726_cov_4.926040	exonerate:protein2genome:local	cds	81	326	.	+	.	
+NODE_322_length_726_cov_4.926040	exonerate:protein2genome:local	exon	81	326	.	+	.	insertions 0 ; deletions 0 ; identity 98.78 ; similarity 100.00
+NODE_322_length_726_cov_4.926040	exonerate:protein2genome:local	similarity	81	326	432	+	.	alignment_id 0 ; Query WP_022626363.1 ; Align 81 1 246
+NODE_464_length_625_cov_0.423358	exonerate:protein2genome:local	gene	94	438	578	+	.	gene_id IS630_transposase-related_protein_[Wolbachia] ; sequence WP_022626382.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_464_length_625_cov_0.423358	exonerate:protein2genome:local	cds	94	438	.	+	.	
+NODE_464_length_625_cov_0.423358	exonerate:protein2genome:local	exon	94	438	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_464_length_625_cov_0.423358	exonerate:protein2genome:local	similarity	94	438	578	+	.	alignment_id 0 ; Query WP_022626382.1 ; Align 94 1 345
+NODE_95_length_1108_cov_2.522793	exonerate:protein2genome:local	gene	175	789	1039	-	.	gene_id AAA_family_ATPase_[Wolbachia] ; sequence WP_022626414.1 ; gene_orientation . ; identity 99.51 ; similarity 99.51
+NODE_95_length_1108_cov_2.522793	exonerate:protein2genome:local	cds	175	789	.	-	.	
+NODE_95_length_1108_cov_2.522793	exonerate:protein2genome:local	exon	175	789	.	-	.	insertions 0 ; deletions 0 ; identity 99.51 ; similarity 99.51
+NODE_95_length_1108_cov_2.522793	exonerate:protein2genome:local	similarity	175	789	1039	-	.	alignment_id 0 ; Query WP_022626414.1 ; Align 790 1 615
+NODE_505_length_606_cov_2.294896	exonerate:protein2genome:local	gene	283	432	269	-	.	gene_id transposase_[Wolbachia] ; sequence WP_022626429.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_505_length_606_cov_2.294896	exonerate:protein2genome:local	cds	283	432	.	-	.	
+NODE_505_length_606_cov_2.294896	exonerate:protein2genome:local	exon	283	432	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_505_length_606_cov_2.294896	exonerate:protein2genome:local	similarity	283	432	269	-	.	alignment_id 0 ; Query WP_022626429.1 ; Align 433 1 150
+NODE_520_length_598_cov_2.819578	exonerate:protein2genome:local	gene	2	544	877	+	.	gene_id dTMP_kinase_[Wolbachia] ; sequence WP_038227975.1 ; gene_orientation . ; identity 95.58 ; similarity 96.13
+NODE_520_length_598_cov_2.819578	exonerate:protein2genome:local	cds	2	544	.	+	.	
+NODE_520_length_598_cov_2.819578	exonerate:protein2genome:local	exon	2	544	.	+	.	insertions 0 ; deletions 0 ; identity 95.58 ; similarity 96.13
+NODE_520_length_598_cov_2.819578	exonerate:protein2genome:local	similarity	2	544	877	+	.	alignment_id 0 ; Query WP_038227975.1 ; Align 2 14 543
+NODE_108_length_1090_cov_2.554788	exonerate:protein2genome:local	gene	3	992	1661	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_038228074.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_108_length_1090_cov_2.554788	exonerate:protein2genome:local	cds	3	992	.	-	.	
+NODE_108_length_1090_cov_2.554788	exonerate:protein2genome:local	exon	3	992	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_108_length_1090_cov_2.554788	exonerate:protein2genome:local	similarity	3	992	1661	-	.	alignment_id 0 ; Query WP_038228074.1 ; Align 993 1 990
+NODE_76_length_1168_cov_2.449129	exonerate:protein2genome:local	gene	417	1166	1261	+	.	gene_id 16S_rRNA_(adenine(1518)-N(6)/adenine(1519)-N(6))-dimethyltransferase_RsmA_[Wolbachia] ; sequence WP_038228092.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_76_length_1168_cov_2.449129	exonerate:protein2genome:local	cds	417	1166	.	+	.	
+NODE_76_length_1168_cov_2.449129	exonerate:protein2genome:local	exon	417	1166	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_76_length_1168_cov_2.449129	exonerate:protein2genome:local	similarity	417	1166	1261	+	.	alignment_id 0 ; Query WP_038228092.1 ; Align 417 1 750
+NODE_452_length_633_cov_0.971223	exonerate:protein2genome:local	gene	88	600	843	-	.	gene_id phage_tail_protein_[Wolbachia] ; sequence WP_038228285.1 ; gene_orientation . ; identity 99.42 ; similarity 100.00
+NODE_452_length_633_cov_0.971223	exonerate:protein2genome:local	cds	88	600	.	-	.	
+NODE_452_length_633_cov_0.971223	exonerate:protein2genome:local	exon	88	600	.	-	.	insertions 0 ; deletions 0 ; identity 99.42 ; similarity 100.00
+NODE_452_length_633_cov_0.971223	exonerate:protein2genome:local	similarity	88	600	843	-	.	alignment_id 0 ; Query WP_038228285.1 ; Align 601 1 513
+NODE_33_length_1654_cov_1.571972	exonerate:protein2genome:local	gene	2	1654	2736	-	.	gene_id RNA_polymerase_sigma_factor_RpoD_[Wolbachia] ; sequence WP_041580664.1 ; gene_orientation . ; identity 99.82 ; similarity 99.82
+NODE_33_length_1654_cov_1.571972	exonerate:protein2genome:local	cds	2	1654	.	-	.	
+NODE_33_length_1654_cov_1.571972	exonerate:protein2genome:local	exon	2	1654	.	-	.	insertions 0 ; deletions 0 ; identity 99.82 ; similarity 99.82
+NODE_33_length_1654_cov_1.571972	exonerate:protein2genome:local	similarity	2	1654	2736	-	.	alignment_id 0 ; Query WP_041580664.1 ; Align 1655 86 1653
+NODE_541_length_583_cov_3.359684	exonerate:protein2genome:local	gene	4	336	613	+	.	gene_id transposase_[Wolbachia] ; sequence WP_049973597.1 ; gene_orientation . ; identity 99.10 ; similarity 100.00
+NODE_541_length_583_cov_3.359684	exonerate:protein2genome:local	cds	4	336	.	+	.	
+NODE_541_length_583_cov_3.359684	exonerate:protein2genome:local	exon	4	336	.	+	.	insertions 0 ; deletions 0 ; identity 99.10 ; similarity 100.00
+NODE_541_length_583_cov_3.359684	exonerate:protein2genome:local	similarity	4	336	613	+	.	alignment_id 0 ; Query WP_049973597.1 ; Align 4 1 333
+NODE_1120_length_391_cov_3.283439	exonerate:protein2genome:local	gene	3	380	615	+	.	gene_id transposase_[Wolbachia] ; sequence WP_050707711.1 ; gene_orientation . ; identity 92.86 ; similarity 96.83
+NODE_1120_length_391_cov_3.283439	exonerate:protein2genome:local	cds	3	380	.	+	.	
+NODE_1120_length_391_cov_3.283439	exonerate:protein2genome:local	exon	3	380	.	+	.	insertions 0 ; deletions 0 ; identity 92.86 ; similarity 96.83
+NODE_1120_length_391_cov_3.283439	exonerate:protein2genome:local	similarity	3	380	615	+	.	alignment_id 0 ; Query WP_050707711.1 ; Align 3 10 378
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	gene	844	1005	275	+	.	gene_id IS3_family_transposase_[Wolbachia] ; sequence WP_080717614.1 ; gene_orientation . ; identity 96.30 ; similarity 98.15
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	cds	844	1005	.	+	.	
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	exon	844	1005	.	+	.	insertions 0 ; deletions 0 ; identity 96.30 ; similarity 98.15
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	similarity	844	1005	275	+	.	alignment_id 0 ; Query WP_080717614.1 ; Align 844 1 162
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	gene	844	1005	240	+	.	gene_id IS3_family_transposase_[Wolbachia] ; sequence WP_080717620.1 ; gene_orientation . ; identity 83.33 ; similarity 88.89
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	cds	844	1005	.	+	.	
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	exon	844	1005	.	+	.	insertions 0 ; deletions 0 ; identity 83.33 ; similarity 88.89
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	similarity	844	1005	240	+	.	alignment_id 0 ; Query WP_080717620.1 ; Align 844 1 162
+NODE_505_length_606_cov_2.294896	exonerate:protein2genome:local	gene	452	595	241	-	.	gene_id IS3_family_transposase_[Wolbachia] ; sequence WP_080717648.1 ; gene_orientation . ; identity 97.92 ; similarity 100.00
+NODE_505_length_606_cov_2.294896	exonerate:protein2genome:local	cds	452	595	.	-	.	
+NODE_505_length_606_cov_2.294896	exonerate:protein2genome:local	exon	452	595	.	-	.	insertions 0 ; deletions 0 ; identity 97.92 ; similarity 100.00
+NODE_505_length_606_cov_2.294896	exonerate:protein2genome:local	similarity	452	595	241	-	.	alignment_id 0 ; Query WP_080717648.1 ; Align 596 1 144
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	gene	339	683	593	+	.	gene_id IS3_family_transposase_[Wolbachia] ; sequence WP_081420798.1 ; gene_orientation . ; identity 99.13 ; similarity 100.00
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	cds	339	683	.	+	.	
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	exon	339	683	.	+	.	insertions 0 ; deletions 0 ; identity 99.13 ; similarity 100.00
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	similarity	339	683	593	+	.	alignment_id 0 ; Query WP_081420798.1 ; Align 339 1 345
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	gene	339	683	526	+	.	gene_id IS3_family_transposase_[Wolbachia] ; sequence WP_081420805.1 ; gene_orientation . ; identity 88.70 ; similarity 94.78
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	cds	339	683	.	+	.	
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	exon	339	683	.	+	.	insertions 0 ; deletions 0 ; identity 88.70 ; similarity 94.78
+NODE_73_length_1180_cov_12.414325	exonerate:protein2genome:local	similarity	339	683	526	+	.	alignment_id 0 ; Query WP_081420805.1 ; Align 339 1 345
+NODE_1164_length_381_cov_4.105263	exonerate:protein2genome:local	gene	73	255	304	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_084741732.1 ; gene_orientation . ; identity 98.36 ; similarity 100.00
+NODE_1164_length_381_cov_4.105263	exonerate:protein2genome:local	cds	73	255	.	+	.	
+NODE_1164_length_381_cov_4.105263	exonerate:protein2genome:local	exon	73	255	.	+	.	insertions 0 ; deletions 0 ; identity 98.36 ; similarity 100.00
+NODE_1164_length_381_cov_4.105263	exonerate:protein2genome:local	similarity	73	255	304	+	.	alignment_id 0 ; Query WP_084741732.1 ; Align 73 1 183
+NODE_846_length_460_cov_1.561358	exonerate:protein2genome:local	gene	167	364	350	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_138344586.1 ; gene_orientation . ; identity 98.48 ; similarity 100.00
+NODE_846_length_460_cov_1.561358	exonerate:protein2genome:local	cds	167	364	.	-	.	
+NODE_846_length_460_cov_1.561358	exonerate:protein2genome:local	exon	167	364	.	-	.	insertions 0 ; deletions 0 ; identity 98.48 ; similarity 100.00
+NODE_846_length_460_cov_1.561358	exonerate:protein2genome:local	similarity	167	364	350	-	.	alignment_id 0 ; Query WP_138344586.1 ; Align 365 1 198
+NODE_2111_length_251_cov_0.000000	exonerate:protein2genome:local	gene	59	199	230	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_153296793.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_2111_length_251_cov_0.000000	exonerate:protein2genome:local	cds	59	199	.	-	.	
+NODE_2111_length_251_cov_0.000000	exonerate:protein2genome:local	exon	59	199	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_2111_length_251_cov_0.000000	exonerate:protein2genome:local	similarity	59	199	230	-	.	alignment_id 0 ; Query WP_153296793.1 ; Align 200 1 141
+NODE_2257_length_238_cov_8.720497	exonerate:protein2genome:local	gene	19	183	286	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_155975180.1 ; gene_orientation . ; identity 96.36 ; similarity 98.18
+NODE_2257_length_238_cov_8.720497	exonerate:protein2genome:local	cds	19	183	.	-	.	
+NODE_2257_length_238_cov_8.720497	exonerate:protein2genome:local	exon	19	183	.	-	.	insertions 0 ; deletions 0 ; identity 96.36 ; similarity 98.18
+NODE_2257_length_238_cov_8.720497	exonerate:protein2genome:local	similarity	19	183	286	-	.	alignment_id 0 ; Query WP_155975180.1 ; Align 184 1 165
+NODE_1159_length_382_cov_8.304918	exonerate:protein2genome:local	gene	113	274	266	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_156768648.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_1159_length_382_cov_8.304918	exonerate:protein2genome:local	cds	113	274	.	-	.	
+NODE_1159_length_382_cov_8.304918	exonerate:protein2genome:local	exon	113	274	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_1159_length_382_cov_8.304918	exonerate:protein2genome:local	similarity	113	274	266	-	.	alignment_id 0 ; Query WP_156768648.1 ; Align 275 1 162
+NODE_1159_length_382_cov_8.304918	exonerate:protein2genome:local	gene	116	274	256	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_156768652.1 ; gene_orientation . ; identity 98.11 ; similarity 98.11
+NODE_1159_length_382_cov_8.304918	exonerate:protein2genome:local	cds	116	274	.	-	.	
+NODE_1159_length_382_cov_8.304918	exonerate:protein2genome:local	exon	116	274	.	-	.	insertions 0 ; deletions 0 ; identity 98.11 ; similarity 98.11
+NODE_1159_length_382_cov_8.304918	exonerate:protein2genome:local	similarity	116	274	256	-	.	alignment_id 0 ; Query WP_156768652.1 ; Align 275 1 159
+NODE_1159_length_382_cov_8.304918	exonerate:protein2genome:local	gene	116	274	262	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_156768661.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_1159_length_382_cov_8.304918	exonerate:protein2genome:local	cds	116	274	.	-	.	
+NODE_1159_length_382_cov_8.304918	exonerate:protein2genome:local	exon	116	274	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_1159_length_382_cov_8.304918	exonerate:protein2genome:local	similarity	116	274	262	-	.	alignment_id 0 ; Query WP_156768661.1 ; Align 275 1 159
+NODE_1936_length_267_cov_1.084211	exonerate:protein2genome:local	gene	1	114	191	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_158247739.1 ; gene_orientation . ; identity 97.37 ; similarity 100.00
+NODE_1936_length_267_cov_1.084211	exonerate:protein2genome:local	cds	1	114	.	-	.	
+NODE_1936_length_267_cov_1.084211	exonerate:protein2genome:local	exon	1	114	.	-	.	insertions 0 ; deletions 0 ; identity 97.37 ; similarity 100.00
+NODE_1936_length_267_cov_1.084211	exonerate:protein2genome:local	similarity	1	114	191	-	.	alignment_id 0 ; Query WP_158247739.1 ; Align 115 1 114
+NODE_1159_length_382_cov_8.304918	exonerate:protein2genome:local	gene	113	274	262	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_167513692.1 ; gene_orientation . ; identity 98.15 ; similarity 100.00
+NODE_1159_length_382_cov_8.304918	exonerate:protein2genome:local	cds	113	274	.	-	.	
+NODE_1159_length_382_cov_8.304918	exonerate:protein2genome:local	exon	113	274	.	-	.	insertions 0 ; deletions 0 ; identity 98.15 ; similarity 100.00
+NODE_1159_length_382_cov_8.304918	exonerate:protein2genome:local	similarity	113	274	262	-	.	alignment_id 0 ; Query WP_167513692.1 ; Align 275 1 162
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	gene	720	860	206	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_173862872.1 ; gene_orientation . ; identity 85.11 ; similarity 87.23
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	cds	720	860	.	+	.	
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	exon	720	860	.	+	.	insertions 0 ; deletions 0 ; identity 85.11 ; similarity 87.23
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	similarity	720	860	206	+	.	alignment_id 0 ; Query WP_173862872.1 ; Align 720 1 141
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	gene	720	860	251	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_173862902.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	cds	720	860	.	+	.	
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	exon	720	860	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	similarity	720	860	251	+	.	alignment_id 0 ; Query WP_173862902.1 ; Align 720 1 141
+NODE_186_length_904_cov_1.634825	exonerate:protein2genome:local	gene	160	381	363	-	.	gene_id acyl_carrier_protein_[Wolbachia] ; sequence WP_213863337.1 ; gene_orientation . ; identity 98.65 ; similarity 100.00
+NODE_186_length_904_cov_1.634825	exonerate:protein2genome:local	cds	160	381	.	-	.	
+NODE_186_length_904_cov_1.634825	exonerate:protein2genome:local	exon	160	381	.	-	.	insertions 0 ; deletions 0 ; identity 98.65 ; similarity 100.00
+NODE_186_length_904_cov_1.634825	exonerate:protein2genome:local	similarity	160	381	363	-	.	alignment_id 0 ; Query WP_213863337.1 ; Align 382 1 222
+NODE_490_length_614_cov_2.057728	exonerate:protein2genome:local	gene	170	343	302	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_223823038.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_490_length_614_cov_2.057728	exonerate:protein2genome:local	cds	170	343	.	+	.	
+NODE_490_length_614_cov_2.057728	exonerate:protein2genome:local	exon	170	343	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_490_length_614_cov_2.057728	exonerate:protein2genome:local	similarity	170	343	302	+	.	alignment_id 0 ; Query WP_223823038.1 ; Align 170 1 174
+NODE_239_length_833_cov_2.645503	exonerate:protein2genome:local	gene	487	684	318	+	.	gene_id monovalent_cation/H+_antiporter_complex_subunit_F_[Wolbachia] ; sequence WP_223823065.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_239_length_833_cov_2.645503	exonerate:protein2genome:local	cds	487	684	.	+	.	
+NODE_239_length_833_cov_2.645503	exonerate:protein2genome:local	exon	487	684	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_239_length_833_cov_2.645503	exonerate:protein2genome:local	similarity	487	684	318	+	.	alignment_id 0 ; Query WP_223823065.1 ; Align 487 1 198
+NODE_10_length_2336_cov_2.030102	exonerate:protein2genome:local	gene	1	1173	2007	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_227738603.1 ; gene_orientation . ; identity 99.74 ; similarity 99.74
+NODE_10_length_2336_cov_2.030102	exonerate:protein2genome:local	cds	1	1173	.	+	.	
+NODE_10_length_2336_cov_2.030102	exonerate:protein2genome:local	exon	1	1173	.	+	.	insertions 0 ; deletions 0 ; identity 99.74 ; similarity 99.74
+NODE_10_length_2336_cov_2.030102	exonerate:protein2genome:local	similarity	1	1173	2007	+	.	alignment_id 0 ; Query WP_227738603.1 ; Align 1 79 1173
+NODE_562_length_573_cov_5.459677	exonerate:protein2genome:local	gene	142	531	676	-	.	gene_id transposase_[Wolbachia] ; sequence WP_227738609.1 ; gene_orientation . ; identity 97.69 ; similarity 99.23
+NODE_562_length_573_cov_5.459677	exonerate:protein2genome:local	cds	142	531	.	-	.	
+NODE_562_length_573_cov_5.459677	exonerate:protein2genome:local	exon	142	531	.	-	.	insertions 0 ; deletions 0 ; identity 97.69 ; similarity 99.23
+NODE_562_length_573_cov_5.459677	exonerate:protein2genome:local	similarity	142	531	676	-	.	alignment_id 0 ; Query WP_227738609.1 ; Align 532 1 390
+NODE_1243_length_364_cov_1.059233	exonerate:protein2genome:local	gene	139	336	316	-	.	gene_id phosphoribosyltransferase_family_protein_[Wolbachia] ; sequence WP_227738610.1 ; gene_orientation . ; identity 98.48 ; similarity 100.00
+NODE_1243_length_364_cov_1.059233	exonerate:protein2genome:local	cds	139	336	.	-	.	
+NODE_1243_length_364_cov_1.059233	exonerate:protein2genome:local	exon	139	336	.	-	.	insertions 0 ; deletions 0 ; identity 98.48 ; similarity 100.00
+NODE_1243_length_364_cov_1.059233	exonerate:protein2genome:local	similarity	139	336	316	-	.	alignment_id 0 ; Query WP_227738610.1 ; Align 337 1 198
+NODE_562_length_573_cov_5.459677	exonerate:protein2genome:local	gene	142	531	685	-	.	gene_id transposase_[Wolbachia] ; sequence WP_227738618.1 ; gene_orientation . ; identity 99.23 ; similarity 100.00
+NODE_562_length_573_cov_5.459677	exonerate:protein2genome:local	cds	142	531	.	-	.	
+NODE_562_length_573_cov_5.459677	exonerate:protein2genome:local	exon	142	531	.	-	.	insertions 0 ; deletions 0 ; identity 99.23 ; similarity 100.00
+NODE_562_length_573_cov_5.459677	exonerate:protein2genome:local	similarity	142	531	685	-	.	alignment_id 0 ; Query WP_227738618.1 ; Align 532 1 390
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	gene	1189	1425	405	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_227738621.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	cds	1189	1425	.	-	.	
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	exon	1189	1425	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	similarity	1189	1425	405	-	.	alignment_id 0 ; Query WP_227738621.1 ; Align 1426 1 237
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	gene	901	2193	2246	+	.	gene_id group_II_intron_reverse_transcriptase/maturase_[Wolbachia] ; sequence WP_227738623.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	cds	901	2193	.	+	.	
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	exon	901	2193	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_11_length_2271_cov_4.965360	exonerate:protein2genome:local	similarity	901	2193	2246	+	.	alignment_id 0 ; Query WP_227738623.1 ; Align 901 1 1293
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	gene	461	1189	1287	-	.	gene_id reverse_transcriptase_domain-containing_protein_[Wolbachia] ; sequence WP_227738624.1 ; gene_orientation . ; identity 99.59 ; similarity 100.00
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	cds	461	1189	.	-	.	
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	exon	461	1189	.	-	.	insertions 0 ; deletions 0 ; identity 99.59 ; similarity 100.00
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	similarity	461	1189	1287	-	.	alignment_id 0 ; Query WP_227738624.1 ; Align 1190 1 729
+NODE_2381_length_229_cov_0.210526	exonerate:protein2genome:local	gene	1	177	305	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_227738626.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_2381_length_229_cov_0.210526	exonerate:protein2genome:local	cds	1	177	.	-	.	
+NODE_2381_length_229_cov_0.210526	exonerate:protein2genome:local	exon	1	177	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_2381_length_229_cov_0.210526	exonerate:protein2genome:local	similarity	1	177	305	-	.	alignment_id 0 ; Query WP_227738626.1 ; Align 178 1 177
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	gene	116	688	1019	-	.	gene_id reverse_transcriptase_domain-containing_protein_[Wolbachia] ; sequence WP_227738635.1 ; gene_orientation . ; identity 99.48 ; similarity 100.00
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	cds	116	688	.	-	.	
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	exon	116	688	.	-	.	insertions 0 ; deletions 0 ; identity 99.48 ; similarity 100.00
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	similarity	116	688	1019	-	.	alignment_id 0 ; Query WP_227738635.1 ; Align 689 1 573
+NODE_977_length_426_cov_0.934097	exonerate:protein2genome:local	gene	81	338	439	+	.	gene_id type_II_toxin-antitoxin_system_RelE/ParE_family_toxin_[Wolbachia] ; sequence WP_227738647.1 ; gene_orientation . ; identity 98.84 ; similarity 100.00
+NODE_977_length_426_cov_0.934097	exonerate:protein2genome:local	cds	81	338	.	+	.	
+NODE_977_length_426_cov_0.934097	exonerate:protein2genome:local	exon	81	338	.	+	.	insertions 0 ; deletions 0 ; identity 98.84 ; similarity 100.00
+NODE_977_length_426_cov_0.934097	exonerate:protein2genome:local	similarity	81	338	439	+	.	alignment_id 0 ; Query WP_227738647.1 ; Align 81 1 258
+NODE_25_length_1919_cov_1.010858	exonerate:protein2genome:local	gene	338	1012	1157	+	.	gene_id dihydropteroate_synthase_[Wolbachia] ; sequence WP_233395582.1 ; gene_orientation . ; identity 99.56 ; similarity 100.00
+NODE_25_length_1919_cov_1.010858	exonerate:protein2genome:local	cds	338	1012	.	+	.	
+NODE_25_length_1919_cov_1.010858	exonerate:protein2genome:local	exon	338	1012	.	+	.	insertions 0 ; deletions 0 ; identity 99.56 ; similarity 100.00
+NODE_25_length_1919_cov_1.010858	exonerate:protein2genome:local	similarity	338	1012	1157	+	.	alignment_id 0 ; Query WP_233395582.1 ; Align 338 1 675
+NODE_149_length_972_cov_1.634637	exonerate:protein2genome:local	gene	2	292	465	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_233395610.1 ; gene_orientation . ; identity 98.97 ; similarity 100.00
+NODE_149_length_972_cov_1.634637	exonerate:protein2genome:local	cds	2	292	.	-	.	
+NODE_149_length_972_cov_1.634637	exonerate:protein2genome:local	exon	2	292	.	-	.	insertions 0 ; deletions 0 ; identity 98.97 ; similarity 100.00
+NODE_149_length_972_cov_1.634637	exonerate:protein2genome:local	similarity	2	292	465	-	.	alignment_id 0 ; Query WP_233395610.1 ; Align 293 1 291
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	gene	116	1189	1905	-	.	gene_id group_II_intron_reverse_transcriptase/maturase_[Wolbachia] ; sequence WP_233700146.1 ; gene_orientation . ; identity 99.72 ; similarity 100.00
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	cds	116	1189	.	-	.	
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	exon	116	1189	.	-	.	insertions 0 ; deletions 0 ; identity 99.72 ; similarity 100.00
+NODE_13_length_2137_cov_4.333495	exonerate:protein2genome:local	similarity	116	1189	1905	-	.	alignment_id 0 ; Query WP_233700146.1 ; Align 1190 1 1074
+NODE_1375_length_343_cov_1.406015	exonerate:protein2genome:local	gene	44	304	455	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_234962160.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_1375_length_343_cov_1.406015	exonerate:protein2genome:local	cds	44	304	.	-	.	
+NODE_1375_length_343_cov_1.406015	exonerate:protein2genome:local	exon	44	304	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_1375_length_343_cov_1.406015	exonerate:protein2genome:local	similarity	44	304	455	-	.	alignment_id 0 ; Query WP_234962160.1 ; Align 305 1 261
+NODE_1839_length_278_cov_2.467662	exonerate:protein2genome:local	gene	125	253	218	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_255317428.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_1839_length_278_cov_2.467662	exonerate:protein2genome:local	cds	125	253	.	-	.	
+NODE_1839_length_278_cov_2.467662	exonerate:protein2genome:local	exon	125	253	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_1839_length_278_cov_2.467662	exonerate:protein2genome:local	similarity	125	253	218	-	.	alignment_id 0 ; Query WP_255317428.1 ; Align 254 1 129
+NODE_587_length_563_cov_2.351852	exonerate:protein2genome:local	gene	329	457	221	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_255322250.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_587_length_563_cov_2.351852	exonerate:protein2genome:local	cds	329	457	.	+	.	
+NODE_587_length_563_cov_2.351852	exonerate:protein2genome:local	exon	329	457	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_587_length_563_cov_2.351852	exonerate:protein2genome:local	similarity	329	457	221	+	.	alignment_id 0 ; Query WP_255322250.1 ; Align 329 1 129
+NODE_60_length_1288_cov_2.786953	exonerate:protein2genome:local	gene	409	834	750	-	.	gene_id IS630_family_transposase_[Wolbachia] ; sequence WP_255322255.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_60_length_1288_cov_2.786953	exonerate:protein2genome:local	cds	409	834	.	-	.	
+NODE_60_length_1288_cov_2.786953	exonerate:protein2genome:local	exon	409	834	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_60_length_1288_cov_2.786953	exonerate:protein2genome:local	similarity	409	834	750	-	.	alignment_id 0 ; Query WP_255322255.1 ; Align 835 1 426
+NODE_278_length_775_cov_2.338109	exonerate:protein2genome:local	gene	132	251	195	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_255322258.1 ; gene_orientation . ; identity 97.50 ; similarity 100.00
+NODE_278_length_775_cov_2.338109	exonerate:protein2genome:local	cds	132	251	.	+	.	
+NODE_278_length_775_cov_2.338109	exonerate:protein2genome:local	exon	132	251	.	+	.	insertions 0 ; deletions 0 ; identity 97.50 ; similarity 100.00
+NODE_278_length_775_cov_2.338109	exonerate:protein2genome:local	similarity	132	251	195	+	.	alignment_id 0 ; Query WP_255322258.1 ; Align 132 1 120
+NODE_378_length_682_cov_3.874380	exonerate:protein2genome:local	gene	327	458	223	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_255322259.1 ; gene_orientation . ; identity 97.73 ; similarity 100.00
+NODE_378_length_682_cov_3.874380	exonerate:protein2genome:local	cds	327	458	.	-	.	
+NODE_378_length_682_cov_3.874380	exonerate:protein2genome:local	exon	327	458	.	-	.	insertions 0 ; deletions 0 ; identity 97.73 ; similarity 100.00
+NODE_378_length_682_cov_3.874380	exonerate:protein2genome:local	similarity	327	458	223	-	.	alignment_id 0 ; Query WP_255322259.1 ; Align 459 1 132
+NODE_1633_length_305_cov_0.000000	exonerate:protein2genome:local	gene	2	112	201	+	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_255322260.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_1633_length_305_cov_0.000000	exonerate:protein2genome:local	cds	2	112	.	+	.	
+NODE_1633_length_305_cov_0.000000	exonerate:protein2genome:local	exon	2	112	.	+	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_1633_length_305_cov_0.000000	exonerate:protein2genome:local	similarity	2	112	201	+	.	alignment_id 0 ; Query WP_255322260.1 ; Align 2 5 111
+NODE_820_length_470_cov_2.875318	exonerate:protein2genome:local	gene	135	263	225	-	.	gene_id hypothetical_protein_[Wolbachia] ; sequence WP_255322265.1 ; gene_orientation . ; identity 100.00 ; similarity 100.00
+NODE_820_length_470_cov_2.875318	exonerate:protein2genome:local	cds	135	263	.	-	.	
+NODE_820_length_470_cov_2.875318	exonerate:protein2genome:local	exon	135	263	.	-	.	insertions 0 ; deletions 0 ; identity 100.00 ; similarity 100.00
+NODE_820_length_470_cov_2.875318	exonerate:protein2genome:local	similarity	135	263	225	-	.	alignment_id 0 ; Query WP_255322265.1 ; Align 264 1 129
