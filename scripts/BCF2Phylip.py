@@ -23,7 +23,6 @@ parser.add_option("--MaxPropGaps", dest="MG",
 parser.add_option("--names", dest="NA",
                   help="numerical parameter", default=1)
 
-
 (options, args) = parser.parse_args()
 parser.add_option_group(group)
 
@@ -49,54 +48,73 @@ for l in load_data(options.NA):
 GTs = d(lambda: d(list))
 Del = d(lambda: d(list))
 C = 1
+Positions = d(str)
 for l in load_data(options.IN):
     if l.startswith("##"):
         continue
     a = l.rstrip().split()
+
+    # get names from headers
     if l.startswith("#"):
         header = [x.split("/")[-1].split(".bam")[0] for x in a[9:]]
         continue
+
+    # obtain alleles
     REF = a[3]
     ALT = a[4]
     ALLELE = [REF, ALT]
-    if len(ALT) > 1:
+
+    # ignore tri- and tetra-allelic SNPs
+    if len(ALT) > 1 or len(REF) > 1:
         continue
+
+    # ignore positions with less than MA individuals with an alternative allele
     if [x.split(":")[0] for x in a[9:]].count("1") < int(options.MA):
         continue
     pops = a[9:]
+
+    # loop through all samples
     for i in range(len(header)):
         GT, PLi, DP, AD = pops[i].split(":")
+
+        if GT == "0":
+            A = 0
+            B = 1
+        else:
+            A = 1
+            B = 0
+
+        # obtain GTs, note that the REF PL is the second and the ALT Pl is the first in the list, thus we need to switch the order first, how confusing...
         PL = PLi.split(",")[::-1]
-        if int(DP) >= int(options.MC) and int(PL[int(GT)]) > 30:
+
+        # only consider GT if (1) the read-depth > than MC, (2) the Posterior Likelihood of the GT is > 50 and the PL of the other (non-called) GT is < 30 otherwise mark as ambiguous
+        if int(DP) >= int(options.MC) and int(PL[A]) > 50 and int(PL[B]) < 30:
             GTs[header[i]][C] = ALLELE[int(GT)]
         else:
-            GTs[header[i]][C] = "-"
+            GTs[header[i]][C] = "N"
             Del[header[i]][C]
     C += 1
 
+# test if length of missing poistions larger than MG. if yes, ignore sample
 for k, v in list(GTs.items()):
-    if list(v.values()).count("-")/len(v.values()) > float(options.MG):
+    if list(v.values()).count("N")/len(v.values()) > float(options.MG):
         del(GTs[k])
         del(Del[k])
 
+# identify positions that contain a missing nucleotide
 FinalDel = d(list)
 for k, v in Del.items():
     for C in v.keys():
         FinalDel[C].append(k)
 
-for k, v in list(FinalDel.items()):
-    Test = 0
-    for I in v:
-        if I not in GTs.keys():
-            Test = 1
-            break
-    if Test == 1:
-        del(FinalDel[k])
-
+# Test if header already printed
 TEST = ""
 for i in header:
+
+    # ignore samples that were excluded
     if i not in GTs:
         continue
+
     PL = []
     for j in range(1, C):
         if options.NG:
