@@ -14,6 +14,7 @@ group = OptionGroup(parser, "< put description here >")
 
 parser.add_option("--input", dest="IN", help="Input file")
 parser.add_option("--names", dest="NA", help="Input file")
+parser.add_option("--exclude", dest="EX", help="Input file")
 
 (options, args) = parser.parse_args()
 parser.add_option_group(group)
@@ -35,6 +36,8 @@ def load_data(x):
 SeqHash = d(lambda: d(list))
 Taxa = d(int)
 Genes = d(int)
+EXC = options.EX.split(",")
+
 
 NAME = d(str)
 for l in load_data(options.NA):
@@ -58,6 +61,8 @@ for file in os.listdir(options.IN):
 
 
 for Tax, v in sorted(SeqHash.items()):
+    if Tax in EXC:
+        continue
     Seq = []
     for Gene, L in sorted(Genes.items()):
         if Gene not in v:
