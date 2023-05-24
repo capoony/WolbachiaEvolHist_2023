@@ -15,6 +15,9 @@ group = OptionGroup(parser, "< put description here >")
 parser.add_option("--input", dest="IN", help="Input file")
 parser.add_option("--names", dest="NA", help="Input file")
 parser.add_option("--exclude", dest="EX", help="Input file")
+parser.add_option("--NoGaps", dest="NG",
+                  help="Input file", action="store_true")
+
 
 (options, args) = parser.parse_args()
 parser.add_option_group(group)
@@ -36,6 +39,7 @@ def load_data(x):
 SeqHash = d(lambda: d(list))
 Taxa = d(int)
 Genes = d(int)
+GeneC = d(lambda: d(str))
 EXC = options.EX.split(",")
 
 
@@ -58,6 +62,7 @@ for file in os.listdir(options.IN):
         if C == 1:
             Genes[Gene] += len(l.rstrip())
         SeqHash[ID][Gene].append(l.rstrip())
+        GeneC[Gene][ID]
 
 
 for Tax, v in sorted(SeqHash.items()):
@@ -65,9 +70,14 @@ for Tax, v in sorted(SeqHash.items()):
         continue
     Seq = []
     for Gene, L in sorted(Genes.items()):
+        if options.NG:
+            if len(GeneC[Gene].keys()) < len(SeqHash.keys())-3:
+                continue
         if Gene not in v:
-            Seq.extend(L * ["-"])
+            Seq.extend(L * ["N"])
         else:
             Seq.extend(v[Gene])
+    if len(list(set(Seq))) == 1 and list(set(Seq))[0] == "N":
+        continue
     print(">" + NAME[Tax])
     print("".join(Seq))

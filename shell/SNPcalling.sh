@@ -52,8 +52,47 @@ python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py
     --MinAlt 1 \
     --MaxPropGaps 0.5 \
     --MinCov 5 \
+    --exclude 377,378,380,HG0029,HG0027,HG0034,wMelCSPOP2,wMelCSPOP,wMelOctoless,wMel_run2,wMel_run3 \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.phy
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red.phy
+
+python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.vcf.gz \
+    --MinAlt 1 \
+    --MaxPropGaps 0.5 \
+    --MinCov 5 \
+    --exclude 377,378,380,HG0027,HG0034,wMelCSPOP2,wMelCSPOP,wMelOctoless,wMel_run2,wMel_run3 \
+    --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red2.phy
+
+python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.vcf.gz \
+    --MinAlt 1 \
+    --MaxPropGaps 0.8 \
+    --MinCov 2 \
+    --exclude wMelCSPOP2,wMelCSPOP,wMelOctoless,wMel_run2,wMel_run3 \
+    --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_full.phy
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo.sh \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red.phy \
+    Wolbachia \
+    wMel1_Gulbenkian,wMel1_Portugal,wMel2_Portugal,wMel1_Finland,wMel2_Finland,wMel_LabStrain_Gulbenkian,wMel_Indiana,wMel_Donor4Aedes \
+    0.5
+
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_red.pdf
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_red.png
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo.sh \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_full \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_full.phy \
+    Wolbachia \
+    wMel1_Gulbenkian,wMel1_Portugal,wMel2_Portugal,wMel1_Finland,wMel2_Finland,wMel_LabStrain_Gulbenkian,wMel_Indiana,wMel_Donor4Aedes \
+    0.5
+
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_full/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_full.pdf
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_full/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_full.png
 
 ### for Mitochondria
 
@@ -91,4 +130,14 @@ python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py
     --MaxPropGaps 0.5 \
     --MinCov 5 \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
+    --exclude NA \
     >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito.phy
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito.phy \
+    Mitchondria \
+    0.5
+
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito/Mitchondria.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Mitochondria_SNPs_full.pdf
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito/Mitchondria.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Mitochondria_SNPs_full.png

@@ -22,6 +22,7 @@ parser.add_option("--MaxPropGaps", dest="MG",
                   help="numerical parameter", default=1)
 parser.add_option("--names", dest="NA",
                   help="numerical parameter", default=1)
+parser.add_option("--exclude", dest="EX", help="Input file")
 
 (options, args) = parser.parse_args()
 parser.add_option_group(group)
@@ -48,6 +49,8 @@ for l in load_data(options.NA):
 GTs = d(lambda: d(list))
 Del = d(lambda: d(list))
 C = 1
+EX = options.EX.split(",")
+
 Positions = d(str)
 for l in load_data(options.IN):
     if l.startswith("##"):
@@ -68,13 +71,12 @@ for l in load_data(options.IN):
     if len(ALT) > 1 or len(REF) > 1:
         continue
 
-    # ignore positions with less than MA individuals with an alternative allele
-    if [x.split(":")[0] for x in a[9:]].count("1") < int(options.MA):
-        continue
     pops = a[9:]
 
-    # loop through all samples
+    TestGT = []
     for i in range(len(header)):
+        if header[i] in EX:
+            continue
         GT, PLi, DP, AD = pops[i].split(":")
 
         if GT == "0":
@@ -89,6 +91,31 @@ for l in load_data(options.IN):
 
         # only consider GT if (1) the read-depth > than MC, (2) the Posterior Likelihood of the GT is > 50 and the PL of the other (non-called) GT is < 30 otherwise mark as ambiguous
         if int(DP) >= int(options.MC) and int(PL[A]) > 50 and int(PL[B]) < 30:
+            TestGT.append(GT)
+
+    # print(TestGT)
+    # ignore positions with less than MA individuals with an alternative allele
+    if TestGT.count("1") < int(options.MA):
+        continue
+
+    # loop through all samples
+    for i in range(len(header)):
+        if header[i] in EX:
+            continue
+        GT, PLi, DP, AD = pops[i].split(":")
+
+        if GT == "0":
+            A = 0
+            B = 1
+        else:
+            A = 1
+            B = 0
+
+        # obtain GTs, note that the REF PL is the second and the ALT Pl is the first in the list, thus we need to switch the order first, how confusing...
+        PL = PLi.split(",")[:: -1]
+
+        # only consider GT if (1) the read-depth > than MC, (2) the Posterior Likelihood of the GT is > 50 and the PL of the other (non-called) GT is < 30 otherwise mark as ambiguous
+        if int(DP) >= int(options.MC) and int(PL[A]) > 50 and int(PL[B]) < 30:
             GTs[header[i]][C] = ALLELE[int(GT)]
         else:
             GTs[header[i]][C] = "N"
@@ -100,6 +127,7 @@ for k, v in list(GTs.items()):
     if list(v.values()).count("N")/len(v.values()) > float(options.MG):
         del(GTs[k])
         del(Del[k])
+
 
 # identify positions that contain a missing nucleotide
 FinalDel = d(list)

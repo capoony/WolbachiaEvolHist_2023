@@ -5,11 +5,11 @@ mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito.phy \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram
 
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.phy \
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red2.phy \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram
 
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/IntersectPhy.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito.phy,/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.phy \
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito.phy,/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red2.phy \
     --names MITO,WOLB \
     --output /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram/
 
@@ -31,7 +31,7 @@ raxmlHPC-PTHREADS-SSE3 \
 
 raxmlHPC-PTHREADS-SSE3 \
     -m GTRCAT \
-    -N 100 \
+    -N 2 \
     -p 772374015 \
     -b 444353738 \
     -n bootrep_snps \
@@ -63,7 +63,7 @@ raxmlHPC-PTHREADS-SSE3 \
 
 raxmlHPC-PTHREADS-SSE3 \
     -m GTRCAT \
-    -N 100 \
+    -N 2 \
     -p 772374015 \
     -b 444353738 \
     -n bootrep_snps \
@@ -84,7 +84,12 @@ library(dendextend)
 library(phylogram) # to make dendrograms from non-ultrametric trees
 library(ape) # to import NEXUS and to plot co-phyloplots
 
-Tree.Wol<-midpoint.root(read.tree("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram/phylogeny_wolb/RAxML_bestTree.Wolb_snps"))
+Tree.Wol<-root(read.tree("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram/phylogeny_wolb/RAxML_bestTree.Wolb_snps"),
+    outgroup=c("wMel1_Portugal",
+    "wMel2_Portugal",
+    "wMel1_Finland",
+    "wMel2_Finland",
+    "wMel_LabStrain_Gulbenkian"))
 
 Wol.ultra=as.dendrogram(chronos(Tree.Wol, lambda=0) )
 # Wol.unmatched <- as.dendrogram(multi2di(Wol.ultra, random=TRUE) )
@@ -112,3 +117,5 @@ dev.off()
 ''' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram/plot.r
 
 Rscript /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram/plot.r
+
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram/Tanglegram.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny
