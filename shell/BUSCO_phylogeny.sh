@@ -149,8 +149,15 @@ mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/ph
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/proteins2genome.py \
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names2.txt \
-    --exclude HG0027,HG0029,HG47205,HG_09,HG0026,HG_20 \
+    --exclude HG0027,HG0029,HG47205,HG_09,HG0026,HG_20, \
     >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/alignment_dna.fa
+
+python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/proteins2genome.py \
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna \
+    --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names2.txt \
+    --exclude NA \
+    --NoGaps \
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/alignment_dna_noGap.fa
 
 module load Phylogeny/RAxML-2.8.10
 

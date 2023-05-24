@@ -11,6 +11,9 @@ grep 'wMel' assembly_summary.txt |
     awk -F '\t' '{print $9$10","$20}' |
     sed 's/strain=//g' >assembly_summary_complete_genomes.txt
 
+grep 'wMel' assembly_summary.txt |
+    grep -v 'Aedes' >assembly_summary_list_genomes.txt
+
 mkdir data
 ## obtain and rename read data for all samples from input file
 while
