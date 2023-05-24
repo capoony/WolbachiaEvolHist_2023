@@ -1,7 +1,7 @@
 output=$1
 input=$2
 name=$3
-offset=$
+offset=$4
 
 ### First Wolbachia
 rm -rf ${output}

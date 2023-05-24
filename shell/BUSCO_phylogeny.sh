@@ -149,8 +149,8 @@ mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/ph
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/proteins2genome.py \
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names2.txt \
-    --exclude HG0027,HG0029,HG47205,HG_09,HG0026,HG_20, \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/alignment_dna.fa
+    --exclude HG0027,HG0029,HG47205,HG_09,HG0026,HG_20,WMELOCTOLESS,WMEL_AMD,WMELCS112,WMELCSCSBERKELEY,WMELPC75,WMELPLUS,WMELPOP1,WMELPOP2,WMELPOP3 \
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna.fa
 
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/proteins2genome.py \
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna \
@@ -159,42 +159,11 @@ python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/proteins2geno
     --NoGaps \
     >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/alignment_dna_noGap.fa
 
-module load Phylogeny/RAxML-2.8.10
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2 \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna.fa \
+    Wolbachia \
+    0.0001
 
-## make new directory
-
-cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2
-
-## run ML tree reconstruction
-raxmlHPC-PTHREADS-SSE3 \
-    -m GTRGAMMA \
-    -N 20 \
-    -p 772374015 \
-    -n Wolbachia_dna \
-    -s /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/alignment_dna.fa \
-    -T 200
-
-raxmlHPC-PTHREADS-SSE3 \
-    -m GTRGAMMA \
-    -N 100 \
-    -p 772374015 \
-    -b 444353738 \
-    -n bootrep_dna \
-    -s /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/alignment_dna.fa \
-    -T 200
-
-# Now, reconcile the best ML tree w/ the bootreps:
-raxmlHPC-SSE3 -f b \
-    -m GTRGAMMA \
-    -t RAxML_bestTree.Wolbachia_dna \
-    -z RAxML_bootstrap.bootrep_dna \
-    -n FINAL_dna
-
-Rscript /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/PlotTree.r \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/RAxML_bipartitions.FINAL_dna \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/Wolbachia_BUSCO \
-    Wolbachia_BUSCO \
-    0.0001 \
-    NO
-
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/Wolbachia_BUSCO.* /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_BUSCO.pdf
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_BUSCO.png
