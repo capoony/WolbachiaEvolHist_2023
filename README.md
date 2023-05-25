@@ -78,7 +78,7 @@ _Wolbachia_
 
 Mitochondira 
 
-![Mito_SNPs](output/Phylogeny/Mitochondria_SNPs_red.png)
+![Mito_SNPs](output/Phylogeny/Mitochondria_SNPs_full.png)
 
 ##### 3.3.3 Tanglegram
 
