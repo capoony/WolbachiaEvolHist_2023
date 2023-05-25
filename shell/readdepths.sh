@@ -40,3 +40,12 @@ for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/denovo/*; d
     qsub /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/${ID}_cov.qsub
 
 done
+
+module load Tools/samtools-1.12
+
+samtools depth -f /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/bamlist_Wolb_stringent.txt >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/ReadDepths/WolbStringent.cov
+
+python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/cov_Sliding.py \
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/ReadDepths/WolbStringent.cov \
+    --window 1000 \
+    --names 377,378,380,HG0026,HG0027,HG0034,HG0029,HG_09,HG_15,HG_16,HG_20,HG47203,HG47204,wMelCS,wMelCSb,wMel_donor,wMel_Indiana,wMel_run1,Re1_full,Re3,Re6_full,Re10,Ak7_full,Ak9_full,MEL_full,CS,POP >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/ReadDepths/WolbStringent_10kb.cov

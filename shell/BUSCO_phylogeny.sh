@@ -150,6 +150,7 @@ python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/proteins2geno
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names2.txt \
     --exclude HG0027,HG0029,HG47205,HG_09,HG0026,HG_20,WMELOCTOLESS,WMEL_AMD,WMELCS112,WMELCSCSBERKELEY,WMELPC75,WMELPLUS,WMELPOP1,WMELPOP2,WMELPOP3 \
+    --geneList /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna.genes \
     >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna.fa
 
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/proteins2genome.py \

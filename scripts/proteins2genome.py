@@ -15,6 +15,7 @@ group = OptionGroup(parser, "< put description here >")
 parser.add_option("--input", dest="IN", help="Input file")
 parser.add_option("--names", dest="NA", help="Input file")
 parser.add_option("--exclude", dest="EX", help="Input file")
+parser.add_option("--geneList", dest="GL", help="Input file")
 parser.add_option("--NoGaps", dest="NG",
                   help="Input file", action="store_true")
 
@@ -64,7 +65,7 @@ for file in os.listdir(options.IN):
         SeqHash[ID][Gene].append(l.rstrip())
         GeneC[Gene][ID]
 
-
+GL = d(list)
 for Tax, v in sorted(SeqHash.items()):
     if Tax in EXC:
         continue
@@ -76,8 +77,14 @@ for Tax, v in sorted(SeqHash.items()):
         if Gene not in v:
             Seq.extend(L * ["N"])
         else:
+            GL[Gene].append(Tax)
             Seq.extend(v[Gene])
     if len(list(set(Seq))) == 1 and list(set(Seq))[0] == "N":
         continue
     print(">" + NAME[Tax])
     print("".join(Seq))
+
+Gout = open(options.GL, "wt")
+
+for k, v in GL.items():
+    Gout.write(k+"\t"+",".join(v)+"\n")
