@@ -31,15 +31,17 @@ To obtain estimates of _Wolbachia_ titers, we used minimap2 (REF) to map all raw
 
 #### 2.4 Phylogenetic analysis 
 
-We employed two complementary approaches to explore the evolutionary history of _Wolbachia_ based on phylogenetics. 
+We employed two complementary approaches to explore the evolutionary history of _Wolbachia_ based on phylogenetic inference. 
 
 ##### 2.4.1 Candidate Genes
 
 In a first approach, we compared the nucleotide sequences of gene models estimated with the BUSCO approach in the denovo assembled genomes of the museum and the contemporary samples. In addition, we supplemented our dataset with XXX published genomes assemblies of _Wolbachia_ samples from _D. melanogaster_ hosts available at the NCBI RefSeq database (XXX). We included these independently assembled genomes to confirm that phylogenetic signals are not confounded or biased by the nature of our dataset or our assembly pipeline.
 
-To obtain a core set of orthologous genes, we applied the BUSCO approach as explained above to all assembled genomes and focused on 104 genes, which were identified as complete and present in the majority of the assembled genomes. 
+To obtain a core set of orthologous genes, we applied the BUSCO approach as explained above to all assembled genomes and focused on 104 genes, which were identified as complete and present in the majority of the assembled genomes in our dataset. Using MAFFT (REF), we aligned their nuclear sequences across all samples and concatenated the alignments with a custom Python script. Then, we reconstructed a maximum likelihood tree based on the GTR-Gamma substitution model using RaXML (REF) and additionally performed 100 rounds of bootstrapping to test for the robustness of each node. The final tree was plotted in _R_ (REF) using the _ggtree_ package (REF).
 
-as MAFFT (REF), we aligned the nuclear sequences of 107 BUSCO genes, which were identified in at least 15 infected historic and contemporary samples. We then concatenated the alignments with a custom Python script and restricted the analysis to 13 samples where nuclear sequences were available for >90% of all 107 BUSCO genes. Then, we reconstructed a maximum likelihood tree based on the GTR-Gamma substitution model using RaXML (REF) and additionally performed 100 rounds of bootstrapping to test for the robustness of each node. The final tree was plotted in _R_ (REF) using the _ggtree_ package (REF).
+##### 2.4.2 SNP-based analysis
+
+Several of the draft Wolbachia genomies assembled from raw Illumina reads of historic samples, were charcaterized by very low numbers of complete BUSCO genes (<5 genes). Thus, it was not possible to include these samples in the phylogenetic approach based on candidate gene alignments explained above.
 
 #### 2.5 Comparsion to mitochondrial phylogeny
 
