@@ -41,18 +41,20 @@ To obtain a core set of orthologous genes, we applied the BUSCO approach as expl
 
 ##### 2.4.2 SNP-based analysis
 
-Several of the draft Wolbachia genomies assembled from raw Illumina reads of historic samples, were charcaterized by very low numbers of complete BUSCO genes (<5 genes). Thus, it was not possible to include these samples in the phylogenetic approach based on candidate gene alignments explained above.
+Several of the draft _Wolbachia_ genomes assembled from raw Illumina reads of historic samples, were charcaterized by very low numbers of complete BUSCO genes (<5 genes). Thus, it was not possible to include these samples in the phylogenetic approach based on candidate gene alignment explained above. We therefore employed a complementary approach based on reference mapping. To this end, we mapped the raw Illumina reads of each sample that we filtered for _Wolbachia_ with Kraken, as explained above, against the wMel reference genome (AE017196.1). For the Illumina sequencing data of historic samples and contemporary samples downloaded from NCBI, we mapped paired-end reads using bwa mem (REF) with default settings. For the ONT sequencing data generated in this study, we used minimap 
 
 #### 2.5 Comparsion to mitochondrial phylogeny
 
 
 
 
-### Results 
+### 3. Results 
 
 
 
-#### _Wolbachia_ in 
+#### 3.1 _Wolbachia_ infections in historic samples
+
+![Wolb](output/BlobTools/376_blob.svg)
 
 
 
