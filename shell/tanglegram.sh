@@ -118,4 +118,4 @@ dev.off()
 
 Rscript /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram/plot.r
 
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram/Tanglegram.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram/Tanglegram.* /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny

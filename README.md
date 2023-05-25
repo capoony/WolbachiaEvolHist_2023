@@ -54,7 +54,35 @@ Several of the draft _Wolbachia_ genomes assembled from raw Illumina reads of hi
 
 #### 3.1 _Wolbachia_ infections in historic samples
 
-![Wolb](output/BlobTools/376_blob.svg)
+![Wolb](output/BlobTools/HG_14_blob.svg)
+![Wolb](output/BlobTools/HG_16_blob.svg)
+
+#### 3.2 DeNovo Assemblies
+
+![BUSCO](output/busco/busco_figure.png)
+
+#### 3.3 Comparing genomes
+
+![Mauve](output/CompGenomics/CompGenomics.png)
+
+#### 3.3 _Wolbachia_ phylogeny
+
+##### 3.3.1 Candidate genes
+![BUSCO_Phylo](output/Phylogeny/Wolbachia_BUSCO.png)
+
+##### 3.3.2 SNP-based
+
+_Wolbachia_ 
+
+![Wolb_SNPs](output/Phylogeny/Wolbachia_SNPs_red.png)
+
+Mitochondira 
+
+![Mito_SNPs](output/Phylogeny/Mitochondria_SNPs_red.png)
+
+##### 3.3.3 Tanglegram
+
+![Tanglegram](output/Phylogeny/Tanglegram.png)
 
 
 
