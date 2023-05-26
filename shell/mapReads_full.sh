@@ -48,11 +48,11 @@ done
 
 printf "#ID\trname\tstartpos\tendpos\tnumreads\tcovbases\tcoverage\tmeandepth\tmeanbaseq\tmeanmapq\n" >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.txt
 
-for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/*.bam; do
+module load Tools/samtools-1.12
 
-    tmp=${i##*/}
-    ID=${tmp%.*}
+for ID in 376 377 378 HG_09 HG_15 HG_16 HG_20 HG0026 HG0027 HG0029 HG0034 HG47203; do
 
+    i=/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/${ID}.bam
     samtools coverage $i | awk -v ID=$ID 'NR>1{print ID"\t"$0}' >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.txt
 
 done
