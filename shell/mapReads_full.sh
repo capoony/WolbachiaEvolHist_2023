@@ -150,4 +150,4 @@ Rscript /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full
 ## copy to output folder
 mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/titer
 
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.p* /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/titer
