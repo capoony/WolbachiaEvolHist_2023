@@ -94,9 +94,60 @@ printf "#ID\trname\tstartpos\tendpos\tnumreads\tcovbases\tcoverage\tmeandepth\tm
 
 module load Tools/samtools-1.12
 
-for ID in 376 377 378 HG_09 HG_15 HG_16 HG_20 HG0026 HG0027 HG0029 HG0034 HG47203; do
+for ID in 376 377 378 HG_09 HG_15 HG_16 HG_20 HG0026 HG0027 HG0029 HG0034 HG47203 HG47204 HG47205 Re1_full Re3 Re6_full Re10 Ak7_full Ak9_full MEL_full CS POP; do
 
     i=/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/${ID}.bam
     samtools coverage $i | awk -v ID=$ID 'NR>1{print ID"\t"$0}' >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.txt
 
 done
+
+python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/SumReadDepths.py \
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.txt \
+    --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.summary
+
+echo """
+
+library(tidyverse)
+library(scales)
+DATA=read.table('/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.summary',
+    header=T)
+
+color <- c('blue3', 'firebrick3','black')
+
+
+DATA\$WType <- factor(DATA\$WType, levels=c('wMel','wMelCS','wMelPop'))
+
+PLOT<-ggplot(DATA,
+    aes(x=reorder(ID, WolbTiter),fill=WType,y=WolbTiter))+
+    geom_bar(stat='identity')+
+    facet_grid(.~Type,scales='free_x',space='free_x')+
+    scale_fill_manual(values=color)+
+    xlab('Sample ID')+
+    ylab('relative Wolbachia titer')+
+    theme_bw()+
+    geom_hline(yintercept=1,lty=2)+
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+    # scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
+    #     labels = trans_format("log10", math_format(10^.x))) +
+    # annotation_logticks(sides="l")  
+
+
+ggsave('/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.pdf',
+    PLOT,
+    width=10,
+    height=6)
+
+ggsave('/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.png',
+    PLOT,
+    width=10,
+    height=6)
+
+""" >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.r
+
+Rscript /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.r
+
+## copy to output folder
+mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/titer
+
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output
