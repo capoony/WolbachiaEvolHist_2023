@@ -1,4 +1,12 @@
-## Historic Museum samples provide evidence for a recent replacment of _Wolbachia_ variants in European _Drosophila melanogaster_
+## Historic museum samples provide evidence for a recent replacment of _Wolbachia_ variants in European _Drosophila melanogaster_.
+
+Anton Strunov<sup>1</sup>, Sandra Kirchner<sup>2</sup>, Julia Schindelar<sup>2</sup>, Luise Kruckenhauser<sup>2</sup>, Elisabeth Haring<sup>2</sup>, Martin Kapun<sup>1,2,*</sup>
+
+<sup>1</sup> Medical university of Vienna, Center for Anatomy and Cell Biology
+
+<sup>2</sup> Natural History Museum, Central Research Laboratories
+
+<sup>*</sup> Corresponding Author: Martin Kapun [martin.kapun@meduniwien.ac.at](mailto:martin.kapun@meduniwien.ac.at)
 
 ### Abstract 
 
