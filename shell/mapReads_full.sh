@@ -46,6 +46,50 @@ for ID in 376 377 378 HG_09 HG_15 HG_16 HG_20 HG0026 HG0027 HG0029 HG0034 HG4720
 
 done
 
+Samples=(Re1_full Re3 Re6_full Re10 Ak7_full Ak9_full MEL_full CS POP)
+
+for i in ${!Samples[*]}; do
+    Sample=${Samples[i]}
+
+    echo $i ${Sample}
+
+    echo """
+    #!/bin/sh
+
+    ## name of Job
+    #PBS -N map_${Sample}
+
+    ## Redirect output stream to this file.
+    #PBS -o /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping/${Sample}_log.txt
+
+    ## Stream Standard Output AND Standard Error to outputfile (see above)
+    #PBS -j oe
+
+    ## Select a maximum walltime of 2h
+    #PBS -l walltime=100:00:00
+
+    ## Select a maximum of 20 cores and 500gb of RAM
+    #PBS -l select=1:ncpus=100:mem=300gb
+
+    ### dependencies
+    module load NGSmapper/minimap2-2.17
+    module load Tools/samtools-1.12
+
+    minimap2 -ax map-ont \
+        -t 100 \
+        /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/holo_dmel_6.12.fa.gz \
+        /media/inter/mkapun/projects/DrosoWolbGenomics/results/assemblies/${Sample}/data/ONT/${Sample}_ont.fq.gz |
+        samtools view -bh | samtools sort \
+        >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/${Sample}.bam
+
+    #samtools index /media/inter/mkapun/projects/DrosoWolbGenomics/results/RefMapping/${Sample}.bam
+
+    """ >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/${Sample}_mapping_full.qsub
+
+    qsub /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/${Sample}_mapping_full.qsub
+
+done
+
 printf "#ID\trname\tstartpos\tendpos\tnumreads\tcovbases\tcoverage\tmeandepth\tmeanbaseq\tmeanmapq\n" >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.txt
 
 module load Tools/samtools-1.12

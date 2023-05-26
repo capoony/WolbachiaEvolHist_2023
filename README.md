@@ -57,11 +57,13 @@ Then, we used the BCFtools (XXX) command _bcftools mpileup_ to synchronize the m
 _Wolbachia_ and the host mitochondria are both transmitted strictly maternally to the offspring. This allows to test for genomic signals of horizontal introgression of _Wolbachia_ into a host, which would manifest in inconsistencies among the species trees of mitchondria and _Wolbachia_. We therefore employed the SNP-based phylogenetic approach described above based on mitchondrial reads, which we pre-filtered by comparing all raw reads against a custom-built Kraken database consisting of the _D. melanogaster_ mitochondrial genome. To this end, we first included all historic samples irrespective of the _Wolbachia_ infection status. Subsequently, we restricted the analyses to samples only, which were _Wolbachia_ infected and for which mitochondrial reads were available as well. We then repeated the phylogenetic analysis with RaXML as explained above and then used function _as.dendrogram_ from the _R_ package _phylogram_ (REF) to convert the Wolbachia and mitochondrial tree files in NEWICK format to ultrametric trees. We first untangled the two trees, i.e., we swaped the branches to best fit the order of the samples using the _untangle_ function with the "step1side" method of the _dendextend_ package (XXX) and then produced a tanglegram using the _tanglegram_ function to visualize the relationship between the two trees.
 
 
-### 3. Results 
+### 3. Results & Discussion
 
-
+In this study we took advantage of a recently published genomic dataset of 25 museum samples of  _D. melanogaster_ samples that were collected betwen 220 and 90 years ago in Northern Europe. Besides testing if museomics of century-old _Drosophila_ samples allows to identify historic _Wolbachia_ infections, we address several long-standing questions concerning the co-evolution of _D. melanogaster_ and _Wolbachia_. In particular, these data for the first time allow to test the hypothesis that the wMelCS _Wolbachia_ variant, which is now found only at low frequencies in world-wide _D. melanogaster_ populations was only recently replaced by the more common wMel variant within the last century.
 
 #### 3.1 _Wolbachia_ infections in historic samples
+
+
 
 ![Wolb](output/BlobTools/HG_14_blob.svg)
 ![Wolb](output/BlobTools/HG_16_blob.svg)
