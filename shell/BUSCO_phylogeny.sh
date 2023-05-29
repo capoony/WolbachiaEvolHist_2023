@@ -187,3 +187,6 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointR
 
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_BUSCO.pdf
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_BUSCO.png
+
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2_noOut/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_BUSCO_noOut.pdf
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2_noOut/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_BUSCO_noOut.png

@@ -90,6 +90,9 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo.sh \
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_red.pdf
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_red.png
 
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red_noOut/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_red_noOut.pdf
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red_noOut/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_red_noOut.png
+
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo.sh \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_full \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_full.phy \
