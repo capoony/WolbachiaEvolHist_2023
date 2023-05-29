@@ -4,3 +4,4 @@ logs/
 results/
 shell/QSUB/
 shell_old/
+busco_downloads/

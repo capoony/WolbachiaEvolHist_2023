@@ -106,7 +106,9 @@ while read line; do
         >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/${line}_dna.fasta
 done </media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/final_busco_ids.txt
 
-rm -rf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna
+## rm -rf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna
+
+# append outgroup data
 
 ### make alignments
 
@@ -121,6 +123,7 @@ for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes
     mafft \
         --thread 50 \
         --auto \
+        --adjustdirection \
         ${i} \
         >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna/${ID}_aln.fasta
 
@@ -144,6 +147,8 @@ done
 
 ## make phylogeny
 
+rm -rf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2
+
 mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2
 
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/ConcatenateAlignments.py \
@@ -156,12 +161,26 @@ python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/ConcatenateAl
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/ConcatenateAlignments.py \
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names2.txt \
+    --exclude HG0027,HG0029,HG47205,HG_09,HG0026,HG_20,WMELOCTOLESS,WMEL_AMD,WMELCS112,WMELCSCSBERKELEY,WMELPC75,WMELPLUS,WMELPOP1,WMELPOP2,WMELPOP3,WYAK \
+    --geneList /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna.genes \
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna_noOut.fa
+
+python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/ConcatenateAlignments.py \
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna \
+    --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names2.txt \
     --exclude NA \
     --NoGaps \
     >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/alignment_dna_noGap.fa
 
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo.sh \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2 \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna.fa \
+    Wolbachia \
+    wYak \
+    0.0001
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2_noOut \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna.fa \
     Wolbachia \
     0.0001

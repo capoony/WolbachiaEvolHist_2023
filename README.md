@@ -22,9 +22,9 @@ In this study, we investigated _Wolbachia_ infections in 25 historic _D. melanog
 
 TBA
 
-#### 2.2 Detection of Wolbachia Infections and Relative Bacterial Titer
+#### 2.2 Detection and characterization of _Wolbachia_ infections
 
-To obtain estimates of _Wolbachia_ titers, we used bwa mem (REF) for Illumina sequencing data or minimap2 (REF) for ONT sequencing data to map all raw FASTQ reads for each sample against a joint reference sequence, which was constructed from the _Drosophila melanogaster_ reference genome v.6 (REF) and additional genome sequences of other common microbial symbionts, including the wMel reference genome (see REF for more details). Using samtools depth (REF) in combination with a custom _python_ script (SumReadDepths.py), we calculated average absolute read depths for all _Drosophila_ chromosomes and symbiont genomes. Based on this information, we estimated relative _Wolbachia_ titers for a given sample by dividing the average read depth at the _Wolbachia_ genome by the average absolute read depth across all _Drosophila_ autosomes.
+To obtain estimates of _Wolbachia_ titers, we used bwa mem (REF) for Illumina sequencing data or minimap2 (REF) for ONT sequencing data to map all raw FASTQ reads for each sample against a joint reference sequence, which was constructed from the _Drosophila melanogaster_ reference genome v.6 (REF) and additional genome sequences of other common microbial symbionts, including the wMel reference genome (see REF for more details). Using samtools depth (REF) in combination with a custom _python_ script (SumReadDepths.py), we calculated average absolute read depths for all _Drosophila_ chromosomes and symbiont genomes. Based on this information, we estimated relative _Wolbachia_ titers for a given sample by dividing the average read depth at the _Wolbachia_ genome by the average absolute read depth across all _Drosophila_ autosomes. Based on the average read depth and the proportion of the _Wolbachia_ genome covered (>30% covered by reads at >4-fold read depth), we classified _Drosophila_ samples as infected with _Wolbachia_ or as uninfected. 
 
 #### 2.3 De-Novo assembly and draft annotation
 

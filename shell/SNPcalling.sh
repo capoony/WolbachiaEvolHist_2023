@@ -39,7 +39,7 @@ bcftools mpileup \
     -Bf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/db/AE017196.1_wMel.fa \
     -b /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/bamlist_Wolb_stringent.txt \
     -a AD,DP \
-    -d 600 \
+    -d 1000 \
     -Ou |
     bcftools call \
         -O z --ploidy 1 \
@@ -61,9 +61,15 @@ python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py
     --MinAlt 1 \
     --MaxPropGaps 0.5 \
     --MinCov 5 \
-    --exclude 377,378,380,HG0027,HG0034,wMelCSPOP2,wMelCSPOP,wMelOctoless,wMel_run2,wMel_run3 \
+    --exclude 377,378,380,HG0029,HG0027,HG0034,wMelCSPOP2,wMelCSPOP,wMelOctoless,wMel_run2,wMel_run3,wYak \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red2.phy
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red_noOut.phy
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red_noOut \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red_noOut.phy \
+    Wolbachia \
+    0.5
 
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.vcf.gz \
@@ -78,7 +84,7 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo.sh \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red.phy \
     Wolbachia \
-    wMel1_Gulbenkian,wMel1_Portugal,wMel2_Portugal,wMel1_Finland,wMel2_Finland,wMel_LabStrain_Gulbenkian,wMel_Indiana,wMel_Donor4Aedes \
+    wYak \
     0.5
 
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_red.pdf
@@ -88,7 +94,7 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo.sh \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_full \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_full.phy \
     Wolbachia \
-    wMel1_Gulbenkian,wMel1_Portugal,wMel2_Portugal,wMel1_Finland,wMel2_Finland,wMel_LabStrain_Gulbenkian,wMel_Indiana,wMel_Donor4Aedes \
+    wYak \
     0.5
 
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_full/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_full.pdf
