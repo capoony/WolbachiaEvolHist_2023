@@ -16,7 +16,9 @@ input <- args[1]
 output <- args[2]
 title <- args[3]
 offset <- as.numeric(args[4])
-outgroup <- args[5]
+width <- as.numeric(args[5])
+height <- as.numeric(args[6])
+outgroup <- args[7]
 
 ## load tree file and root midpoint
 tree <- read.tree(input)
@@ -61,9 +63,13 @@ PDF <- paste0(output, ".pdf")
 ## export tree
 ggsave(
   filename = PDF,
-  PLOT.tree
+  PLOT.tree,
+  width = width,
+  height = height
 )
 ggsave(
   filename = PNG,
-  PLOT.tree
+  PLOT.tree,
+  width = width,
+  height = height
 )

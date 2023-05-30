@@ -16,7 +16,7 @@ _Wolbachia_ is a gram-negative alpha-proteobacterium of the order Rickettsiales,
 
 ### 2. Materials and Methods
 
-In this study, we investigated _Wolbachia_ infections in 25 historic _D. melanogaster_ museum samples from Sweden, Denmark and Germany, that were collected between 90 and 200 years ago (REF). Taking advantage of recently published whole genomic Illumina deep sequencing data of the samples, we tested for the presence of _Wolbachia_-specific reads in these samples, estimated titer variation and investigated the relatedness to contemporary _Wolbachia_ strains. Complementary to the historic samples, we used Oxford Nanopore sequencing technology (ONT) to newly sequence genomic DNA of six strain of freshly collected isofemale lines from wild populations in Portugal and Finland, that were naturally infected with either the wMel or the wMelCS _Wolbachia_ variants (REF) and of three lab-strains that were artifically infected previously with wMel, wMelCS and wMelPOP (REF; see Table S1). Complementary to these data, we obtained XXX RefSeq assemblies of _D. melanogaster_-specific _Wolbachia_ samples and included raw Illumina sequencing data of XXX _Drosophila melanogaster_ samples infected with wMel or wMelCS from the NCBI Short Read Archive (SRA) for phylogenetic anslyses.
+In this study, we investigated _Wolbachia_ infections in 25 historic _D. melanogaster_ museum samples from Sweden, Denmark and Germany, that were collected between 90 and 200 years ago (REF). Taking advantage of recently published whole genomic Illumina deep sequencing data of the samples, we tested for the presence of _Wolbachia_-specific reads in these samples, estimated titer variation and investigated the relatedness to contemporary _Wolbachia_ strains. Complementary to the historic samples, we used Oxford Nanopore sequencing technology (ONT) to newly sequence genomic DNA of six strain of freshly collected isofemale lines from wild populations in Portugal and Finland, that were naturally infected with either the wMel or the wMelCS _Wolbachia_ variants (REF) and of three lab-strains that were artifically infected previously with wMel, wMelCS and wMelPOP (REF; see Table S1). Complementary to these data, we obtained XXX RefSeq assemblies of _D. melanogaster_-specific _Wolbachia_ samples and included raw Illumina sequencing data of XXX _Drosophila melanogaster_ samples infected with wMel or wMelCS from the NCBI Short Read Archive (SRA) for phylogenetic analyses (see Table S1). Given the close relationship between wYak and wMel, we obtained the RefSeq sequence information of the wYak _Wolbachia_ variant (NZ_VCEF01000001.1) and the mitochondrion () of _D. yakuba_ and used these as outgroups for phylogenetic inference.
 
 #### 2.1 DNA extraction, library preprartion and ONT whole genome sequencing
 
@@ -34,7 +34,7 @@ Subsequently, we assessed the assembly quality based on common quality statistic
 
 Finally, we used the published _Wolbachia_ wMel reference genome (ENA|AE017196|AE017196.1) as a backbone to align and orient the raw contigs with _nucmer_ of the MUMmer package (REF). Then, we used _show-tiling_ of the MUMmer package to identify the minimum number of unique contigs that span a maximum of the reference backbone. Using a custom script, we then combined these contigs into a single scaffold and filled the gaps between each pair of consecutive contigs with a string of ten N's. Moreover, given that the bacterial genome is circular, we anchored the newly assembled scaffolds at the startpoint of the reference genome and shifted pretailing sequences to the end of the scaffolds. We then calculated multiple genome alignments of all scaffolds and the _Wolbachia_ reference using progressive-mauve (REF) and visualized the alignemnt with Mauve GUI (REF).
 
-Since RNASeq data was neither available for the historic nor for the contemporary samples, we computed a draft genome annotation based on comparing the genomic sequences of the assemblies to a reference wMel transcriptome (CP046925.1) by gapped alignment using the protein2genome model of exonerate (REF). Conservatively, we only retained gene models with reached at least 80% of the maximum alignment score optainable for a given sequence.
+Since RNASeq data was neither available for the historic nor for the contemporary samples, we computed a draft genome annotation based on comparing the genomic sequences of the assemblies to a reference wMel (ENA|AE017196|AE017196.1) transcriptome by gapped alignment using the _protein2genome_ model of exonerate (REF). Conservatively, we only retained gene models with reached at least 80% of the maximum alignment score optainable for a given sequence.
 
 #### 2.4 Phylogenetic analysis 
 
@@ -48,9 +48,13 @@ To obtain a core set of orthologous genes, we applied the BUSCO approach as expl
 
 ##### 2.4.2 SNP-based phylogenetic analysis
 
-Several of the draft _Wolbachia_ genomes assembled from raw Illumina reads of historic samples, were charcaterized by very low numbers of complete BUSCO genes (<5 genes). Thus, it was not possible to include these samples in the phylogenetic approach based on candidate gene alignment explained above. We therefore employed a complementary approach based on reference mapping. To this end, we mapped the raw Illumina reads of each sample that we pre-filtered for _Wolbachia_ with Kraken, as explained above, against the wMel reference genome (AE017196.1). For the Illumina sequencing data of historic samples and contemporary samples downloaded from NCBI SRA, we mapped paired-end reads using bwa mem (REF) with default settings. Conversely, we used minimap with default paramters to map long-fragment reads from ONT sequencing against the reference _Wolbachia_ genome. Raw BAM files were filtered with Samtools (XXX) to contain mapped reads only and sorted by reference position using the _samtools sort_ command. 
+Several of the draft _Wolbachia_ genomes assembled from raw Illumina reads of historic samples, were charcaterized by very low numbers of complete BUSCO genes (<5 genes). Thus, it was not possible to include these samples in the phylogenetic approach based on candidate gene alignment explained above. We therefore employed a complementary approach based on reference mapping to include more of the historic samples into the phylogenetic analsyis. To this end, we mapped the raw Illumina reads of each sample that we pre-filtered for _Wolbachia_ with Kraken, as explained above, against the wMel reference genome (AE017196.1). For the Illumina sequencing data of historic samples and contemporary samples downloaded from NCBI SRA, we mapped paired-end reads using bwa mem (REF) with default settings. Conversely, we used minimap with default paramters to map long-fragment reads from ONT sequencing against the reference _Wolbachia_ genome. Raw BAM files were filtered with Samtools (XXX) to contain mapped reads only and sorted by reference position using the _samtools sort_ command. 
 
 Then, we used the BCFtools (XXX) command _bcftools mpileup_ to synchronize the mapped reads of all samples and called SNPs using _bcftools call_ assuming haploidy and stored the variants in the VCF file format. Using a custom Python script (BCF2Phylip.py) we converted the VCF file to the phylip format, only considering bi-allelic polymorphic positions where the posterior probability of the most likely genotype was > 50 and of the alternative genotype <30. In addition, we only included positions with more than 5-fold coverage in each of the samples and removed samples, with more than 50% missing information across all SNPs. Similar to above, we used the aligned SNP data to reconstruct a maximum likelihood tree based on the GTR-CAT substitution model from 20 starting trees using RaXML (REF) and additionally performed 100 rounds of bootstrapping to test for the robustness of each node. The final tree was plotted in _R_ (REF) using the _ggtree_ package (REF).
+
+##### 2.4.3 Classification based on diagnostic SNPs
+
+The two aforementioned phylogenetic approaches allowed to determine the evolutionary relationship of historic _Wolbachia_ samples to contemporary _Wolbachia_ strains for a handful of the museum samples. However, several other samples which appeared to be infected with _Wolbachia_ did not have sufficient coverage to be included in these two analyses. We thus choose a different strategy to estimate if these are more closely related to wMel or wMelCS. We therefore identified 115 SNPs in 15 contemporary samples that were fixed for different alleles in the eight wMel and the seven wMelCS samples. Then, we tested the allelic state at these diagnostic SNPs in the 13 historic samples that were putatively infected with _Wolbachia_ whenever the read-depth was >=2 and the allelic state was unambigously identified based on the posterior probablity as explained above.
 
 #### 2.5 Comparsion to mitochondrial phylogeny
 
@@ -63,7 +67,49 @@ In this study we took advantage of a recently published genomic dataset of 25 mu
 
 #### 3.1 _Wolbachia_ infections in historic samples
 
-As a first step, we classified the sequenced _Drosophila_ samples as infected or uninfected. We therefore mapped 
+As a first step, we classified the sequenced _Drosophila_ samples as infected or uninfected based on reference mapping. We found that read-depths of reads mapping to the _Wolbachia_ reference varied between 
+
+| NewID                          | OriginalID   | NCBI Accession | rname                     | numreads | Coverered Bases | coverage | Mean ReadDepth | meanbaseq | meanmapq |
+| ------------------------------ | ------------ | -------------- | ------------------------- | -------- | --------------- | -------- | -------------- | --------- | -------- |
+| Sweden_Lund_1800_376           | 376          | SRR23876563    | ENA\|AE017196\|AE017196.1 | 128250   | 387434          | 30.56    | 4.26343        | 36.3      | 50.7     |
+| Sweden_Lund_1800_377           | 377          | SRR23876584    | ENA\|AE017196\|AE017196.1 | 1243920  | 1201914         | 94.8045  | 45.1901        | 36.3      | 54.3     |
+| Sweden_Lund_1800_378           | 378          | SRR23876583    | ENA\|AE017196\|AE017196.1 | 1437673  | 1122077         | 88.5071  | 51.1695        | 36.3      | 53.9     |
+| Sweden_Lund_1800_380           | 380          | SRR23876582    | ENA\|AE017196\|AE017196.1 | 67579    | 195541          | 15.4239  | 2.09902        | 36.3      | 49       |
+| Sweden_Lund_1933_HG0021        | HG0021       | SRR23876586    | ENA\|AE017196\|AE017196.1 | 37630    | 47900           | 3.77825  | 0.721645       | 36.4      | 36.8     |
+| Sweden_Lund_1933_HG0025        | HG0025       | SRR23876585    | ENA\|AE017196\|AE017196.1 | 6853     | 11821           | 0.932416 | 0.159924       | 36.3      | 42       |
+| Sweden_Lund_1933_HG0026        | HG0026       | SRR23876567    | ENA\|AE017196\|AE017196.1 | 5479866  | 1265866         | 99.8489  | 194.816        | 36.3      | 54.3     |
+| Sweden_Lund_1933_HG0027        | HG0027       | SRR23876574    | ENA\|AE017196\|AE017196.1 | 107666   | 421543          | 33.2504  | 5.42906        | 35.9      | 55       |
+| Sweden_Lund_1933_HG0028        | HG0028       | SRR23876568    | ENA\|AE017196\|AE017196.1 | 79517    | 66434           | 5.24018  | 1.91583        | 36.3      | 42.6     |
+| Denmark_Zealand_1800_HG0029    | HG0029       | SRR23876565    | ENA\|AE017196\|AE017196.1 | 127214   | 301095          | 23.7497  | 4.30894        | 36.1      | 46.5     |
+| Sweden_Lund_1800_HG0034        | HG0034       | SRR23876564    | ENA\|AE017196\|AE017196.1 | 528066   | 719950          | 56.7882  | 19.0877        | 36.3      | 53.9     |
+| Sweden_Smaland_1800_HG0035     | HG0035       | SRR23876566    | ENA\|AE017196\|AE017196.1 | 49729    | 72427           | 5.71289  | 1.66779        | 36.3      | 50.8     |
+| Germany_Passau_1800_HG_09      | HG_09        | SRR23876562    | ENA\|AE017196\|AE017196.1 | 5705972  | 1266897         | 99.9302  | 216.997        | 36.3      | 54.7     |
+| Sweden_Lund_1933_HG_14         | HG_14        | SRR23876581    | ENA\|AE017196\|AE017196.1 | 35284    | 40793           | 3.21767  | 0.861242       | 36.4      | 43.3     |
+| Sweden_Lund_1933_HG_15         | HG_15        | SRR23876580    | ENA\|AE017196\|AE017196.1 | 18303585 | 1267776         | 99.9995  | 723.381        | 36.3      | 55       |
+| Sweden_Lund_1933_HG_16         | HG_16        | SRR23876579    | ENA\|AE017196\|AE017196.1 | 26086620 | 1267777         | 99.9996  | 976.462        | 36.2      | 54.6     |
+| Sweden_Lund_1933_HG_17         | HG_17        | SRR23876578    | ENA\|AE017196\|AE017196.1 | 30526    | 45697           | 3.60448  | 0.727866       | 36.4      | 42.9     |
+| Sweden_Lund_1933_HG_18         | HG_18        | SRR23876577    | ENA\|AE017196\|AE017196.1 | 50665    | 36669           | 2.89237  | 1.2309         | 36.3      | 41.4     |
+| Sweden_Lund_1933_HG_19         | HG_19        | SRR23876576    | ENA\|AE017196\|AE017196.1 | 34632    | 52301           | 4.12539  | 0.896751       | 36.3      | 45.2     |
+| Sweden_Lund_1933_HG_20         | HG_20        | SRR23876575    | ENA\|AE017196\|AE017196.1 | 8017567  | 1267778         | 99.9997  | 304.739        | 36.3      | 54.6     |
+| Sweden_Lund_1933_HG_21         | HG_21        | SRR23876573    | ENA\|AE017196\|AE017196.1 | 23211    | 51276           | 4.04454  | 0.400302       | 36.4      | 35.4     |
+| Germany_Passau_1800_HG29702    | HG29702      | SRR23876569    | ENA\|AE017196\|AE017196.1 | 33276    | 67249           | 5.30446  | 0.578816       | 36.5      | 36.1     |
+| Sweden_Lund_1933_HG47203       | HG47203      | SRR23876570    | ENA\|AE017196\|AE017196.1 | 3265133  | 1267765         | 99.9987  | 136.47         | 36.4      | 54.1     |
+| Sweden_Lund_1933_HG47204       | HG47204      | SRR23876571    | ENA\|AE017196\|AE017196.1 | 10237972 | 1267777         | 99.9996  | 496.438        | 36.3      | 54.9     |
+| Sweden_Lund_1933_HG47205       | HG47205      | SRR23876572    | ENA\|AE017196\|AE017196.1 | 59246    | 304273          | 24.0004  | 2.14245        | 35.9      | 45.4     |
+| wMelCS_Gulbenkian              | wMelCS       | SRR945468      | ENA\|AE017196\|AE017196.1 | 22180864 | 1267780         | 99.9998  | 1290.01        | 24.6      | 55.2     |
+| wMelCSb_Gulbenkian             | wMelCSb      | SRR10438626    | ENA\|AE017196\|AE017196.1 | 195548   | 1267730         | 99.9959  | 34.7978        | 37.3      | 56.8     |
+| wMel_Donor4Aedes               | wMel_donor   | SRR17978916    | ENA\|AE017196\|AE017196.1 | 457499   | 1267781         | 99.9999  | 53.7371        | 35.9      | 56.7     |
+| wMel_Indiana                   | wMel_Indiana | SRR1645077     | ENA\|AE017196\|AE017196.1 | 1951378  | 1267782         | 100      | 388.546        | 35.5      | 56.6     |
+| wMel1_Gulbenkian               | wMel_run1    | SRR10424182    | ENA\|AE017196\|AE017196.1 | 113106   | 1267760         | 99.9983  | 22.4861        | 34.1      | 56.9     |
+| wMel1_Portugal                 | Re1_full     | #NA            | ENA\|AE017196\|AE017196.1 | 6974     | 1267777         | 99.9996  | 13.5808        | 24.3      | 58.6     |
+| wMelCS1_Portugal               | Re3          | #NA            | ENA\|AE017196\|AE017196.1 | 10019    | 1267131         | 99.9487  | 19.1874        | 24.6      | 58.5     |
+| wMel2_Portugal                 | Re6_full     | #NA            | ENA\|AE017196\|AE017196.1 | 10900    | 1267351         | 99.966   | 20.1418        | 24.3      | 58.3     |
+| wMelCS2_Portugal               | Re10         | #NA            | ENA\|AE017196\|AE017196.1 | 7955     | 1267356         | 99.9664  | 14.6086        | 24.6      | 58.3     |
+| wMel1_Finland                  | Ak7_full     | #NA            | ENA\|AE017196\|AE017196.1 | 9730     | 1267769         | 99.999   | 17.2181        | 24.3      | 58.5     |
+| wMel2_Finland                  | Ak9_full     | #NA            | ENA\|AE017196\|AE017196.1 | 10535    | 1267781         | 99.9999  | 25.6721        | 24.2      | 58.8     |
+| wMel_LabStrain_Gulbenkian      | MEL_full     | #NA            | ENA\|AE017196\|AE017196.1 | 7302     | 1267777         | 99.9996  | 14.199         | 24.2      | 58.5     |
+| wMelCS_LabStrain_Gulbenkian    | CS           | #NA            | ENA\|AE017196\|AE017196.1 | 9854     | 1267583         | 99.9843  | 15.1502        | 24.6      | 58.1     |
+| wMelCSPOP_LabStrain_Gulbenkian | POP          | #NA            | ENA\|AE017196\|AE017196.1 | 29571    | 1267630         | 99.988   | 49.3559        | 24.7      | 58.2     |
 
 ![Wolb](output/BlobTools/HG_14_blob.svg)
 ![Wolb](output/BlobTools/HG_16_blob.svg)

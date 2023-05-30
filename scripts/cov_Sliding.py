@@ -13,6 +13,7 @@ group = OptionGroup(parser, '< put description here >')
 
 parser.add_option("--input", dest="IN", help="Input file")
 parser.add_option("--names", dest="NA", help="Input file")
+parser.add_option("--Syn", dest="SY", help="Input file")
 parser.add_option("--window", dest="WI", help="Input file")
 (options, args) = parser.parse_args()
 parser.add_option_group(group)
@@ -30,8 +31,13 @@ def load_data(x):
     return y
 
 
+NAME = d(str)
+for l in load_data(options.SY):
+    a = l.rstrip().split(",")
+    NAME[a[0]] = a[1]
+
 names = options.NA.split(",")
-print("Pos\t"+"\t".join(names))
+print("Pos\t"+"\t".join([NAME[x] for x in names]))
 Cov = d(list)
 window = int(options.WI)
 Pos = 0

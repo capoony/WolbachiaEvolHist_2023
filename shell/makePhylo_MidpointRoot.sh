@@ -2,6 +2,8 @@ output=$1
 input=$2
 name=$3
 offset=$4
+width=$5
+height=$6
 
 ### First Wolbachia
 rm -rf ${output}
@@ -42,4 +44,6 @@ Rscript /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/PlotTree.r \
     ${output}/${name} \
     ${name} \
     ${offset} \
+    ${width} \
+    ${height} \
     NO

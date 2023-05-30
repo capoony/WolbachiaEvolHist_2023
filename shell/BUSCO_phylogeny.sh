@@ -172,18 +172,22 @@ python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/ConcatenateAl
     --NoGaps \
     >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/alignment_dna_noGap.fa
 
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo.sh \
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2 \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna.fa \
     Wolbachia \
     wYak \
-    0.0001
+    0.0001 \
+    8 \
+    5
 
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2_noOut \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna.fa \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna_noOut.fa \
     Wolbachia \
-    0.0001
+    0.0001 \
+    8 \
+    5
 
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_BUSCO.pdf
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_BUSCO.png
