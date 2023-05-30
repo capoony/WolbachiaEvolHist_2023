@@ -114,9 +114,6 @@ As a first step, we classified the sequenced _Drosophila_ samples as infected or
 | wMelCSPOP_LabStrain_Gulbenkian | POP          | #NA            | Oxford Nanopore       | 100.0                  | 49.36          | 24.7          | 58.2             | yes              |
 
 
-#![Wolb](output/BlobTools/HG_14_blob.svg)
-#![Wolb](output/BlobTools/HG_16_blob.svg)
-
 ![Full_cov](output/titer/Full_coverages.png)
 ![CovDist](output/ReadDepths/WolbStringent_1kb.png)
 
