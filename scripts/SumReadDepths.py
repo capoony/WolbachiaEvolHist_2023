@@ -57,6 +57,8 @@ header = ["ID", "rname", "startpos", "endpos", "numreads",
           "covbases", "coverage", "meandepth", "meanbaseq", "meanmapq"]
 for l in load_data(options.IN):
     a = l.rstrip().split()
+    if len(a) != 10:
+        continue
     if a[1] in Autosomes:
         Aut[a[0]].append(float(a[-3]))
     if a[1] == "X":

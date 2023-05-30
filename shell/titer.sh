@@ -130,7 +130,7 @@ color <- c('blue3', 'firebrick3','black')
 DATA\$WType <- factor(DATA\$WType, levels=c('wMel','wMelCS','wMelPop'))
 
 PLOT<-ggplot(DATA,
-    aes(x=reorder(ID, WolbTiter),fill=WType,y=WolbTiter))+
+    aes(x=reorder(ID, WolbTiter),fill=WType,y=WolbTiter,col=Status))+
     geom_bar(stat='identity')+
     facet_grid(.~Type,scales='free_x',space='free_x')+
     scale_fill_manual(values=color)+
