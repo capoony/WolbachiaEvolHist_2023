@@ -24,7 +24,7 @@ TBA
 
 #### 2.2 Detection and characterization of _Wolbachia_ infections
 
-To obtain estimates of _Wolbachia_ titers, we used bwa mem (REF) for Illumina sequencing data or minimap2 (REF) for ONT sequencing data to map all raw FASTQ reads for each sample against a joint reference sequence, which was constructed from the _Drosophila melanogaster_ reference genome v.6 (REF) and additional genome sequences of other common microbial symbionts, including the wMel reference genome (see REF for more details). Using the command _samtools depth_ of the samtools program (REF) in combination with a custom _python_ script (SumReadDepths.py), we calculated average absolute read depths for all _Drosophila_ chromosomes and symbiont genomes. Based on this information, we estimated relative _Wolbachia_ titers for a given sample by dividing the average read depth at the _Wolbachia_ genome by the average absolute read depth across all _Drosophila_ autosomes. Based on the average read depth and the proportion of the _Wolbachia_ genome covered (>30% covered by reads at >4-fold read depth), we classified _Drosophila_ samples as either infected with _Wolbachia_ or as uninfected. 
+To obtain estimates of _Wolbachia_ titers, we used bwa mem (REF) for Illumina sequencing data or minimap2 (REF) for ONT sequencing data to map all raw FASTQ reads for each sample against a joint reference sequence, which was constructed from the _Drosophila melanogaster_ reference genome v.6 (REF) and additional genome sequences of other common microbial symbionts, including the wMel reference genome (see REF for more details). Using the command _samtools depth_ of the samtools program (REF) in combination with a custom _python_ script (SumReadDepths.py), we calculated average absolute read depths for all _Drosophila_ chromosomes and symbiont genomes. Based on this information, we estimated relative _Wolbachia_ titers for a given sample by dividing the average read depth at the _Wolbachia_ genome by the average absolute read depth across all _Drosophila_ autosomes. Based on the average read depth and the proportion of the _Wolbachia_ genome covered, we classified _Drosophila_ samples as either infected with _Wolbachia_, as uninfected, or as with unclear status. 
 
 #### 2.3 De-Novo assembly and draft annotation
 
@@ -67,52 +67,52 @@ In this study we took advantage of a recently published genomic dataset of 25 mu
 
 #### 3.1 _Wolbachia_ infections in historic samples
 
-As a first step, we classified the sequenced _Drosophila_ samples as infected or uninfected based on reference mapping. We found that read-depths of reads mapping to the _Wolbachia_ reference varied between 
+As a first step, we classified the sequenced _Drosophila_ samples as infected or uninfected based on reference mapping. We found that read-depths of reads mapping to the _Wolbachia_ reference varied dramatically between bascially zero-fold to a thousand-fold read-depths across samples (see Table 1). Similarly, we observed large variations in the proprortion of the reference sequence covered by reads range from as low as 0.9% to 100%. Based on these results, we qualitatively classified 10 historic samples as uninfected (<15% covered by reads and <2-fold average read depth) with very low coverage which could be due to non-specific mapping and 10 historic samples as infected (>50% covered by reads and >10-fold average read depth). Besides these two types,we identified five samples, which were charcterized 
 
->Table 1. Table showing Sample ID's, accession numbers and sequencing technology used for the data generation of samples used in this study. Additionally, this table provides summary statitsics from mapping the raw reads against the wMel reference genome (ENA|AE017196|AE017196.1) and shows the proportion of the total reference sequence that is covered by reads, the mean read depth, the mean basequality and the mean mapping quality of each sample.
+>**Table 1.** Table showing Sample ID's, NCBI SRA accession numbers and sequencing technology used for the data generation of samples used in this study. Additionally, this table includes summary statistics for raw reads mapped against the wMel reference genome (ENA|AE017196|AE017196.1) and provides the proportion of the total reference sequence that is covered by reads, the mean read depth, the mean base-quality and the mean mapping-quality of each sample.
 
+| NewID                          | OriginalID   | NCBI Accession | Sequencing Technology | Reference Coverage [%] | Mean ReadDepth | Mean BaseQual | Mean MappingQual | Infection Status |
+| ------------------------------ | ------------ | -------------- | --------------------- | ---------------------- | -------------- | ------------- | ---------------- | ---------------- |
+| Sweden_Lund_1800_376           | 376          | SRR23876563    | Illumina              | 30.6                   | 4.26           | 36.3          | 50.7             | unclear          |
+| Sweden_Lund_1800_377           | 377          | SRR23876584    | Illumina              | 94.8                   | 45.19          | 36.3          | 54.3             | yes              |
+| Sweden_Lund_1800_378           | 378          | SRR23876583    | Illumina              | 88.5                   | 51.17          | 36.3          | 53.9             | yes              |
+| Sweden_Lund_1800_380           | 380          | SRR23876582    | Illumina              | 15.4                   | 2.10           | 36.3          | 49               | unclear          |
+| Sweden_Lund_1933_HG0021        | HG0021       | SRR23876586    | Illumina              | 3.8                    | 0.72           | 36.4          | 36.8             | no               |
+| Sweden_Lund_1933_HG0025        | HG0025       | SRR23876585    | Illumina              | 0.9                    | 0.16           | 36.3          | 42               | no               |
+| Sweden_Lund_1933_HG0026        | HG0026       | SRR23876567    | Illumina              | 99.8                   | 194.82         | 36.3          | 54.3             | yes              |
+| Sweden_Lund_1933_HG0027        | HG0027       | SRR23876574    | Illumina              | 33.3                   | 5.43           | 35.9          | 55               | unclear          |
+| Sweden_Lund_1933_HG0028        | HG0028       | SRR23876568    | Illumina              | 5.2                    | 1.92           | 36.3          | 42.6             | no               |
+| Denmark_Zealand_1800_HG0029    | HG0029       | SRR23876565    | Illumina              | 23.7                   | 4.31           | 36.1          | 46.5             | unclear          |
+| Sweden_Lund_1800_HG0034        | HG0034       | SRR23876564    | Illumina              | 56.8                   | 19.09          | 36.3          | 53.9             | yes              |
+| Sweden_Smaland_1800_HG0035     | HG0035       | SRR23876566    | Illumina              | 5.7                    | 1.67           | 36.3          | 50.8             | no               |
+| Germany_Passau_1800_HG_09      | HG_09        | SRR23876562    | Illumina              | 99.9                   | 217.00         | 36.3          | 54.7             | yes              |
+| Sweden_Lund_1933_HG_14         | HG_14        | SRR23876581    | Illumina              | 3.2                    | 0.86           | 36.4          | 43.3             | no               |
+| Sweden_Lund_1933_HG_15         | HG_15        | SRR23876580    | Illumina              | 100.0                  | 723.38         | 36.3          | 55               | yes              |
+| Sweden_Lund_1933_HG_16         | HG_16        | SRR23876579    | Illumina              | 100.0                  | 976.46         | 36.2          | 54.6             | yes              |
+| Sweden_Lund_1933_HG_17         | HG_17        | SRR23876578    | Illumina              | 3.6                    | 0.73           | 36.4          | 42.9             | no               |
+| Sweden_Lund_1933_HG_18         | HG_18        | SRR23876577    | Illumina              | 2.9                    | 1.23           | 36.3          | 41.4             | no               |
+| Sweden_Lund_1933_HG_19         | HG_19        | SRR23876576    | Illumina              | 4.1                    | 0.90           | 36.3          | 45.2             | no               |
+| Sweden_Lund_1933_HG_20         | HG_20        | SRR23876575    | Illumina              | 100.0                  | 304.74         | 36.3          | 54.6             | yes              |
+| Sweden_Lund_1933_HG_21         | HG_21        | SRR23876573    | Illumina              | 4.0                    | 0.40           | 36.4          | 35.4             | no               |
+| Germany_Passau_1800_HG29702    | HG29702      | SRR23876569    | Illumina              | 5.3                    | 0.58           | 36.5          | 36.1             | no               |
+| Sweden_Lund_1933_HG47203       | HG47203      | SRR23876570    | Illumina              | 100.0                  | 136.47         | 36.4          | 54.1             | yes              |
+| Sweden_Lund_1933_HG47204       | HG47204      | SRR23876571    | Illumina              | 100.0                  | 496.44         | 36.3          | 54.9             | yes              |
+| Sweden_Lund_1933_HG47205       | HG47205      | SRR23876572    | Illumina              | 24.0                   | 2.14           | 35.9          | 45.4             | unclear          |
+| wMelCS_Gulbenkian              | wMelCS       | SRR945468      | Illumina              | 100.0                  | 1290.01        | 24.6          | 55.2             | yes              |
+| wMelCSb_Gulbenkian             | wMelCSb      | SRR10438626    | Illumina              | 100.0                  | 34.80          | 37.3          | 56.8             | yes              |
+| wMel_Donor4Aedes               | wMel_donor   | SRR17978916    | Illumina              | 100.0                  | 53.74          | 35.9          | 56.7             | yes              |
+| wMel_Indiana                   | wMel_Indiana | SRR1645077     | Illumina              | 100.0                  | 388.55         | 35.5          | 56.6             | yes              |
+| wMel1_Gulbenkian               | wMel_run1    | SRR10424182    | Illumina              | 100.0                  | 22.49          | 34.1          | 56.9             | yes              |
+| wMel1_Portugal                 | Re1_full     | #NA            | Oxford Nanopore       | 100.0                  | 13.58          | 24.3          | 58.6             | yes              |
+| wMelCS1_Portugal               | Re3          | #NA            | Oxford Nanopore       | 99.9                   | 19.19          | 24.6          | 58.5             | yes              |
+| wMel2_Portugal                 | Re6_full     | #NA            | Oxford Nanopore       | 100.0                  | 20.14          | 24.3          | 58.3             | yes              |
+| wMelCS2_Portugal               | Re10         | #NA            | Oxford Nanopore       | 100.0                  | 14.61          | 24.6          | 58.3             | yes              |
+| wMel1_Finland                  | Ak7_full     | #NA            | Oxford Nanopore       | 100.0                  | 17.22          | 24.3          | 58.5             | yes              |
+| wMel2_Finland                  | Ak9_full     | #NA            | Oxford Nanopore       | 100.0                  | 25.67          | 24.2          | 58.8             | yes              |
+| wMel_LabStrain_Gulbenkian      | MEL_full     | #NA            | Oxford Nanopore       | 100.0                  | 14.20          | 24.2          | 58.5             | yes              |
+| wMelCS_LabStrain_Gulbenkian    | CS           | #NA            | Oxford Nanopore       | 100.0                  | 15.15          | 24.6          | 58.1             | yes              |
+| wMelCSPOP_LabStrain_Gulbenkian | POP          | #NA            | Oxford Nanopore       | 100.0                  | 49.36          | 24.7          | 58.2             | yes              |
 
-| NewID                          | OriginalID   | NCBI Accession | Sequencing Technology | Reference Coverage \[\%\] | Mean ReadDepth | Mean BaseQual | Mean MappingQual |
-| ------------------------------ | ------------ | -------------- | --------------------- | ------------------------- | -------------- | ------------- | ---------------- |
-| Sweden_Lund_1800_376           | 376          | SRR23876563    | Illumina              | 30.6                      | 4.26           | 36.3          | 50.7             |
-| Sweden_Lund_1800_377           | 377          | SRR23876584    | Illumina              | 94.8                      | 45.19          | 36.3          | 54.3             |
-| Sweden_Lund_1800_378           | 378          | SRR23876583    | Illumina              | 88.5                      | 51.17          | 36.3          | 53.9             |
-| Sweden_Lund_1800_380           | 380          | SRR23876582    | Illumina              | 15.4                      | 2.10           | 36.3          | 49               |
-| Sweden_Lund_1933_HG0021        | HG0021       | SRR23876586    | Illumina              | 3.8                       | 0.72           | 36.4          | 36.8             |
-| Sweden_Lund_1933_HG0025        | HG0025       | SRR23876585    | Illumina              | 0.9                       | 0.16           | 36.3          | 42               |
-| Sweden_Lund_1933_HG0026        | HG0026       | SRR23876567    | Illumina              | 99.8                      | 194.82         | 36.3          | 54.3             |
-| Sweden_Lund_1933_HG0027        | HG0027       | SRR23876574    | Illumina              | 33.3                      | 5.43           | 35.9          | 55               |
-| Sweden_Lund_1933_HG0028        | HG0028       | SRR23876568    | Illumina              | 5.2                       | 1.92           | 36.3          | 42.6             |
-| Denmark_Zealand_1800_HG0029    | HG0029       | SRR23876565    | Illumina              | 23.7                      | 4.31           | 36.1          | 46.5             |
-| Sweden_Lund_1800_HG0034        | HG0034       | SRR23876564    | Illumina              | 56.8                      | 19.09          | 36.3          | 53.9             |
-| Sweden_Smaland_1800_HG0035     | HG0035       | SRR23876566    | Illumina              | 5.7                       | 1.67           | 36.3          | 50.8             |
-| Germany_Passau_1800_HG_09      | HG_09        | SRR23876562    | Illumina              | 99.9                      | 217.00         | 36.3          | 54.7             |
-| Sweden_Lund_1933_HG_14         | HG_14        | SRR23876581    | Illumina              | 3.2                       | 0.86           | 36.4          | 43.3             |
-| Sweden_Lund_1933_HG_15         | HG_15        | SRR23876580    | Illumina              | 100.0                     | 723.38         | 36.3          | 55               |
-| Sweden_Lund_1933_HG_16         | HG_16        | SRR23876579    | Illumina              | 100.0                     | 976.46         | 36.2          | 54.6             |
-| Sweden_Lund_1933_HG_17         | HG_17        | SRR23876578    | Illumina              | 3.6                       | 0.73           | 36.4          | 42.9             |
-| Sweden_Lund_1933_HG_18         | HG_18        | SRR23876577    | Illumina              | 2.9                       | 1.23           | 36.3          | 41.4             |
-| Sweden_Lund_1933_HG_19         | HG_19        | SRR23876576    | Illumina              | 4.1                       | 0.90           | 36.3          | 45.2             |
-| Sweden_Lund_1933_HG_20         | HG_20        | SRR23876575    | Illumina              | 100.0                     | 304.74         | 36.3          | 54.6             |
-| Sweden_Lund_1933_HG_21         | HG_21        | SRR23876573    | Illumina              | 4.0                       | 0.40           | 36.4          | 35.4             |
-| Germany_Passau_1800_HG29702    | HG29702      | SRR23876569    | Illumina              | 5.3                       | 0.58           | 36.5          | 36.1             |
-| Sweden_Lund_1933_HG47203       | HG47203      | SRR23876570    | Illumina              | 100.0                     | 136.47         | 36.4          | 54.1             |
-| Sweden_Lund_1933_HG47204       | HG47204      | SRR23876571    | Illumina              | 100.0                     | 496.44         | 36.3          | 54.9             |
-| Sweden_Lund_1933_HG47205       | HG47205      | SRR23876572    | Illumina              | 24.0                      | 2.14           | 35.9          | 45.4             |
-| wMelCS_Gulbenkian              | wMelCS       | SRR945468      | Illumina              | 100.0                     | 1290.01        | 24.6          | 55.2             |
-| wMelCSb_Gulbenkian             | wMelCSb      | SRR10438626    | Illumina              | 100.0                     | 34.80          | 37.3          | 56.8             |
-| wMel_Donor4Aedes               | wMel_donor   | SRR17978916    | Illumina              | 100.0                     | 53.74          | 35.9          | 56.7             |
-| wMel_Indiana                   | wMel_Indiana | SRR1645077     | Illumina              | 100.0                     | 388.55         | 35.5          | 56.6             |
-| wMel1_Gulbenkian               | wMel_run1    | SRR10424182    | Illumina              | 100.0                     | 22.49          | 34.1          | 56.9             |
-| wMel1_Portugal                 | Re1_full     | #NA            | Oxford Nanopore       | 100.0                     | 13.58          | 24.3          | 58.6             |
-| wMelCS1_Portugal               | Re3          | #NA            | Oxford Nanopore       | 99.9                      | 19.19          | 24.6          | 58.5             |
-| wMel2_Portugal                 | Re6_full     | #NA            | Oxford Nanopore       | 100.0                     | 20.14          | 24.3          | 58.3             |
-| wMelCS2_Portugal               | Re10         | #NA            | Oxford Nanopore       | 100.0                     | 14.61          | 24.6          | 58.3             |
-| wMel1_Finland                  | Ak7_full     | #NA            | Oxford Nanopore       | 100.0                     | 17.22          | 24.3          | 58.5             |
-| wMel2_Finland                  | Ak9_full     | #NA            | Oxford Nanopore       | 100.0                     | 25.67          | 24.2          | 58.8             |
-| wMel_LabStrain_Gulbenkian      | MEL_full     | #NA            | Oxford Nanopore       | 100.0                     | 14.20          | 24.2          | 58.5             |
-| wMelCS_LabStrain_Gulbenkian    | CS           | #NA            | Oxford Nanopore       | 100.0                     | 15.15          | 24.6          | 58.1             |
-| wMelCSPOP_LabStrain_Gulbenkian | POP          | #NA            | Oxford Nanopore       | 100.0                     | 49.36          | 24.7          | 58.2             |
 
 ![Wolb](output/BlobTools/HG_14_blob.svg)
 ![Wolb](output/BlobTools/HG_16_blob.svg)

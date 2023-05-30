@@ -74,6 +74,11 @@ ggsave("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/ReadDepths/W
     width=16,
     height=12)
 
+ggsave("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/ReadDepths/WolbStringent_1kb.png",
+    PLOT,
+    width=16,
+    height=12)
+
 ''' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/ReadDepths/WolbStringent_1kb.r
 
 Rscript /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/ReadDepths/WolbStringent_1kb.r
@@ -101,4 +106,7 @@ for i in ${!Samples[*]}; do
 
 done
 
-sed 's/\t/|/g' /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_coverages.txt | awk '{print "|"$0"|"}' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Wolb_coverages.txt
+mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/ReadDepths
+
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/ReadDepths/WolbStringent_1kb.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/ReadDepths
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/ReadDepths/WolbStringent_1kb.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/ReadDepths

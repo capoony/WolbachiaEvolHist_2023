@@ -103,7 +103,7 @@ for ID in 376 377 378 HG_09 HG_15 HG_16 HG_20 HG0026 HG0027 HG0029 HG0034 HG4720
 
 done
 
-for ID in 376 377 378 HG_09 HG_15 HG_16 HG_20 HG0026 HG0027 HG0029 HG0034 HG47203 HG47204 HG47205 Re1_full Re3 Re6_full Re10 Ak7_full Ak9_full MEL_full CS POP; do
+for ID in 380; do
 
     i=/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/${ID}.bam
     samtools coverage $i | awk -v ID=$ID 'NR>1{print ID"\t"$0}' >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.txt
