@@ -30,6 +30,14 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/mapReads.sh
 
 # sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/subsetBAM.sh
 
+## investigate the distribution of read depths along the reference
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/readdepths.sh
+
+## calculate the relative titer for all strains
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/titer.sh
+
 ## SNP calling
 
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/SNPcalling.sh

@@ -67,7 +67,7 @@ In this study we took advantage of a recently published genomic dataset of 25 mu
 
 #### 3.1 _Wolbachia_ infections in historic samples
 
-As a first step, we classified the sequenced _Drosophila_ samples as infected or uninfected based on reference mapping. We found that read-depths of reads mapping to the _Wolbachia_ reference varied dramatically between bascially zero-fold to a thousand-fold read-depths across samples (see Table 1). Similarly, we observed large variations in the proprortion of the reference sequence covered by reads range from as low as 0.9% to 100%. Based on these results, we qualitatively classified 10 historic samples as uninfected (<15% covered by reads and <2-fold average read depth) with very low coverage which could be due to non-specific mapping and 10 historic samples as infected (>50% covered by reads and >10-fold average read depth). Besides these two types,we identified five samples, which were charcterized 
+As a first step, we classified the sequenced _Drosophila_ samples as infected or uninfected based on reference mapping. We found that read-depths of reads mapping to the _Wolbachia_ reference varied dramatically between bascially zero-fold to a thousand-fold read-depths across samples (see Table 1). Similarly, we observed large variations in the proprortion of the reference sequence covered by reads range from as low as 0.9% to 100%. Based on these results, we qualitatively classified 10 historic samples as uninfected (<15% covered by reads and <2-fold average read depth) with very low coverage which could be due to non-specific mapping and 10 historic samples as infected (>50% covered by reads and >10-fold average read depth). Besides these two types,we identified five samples with uncertain infection status, which were characterized by read-depths > 2-fold which covered only parts (15-30%) of the reference genome. We found that these samples were further characterized by very low relative Wolbachia titer
 
 >**Table 1.** Table showing Sample ID's, NCBI SRA accession numbers and sequencing technology used for the data generation of samples used in this study. Additionally, this table includes summary statistics for raw reads mapped against the wMel reference genome (ENA|AE017196|AE017196.1) and provides the proportion of the total reference sequence that is covered by reads, the mean read depth, the mean base-quality and the mean mapping-quality of each sample.
 
@@ -114,8 +114,11 @@ As a first step, we classified the sequenced _Drosophila_ samples as infected or
 | wMelCSPOP_LabStrain_Gulbenkian | POP          | #NA            | Oxford Nanopore       | 100.0                  | 49.36          | 24.7          | 58.2             | yes              |
 
 
-![Wolb](output/BlobTools/HG_14_blob.svg)
-![Wolb](output/BlobTools/HG_16_blob.svg)
+#![Wolb](output/BlobTools/HG_14_blob.svg)
+#![Wolb](output/BlobTools/HG_16_blob.svg)
+
+![Full_cov](output/titer/Full_coverages.png)
+![CovDist](output/ReadDepths/WolbStringent_1kb.png)
 
 #### 3.2 DeNovo Assemblies
 
