@@ -73,7 +73,8 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointR
     Wolbachia \
     0.5 \
     8 \
-    5
+    5 \
+    yes
 
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.vcf.gz \
@@ -84,12 +85,14 @@ python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
     >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_full.phy
 
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo.sh \
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red.phy \
     Wolbachia \
-    wYak \
-    0.5
+    0.8 \
+    12 \
+    5 \
+    yes
 
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_red.pdf
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_red.png

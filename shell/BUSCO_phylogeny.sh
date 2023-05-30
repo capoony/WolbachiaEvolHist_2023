@@ -176,10 +176,10 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointR
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2 \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna.fa \
     Wolbachia \
-    wYak \
     0.0001 \
     8 \
-    5
+    5 \
+    yes
 
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2_noOut \
@@ -187,7 +187,8 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointR
     Wolbachia \
     0.0001 \
     8 \
-    5
+    5 \
+    yes
 
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_BUSCO.pdf
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_BUSCO.png
