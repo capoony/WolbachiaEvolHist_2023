@@ -69,8 +69,10 @@ for l in load_data(options.IN):
     if a[1] == "mitochondrion_genome":
         MitoDepth[a[0]] = float(a[-3])
 
-print("ID\tType\tWType\tStatus\tAut\tX\tMito\tWolb\tWolbCov\tWolbTiter")
+print("ID\tType\tWolbachiaType\tInfectionStatus\tAut\tX\tMito\tWolb\tWolbCov\tWolbTiter")
 for k in sorted(list(Aut.keys())):
+    if k not in NAME:
+        continue
     if k in ONT:
         Type = "Recent"
     else:

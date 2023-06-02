@@ -127,10 +127,10 @@ DATA=read.table('/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/map
 color <- c('blue3', 'firebrick3','black')
 
 
-DATA\$WType <- factor(DATA\$WType, levels=c('wMel','wMelCS','wMelPop'))
+DATA\$WolbachiaType <- factor(DATA\$WolbachiaType, levels=c('wMel','wMelCS','wMelPop'))
 
 PLOT<-ggplot(DATA,
-    aes(x=reorder(ID, WolbTiter),fill=WType,y=WolbTiter,col=Status))+
+    aes(x=reorder(ID, WolbTiter),fill=WolbachiaType,y=WolbTiter,col=InfectionStatus))+
     geom_bar(stat='identity')+
     facet_grid(.~Type,scales='free_x',space='free_x')+
     scale_fill_manual(values=color)+

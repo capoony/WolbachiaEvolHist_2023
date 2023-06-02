@@ -127,10 +127,14 @@ As a first step, we classified the sequenced _Drosophila_ samples as infected or
 
 #### 3.3 _Wolbachia_ phylogeny
 
-##### 3.3.1 Candidate genes
+##### 3.3.1 Classification with diagnostic SNPs
+
+![Diagnostic](output/Variants/variants_variants.png)
+
+##### 3.3.2 Candidate genes
 ![BUSCO_Phylo](output/Phylogeny/Wolbachia_BUSCO.png)
 
-##### 3.3.2 SNP-based
+##### 3.3.3 SNP-based
 
 _Wolbachia_ 
 
@@ -140,7 +144,7 @@ Mitochondira
 
 ![Mito_SNPs](output/Phylogeny/Mitochondria_SNPs_full.png)
 
-##### 3.3.3 Tanglegram
+##### 3.4 Tanglegram
 
 ![Tanglegram](output/Phylogeny/Tanglegram.png)
 

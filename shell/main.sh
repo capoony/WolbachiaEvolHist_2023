@@ -70,3 +70,11 @@ for i in ${!Samples[*]}; do
 done
 
 gzip /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/genomes/*/*.fa*
+
+cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023
+
+pandoc \
+    -f markdown \
+    -t docx \
+    -o /media/inter/mkapun/projects/WolbachiaEvolHist_2023/WolbEvolHist_2023.docx \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/README.md
