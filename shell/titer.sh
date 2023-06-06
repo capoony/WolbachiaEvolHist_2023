@@ -138,10 +138,9 @@ PLOT<-ggplot(DATA,
     ylab('relative Wolbachia titer')+
     theme_bw()+
     geom_hline(yintercept=1,lty=2)+
-    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
-    # scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
-    #     labels = trans_format("log10", math_format(10^.x))) +
-    # annotation_logticks(sides="l")  
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))+
+    scale_y_log10(breaks = trans_breaks(\"log10\", function(x) 10^x)) +
+    annotation_logticks(sides=\"l\")  
 
 
 ggsave('/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.pdf',
