@@ -3,12 +3,16 @@
 mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full
 module load NGSmapper/bwa-0.7.13
 
+## add Burkholderia to Hologenome
+
+cat /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/holo_dmel_6.12.fa.gz \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Burkholderia_cenocepacia.fna.gz \
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/holo_dmel_6.12+Burkh.fa.gz
+
 ## index reference
-bwa index /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/holo_dmel_6.12.fa.gz
+bwa index /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/holo_dmel_6.12+Burkh.fa.gz
 
-for ID in 376 377 378 HG_09 HG_15 HG_16 HG_20 HG0026 HG0027 HG0029 HG0034 HG47203 HG47204 HG47205; do
-
-for ID in 380 HG_14 HG_17 HG_18 HG_19 HG_21 HG0021 HG0025 HG0028 HG0035 HG29702 HG47203 ; do
+for ID in 376 377 378 HG_09 HG_15 HG_16 HG_20 HG0026 HG0027 HG0029 HG0034 HG47203 HG47204 HG47205 380 HG_14 HG_17 HG_18 HG_19 HG_21 HG0021 HG0025 HG0028 HG0035 HG29702 HG47203; do
 
     echo """
     #!/bin/sh
@@ -36,7 +40,7 @@ for ID in 380 HG_14 HG_17 HG_18 HG_19 HG_21 HG0021 HG0025 HG0028 HG0035 HG29702 
 
     bwa mem \
         -t 100 \
-        /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/holo_dmel_6.12.fa.gz \
+        /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/holo_dmel_6.12+Burkh.fa.gz \
         /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads/${ID}_1.fastq.gz \
         /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads/${ID}_2.fastq.gz |
         samtools view  -F 4 -bh | samtools sort \
@@ -79,7 +83,7 @@ for i in ${!Samples[*]}; do
 
     minimap2 -ax map-ont \
         -t 100 \
-        /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/holo_dmel_6.12.fa.gz \
+        /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/holo_dmel_6.12+Burkh.fa.gz \
         /media/inter/mkapun/projects/DrosoWolbGenomics/results/assemblies/${Sample}/data/ONT/${Sample}_ont.fq.gz |
         samtools view -bh | samtools sort \
         >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/${Sample}.bam
@@ -109,7 +113,6 @@ for ID in HG_14 HG_17 HG_18 HG_19 HG_21 HG0021 HG0025 HG0028 HG0035 HG29702 HG47
     samtools coverage $i | awk -v ID=$ID 'NR>1{print ID"\t"$0}' >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.txt &
 
 done
-
 
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/SumReadDepths.py \
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.txt \
