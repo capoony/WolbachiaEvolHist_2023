@@ -77,7 +77,7 @@ module load Tools/samtools-1.12
 
 bwa mem \
     -t 100 \
-    /media/inter/mkapun/projects/DrosoWolbGenomics/data/AE017196.1_wMel.fa \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolb_Burkholderia.fna.gz \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads/wYak-pe100-reads1_p33.fq.gz \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads/wYak-pe100-reads2_p33.fq.gz |
     samtools view -F 4 -bh | samtools sort \
