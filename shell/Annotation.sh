@@ -136,7 +136,8 @@ echo '''
 library(tidyverse)
 
 DATA=read.table("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Annotation/Summary.txt",
-  header=T)
+  header=T,
+  sep="\t")
 
 DATA.wide <- DATA %>% 
   spread(ID,Type)
@@ -174,3 +175,7 @@ ggsave("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/busco/Annotat
 ''' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/busco/Annotation.r
 
 Rscript /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/busco/Annotation.r
+
+python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/GeneFunctFromGFF.py \
+  --gff /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/db/GCF_000008025.1/genomic.gff \
+  >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/busco/function.txt
