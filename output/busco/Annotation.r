@@ -3,7 +3,8 @@
 library(tidyverse)
 
 DATA=read.table("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Annotation/Summary.txt",
-  header=T)
+  header=T,
+  sep="\t")
 
 DATA.wide <- DATA %>% 
   spread(ID,Type)

@@ -39,7 +39,7 @@ for l in load_data(options.EN):
     NAME[a[0]] = a[1]
 
 GenePos=d(tuple)
-
+Function = d(str)
 for l in load_data(options.GFF):
     if l.startswith("#"):
         continue
@@ -49,11 +49,14 @@ for l in load_data(options.GFF):
     Start=a[3]
     End=a[4]
     GENE="W"+a[-1].split("cds-W")[1].split(";")[0]
+    PROD = a[-1].split("product=")[1].split(";")[0]
     GenePos[GENE]=(Start,End)
+    Function[GENE]=PROD
     #print(GENE, Start, End)
 
 START=0
 Type=d(str)
+
 for l in load_data(options.IN):
     if l.strip()=="":
         continue
@@ -119,6 +122,7 @@ for l in load_data(options.IN):
 
 for k,v in sorted(GenePos.items()):
     if k in Type:
-        print(NAME[options.NA],k,"\t".join(v),Type[k],sep="\t")
+        print(NAME[options.NA], k, "\t".join(
+            v), Type[k], sep="\t")
     else:
         print(NAME[options.NA],k,"\t".join(v),"Missing",sep="\t")
