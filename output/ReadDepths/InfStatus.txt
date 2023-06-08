@@ -3,13 +3,13 @@ Sweden_Lund_1800_377	yes
 Sweden_Lund_1800_378	yes
 Sweden_Lund_1800_380	unclear
 Sweden_Lund_1933_HG0021	no
-Sweden_Lund_1933_HG0025	no
+Sweden_Lund_1933_HG0025	unclear
 Sweden_Lund_1933_HG0026	yes
 Sweden_Lund_1933_HG0027	unclear
 Sweden_Lund_1933_HG0028	no
 Denmark_Zealand_1800_HG0029	unclear
 Sweden_Lund_1800_HG0034	yes
-Sweden_Smaland_1800_HG0035	no
+Sweden_Smaland_1800_HG0035	unclear
 Germany_Passau_1800_HG_09	yes
 Sweden_Lund_1933_HG_14	no
 Sweden_Lund_1933_HG_15	yes
