@@ -41,6 +41,15 @@ conda activate busco_5.2.2
 python3.9 /opt/anaconda3/envs/busco_5.2.2/bin/generate_plot.py \
     -wd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_summaries
 
+cp /media/inter/mkapun/projects/DrosoWolbGenomics/results/assemblies/*/results/AssemblyQC/Busco/*/short_summary.specific.rickettsiales_odb10.*.txt /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_summaries_red
+
+python3.9 /opt/anaconda3/envs/busco_5.2.2/bin/generate_plot.py \
+    -wd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_summaries_red
+
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_summaries_red/busco_figure.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/busco/busco_figure_red.pdf
+
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_summaries_red/busco_figure.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/busco/busco_figure_red.png
+
 ## Wolb Spec stats for 
 
 

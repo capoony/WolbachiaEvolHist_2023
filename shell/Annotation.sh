@@ -64,8 +64,6 @@ done
 Spec=(Re1_full Re3 Re6_full Re10 Ak7_full Ak9_full MEL_full CS POP)
 Names=(Portugal_wMel_Re1 Portugal_wMelCS_Re3 Portugal_wMel_Re6 Portugal_wMelCS_Re10 Finland_wMel_AK7 Finland_wMel_AK9 w1118_wMel w1118_wMelCS w1118_wMelPop)
 
-Species=POP
-Name=w1118_wMelPop
 for i in ${!Spec[*]}; do
   Species=${Spec[i]}
   Name=${Names[i]}
@@ -96,9 +94,10 @@ for i in ${!Spec[*]}; do
 
     mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Annotation/${Species}
 
+    gunzip /media/inter/mkapun/projects/DrosoWolbGenomics/Output/Genomes/${Name}.fasta.gz 
     exonerate \
         /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/db/GCF_000008025.1_ASM802v1_protein.faa \
-        /media/inter/mkapun/projects/DrosoWolbGenomics/results/WolbGenomes/${Name}/nucmer/${Name}.fasta \
+        /media/inter/mkapun/projects/DrosoWolbGenomics/Output/Genomes/${Name}.fasta \
         --showtargetgff \
         --showalignment  \
         --showvulgar \
@@ -108,6 +107,8 @@ for i in ${!Spec[*]}; do
         --bestn 1 \
         --ryo \">${Species}_%qi_%qd_%ti_(%tab-%tae)\n%tas\n\" \
       >> /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Annotation/${Species}/${Species}_genes.full
+
+    gzip /media/inter/mkapun/projects/DrosoWolbGenomics/Output/Genomes/${Name}.fasta
 
     python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/parseExonerate.py \
       --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Annotation/${Species}/${Species}_genes.full \
@@ -138,6 +139,52 @@ library(tidyverse)
 DATA=read.table("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Annotation/Summary.txt",
   header=T,
   sep="\t")
+
+DATA$Type<-factor(DATA$Type,levels=c("Complete", "Incomplete", "FrameShift", 
+            "PrematureStop", "Missing"))
+
+# DATA$ID<-factor(DATA$ID, levels = rev(c(
+#   "377", "378", "HG_09", "HG_15", "HG_16", "HG_20", "HG0026", "HG0034", "HG47203", "HG47204", "Ak7_full", "Ak9_full", "Re1_full", "Re6_full", "MEL_full", "Re3", "Re10", "CS", "POP"
+# )))
+
+DATA.prop <- DATA %>%
+filter(!"-" %in% Gene) %>%
+  group_by(ID,Type) %>%
+  summarise(Mean=n()) 
+
+my_colors <- c("#56B4E9", 
+"#F0E442",
+  "orange", 
+  "purple",
+  "#F04442")
+
+PLOT <- ggplot(DATA.prop,aes(x=fct_rev(ID),y=Mean,fill=Type))+
+   geom_bar(position="fill", stat="identity")+
+  coord_flip()+
+  scale_fill_manual(values = my_colors, labels = c(
+    " Complete ",
+    " Fragmented",
+    " Frame Shifted",
+    " Premature Stop",    
+    " Missing"
+  ))+ 
+  ylab("Proportion")+
+  xlab("")+
+  theme_bw()+
+  scale_y_continuous(breaks=seq(0, 1, 0.1))+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) 
+
+
+ggsave("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/busco/Annotation_prop.pdf",
+  PLOT,
+  width=10,
+  height=4)
+
+ggsave("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/busco/Annotation_prop.png",
+  PLOT,
+  width=10,
+  height=4)
+
 
 DATA.wide <- DATA %>% 
   spread(ID,Type)
