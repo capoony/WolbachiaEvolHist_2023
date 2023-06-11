@@ -107,6 +107,17 @@ do
 
 done </media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/newDATA.txt
 
+DBNAME=/media/scratch/kraken-2.1.2/db/Wolbachia
+
+kraken2 \
+    --threads 100 \
+    --gzip-compressed \
+    --report /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken/DGRP335.report \
+    --use-names \
+    --db $DBNAME \
+    --classified-out /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken/DGRP335.fq \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads/DGRP335.fastq.gz >/dev/null
+
 cat /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/holo_dmel_6.12_newWolb.fa.gz \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Burkholderia_cenocepacia.fna.gz \
     /media/inter/mkapun/projects/DrosoWolbGenomics/data/AE017196.1_wMel.fa.gz \
@@ -159,6 +170,13 @@ do
 
 done </media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/newDATA.txt
 
+bwa mem \
+    -t 50 \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/holo_dmel_6.12_newWolb_Burk.fa.gz \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads/DGRP335.fastq.gz |
+    samtools view -F 4 -bh | samtools sort \
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/DGRP335.bam
+
 while
     IFS=','
     read -r ID GROUP SRR
@@ -180,21 +198,66 @@ do
     #PBS -l walltime=100:00:00
 
     ## Select a maximum of 20 cores and 500gb of RAM
-    #PBS -l select=1:ncpus=1:mem=300gb
+    #PBS -l select=1:ncpus=50:mem=300gb
 
     ### dependenceies
 
-
+    module load NGSmapper/bwa-0.7.13
+    module load NGSmapper/minimap2-2.17
     module load Tools/samtools-1.12
 
-    samtools view -bh 'ENA|AE017196|AE017196.1' /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/${ID}.bam \
-    > /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping/${ID}.bam
+    # bwa mem \
+    #     -t 50 \
+    #     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolb_Burkholderia.fna.gz \
+    #     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken/${ID}_1.fq.gz \
+    #     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken/${ID}_2.fq.gz |
+    #     samtools view  -F 4 -bh | samtools sort \
+    #     >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping/${ID}.bam
 
-""" >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/filter_${ID}.qsub
+    samtools index /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping/${ID}.bam
+    #echo /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping/${ID}.bam >> /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/bamlist_Wolb.txt
 
-    qsub /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/filter_${ID}.qsub
 
-done
+    """ >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/${ID}_mapping.qsub
+
+    qsub /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/${ID}_mapping.qsub
+
+done </media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/newDATA.txt
+
+DGRP335
+
+bwa mem \
+    -t 50 \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolb_Burkholderia.fna.gz \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken/DGRP335.fq.gz |
+    samtools view -F 4 -bh | samtools sort \
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping/DGRP335.bam
+
+samtools index /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping/DGRP335.bam
+
+echo /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping/DGRP335.bam >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/bamlist_Wolb.txt
+
+while
+    IFS=','
+    read -r ID GROUP SRR
+do
+    module load Tools/samtools-1.12
+
+    samtools index /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping/${ID}.bam
+
+done </media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/newDATA.txt
+
+while
+    IFS=','
+    read -r ID GROUP SRR
+do
+    module load Tools/samtools-1.12
+
+    samtools index /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping/${ID}.bam
+
+    #echo /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping/${ID}.bam >> /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/bamlist_Wolb.txt
+
+done </media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/newDATA.txt
 
 for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken_mito/*_1.fq.gz; do
     tmp=${i##*/}

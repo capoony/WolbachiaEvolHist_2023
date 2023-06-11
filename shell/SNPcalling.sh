@@ -67,10 +67,10 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointR
     0.8 \
     12 \
     5 \
-    no
+    yes
 
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.vcf.gz \
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_new.vcf.gz \
     --MinAlt 1 \
     --MaxPropGaps 0.5 \
     --MinCov 5 \
@@ -82,9 +82,9 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointR
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red_noOut \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red_noOut.phy \
     Wolbachia \
-    0.5 \
+    0.1 \
     8 \
-    5 \
+    8 \
     no
 
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \

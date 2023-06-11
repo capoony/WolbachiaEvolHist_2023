@@ -152,4 +152,4 @@ for i in header:
     if TEST == "":
         print(len(GTs.keys()), len(PL))
         TEST = 1
-    print(NAME[i]+"\t"+"".join(PL))
+    print(i+"\t"+"".join(PL))
