@@ -176,7 +176,7 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointR
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2 \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna.fa \
     Wolbachia \
-    0.0001 \
+    0.00015 \
     8 \
     5 \
     yes
