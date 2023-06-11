@@ -83,5 +83,5 @@ for k in sorted(list(Aut.keys())):
         WType = "wMelPop"
     else:
         WType = "wMelCS"
-    print(NAME[k], Type, WType, STATUS[NAME[k]], str(sum(Aut[k])/len(Aut[k])), str(X[k]), str(MitoDepth[k]), str(
+    print(k, Type, WType, STATUS[NAME[k]], str(sum(Aut[k])/len(Aut[k])), str(X[k]), str(MitoDepth[k]), str(
         WolDepth[k]), str(WolCov[k]), str(WolDepth[k]/(sum(Aut[k])/len(Aut[k]))), sep="\t")
