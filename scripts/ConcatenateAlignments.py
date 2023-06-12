@@ -81,7 +81,7 @@ for Tax, v in sorted(SeqHash.items()):
             Seq.extend(v[Gene])
     if len(list(set(Seq))) == 1 and list(set(Seq))[0] == "N":
         continue
-    print(">" + NAME[Tax])
+    print(">" + Tax)
     print("".join(Seq))
 
 Gout = open(options.GL, "wt")
