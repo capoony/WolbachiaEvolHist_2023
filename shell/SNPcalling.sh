@@ -56,7 +56,7 @@ python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py
     --MinAlt 1 \
     --MaxPropGaps 0.5 \
     --MinCov 5 \
-    --exclude 377,378,380,HG0029,HG0027,HG0034,wMelCSPOP2,wMelCSPOP,wMelOctoless,wMel_run2,wMel_run3 \
+    --exclude 377,378,380,HG0029,HG0027,HG0034 \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
     >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red.phy
 
@@ -74,7 +74,7 @@ python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py
     --MinAlt 1 \
     --MaxPropGaps 0.5 \
     --MinCov 5 \
-    --exclude 377,378,380,HG0029,HG0027,HG0034,wMelCSPOP2,wMelCSPOP,wMelOctoless,wMel_run2,wMel_run3,wYak \
+    --exclude 377,378,380,HG0029,HG0027,HG0034,wYak \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
     >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red_noOut.phy
 
@@ -157,7 +157,8 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointR
     Mitchondria \
     0.3 \
     8 \
-    5
+    8 \
+    no
 
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito.vcf.gz \
@@ -174,7 +175,8 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointR
     Mitchondria \
     0.3 \
     8 \
-    5
+    8 \
+    no
 
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito/Mitchondria.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Mitochondria_SNPs_full.pdf
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito/Mitchondria.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Mitochondria_SNPs_full.png

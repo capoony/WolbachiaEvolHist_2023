@@ -2,14 +2,8 @@
 
 mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram
 
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito.phy \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram
-
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red2.phy \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram
-
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/IntersectPhy.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito.phy,/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red2.phy \
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito_noOut.phy,/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red_noOut.phy \
     --names MITO,WOLB \
     --output /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram/
 
@@ -31,7 +25,7 @@ raxmlHPC-PTHREADS-SSE3 \
 
 raxmlHPC-PTHREADS-SSE3 \
     -m GTRCAT \
-    -N 2 \
+    -N 100 \
     -p 772374015 \
     -b 444353738 \
     -n bootrep_snps \
@@ -63,7 +57,7 @@ raxmlHPC-PTHREADS-SSE3 \
 
 raxmlHPC-PTHREADS-SSE3 \
     -m GTRCAT \
-    -N 2 \
+    -N 100 \
     -p 772374015 \
     -b 444353738 \
     -n bootrep_snps \
@@ -84,12 +78,7 @@ library(dendextend)
 library(phylogram) # to make dendrograms from non-ultrametric trees
 library(ape) # to import NEXUS and to plot co-phyloplots
 
-Tree.Wol<-root(read.tree("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram/phylogeny_wolb/RAxML_bestTree.Wolb_snps"),
-    outgroup=c("wMel1_Portugal",
-    "wMel2_Portugal",
-    "wMel1_Finland",
-    "wMel2_Finland",
-    "wMel_LabStrain_Gulbenkian"))
+Tree.Wol<-midpoint.root(read.tree("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram/phylogeny_wolb/RAxML_bestTree.Wolb_snps"))
 
 Wol.ultra=as.dendrogram(chronos(Tree.Wol, lambda=0) )
 # Wol.unmatched <- as.dendrogram(multi2di(Wol.ultra, random=TRUE) )
@@ -105,12 +94,24 @@ Mito.ultra=as.dendrogram(chronos(Tree.Mito, lambda=0) )
 dndlist<-dendlist("Wolbachia"=Wol.ultra,"Mitochondria"=Mito.ultra)
 
 pdf("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram/Tanglegram.pdf",
-    width=12,
+    width=10,
     height=6)
 dndlist %>% untangle(method = "step1side") %>% 
     tanglegram(common_subtrees_color_branches = TRUE, 
         highlight_branches_lwd = FALSE,
-        margin_inner = 15,
+        margin_inner = 5,
+        edge.lwd=3)
+dev.off()
+
+png("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram/Tanglegram.png",
+    width=10,
+    height=6,
+    units="in",
+    res=300)
+dndlist %>% untangle(method = "step1side") %>% 
+    tanglegram(common_subtrees_color_branches = TRUE, 
+        highlight_branches_lwd = FALSE,
+        margin_inner = 5,
         edge.lwd=3)
 dev.off()
 

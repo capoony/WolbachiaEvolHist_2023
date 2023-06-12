@@ -118,6 +118,17 @@ kraken2 \
     --classified-out /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken/DGRP335.fq \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads/DGRP335.fastq.gz >/dev/null
 
+DBNAME=/media/scratch/kraken-2.1.2/db/MitoDmel
+
+kraken2 \
+    --threads 100 \
+    --gzip-compressed \
+    --report /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken_mito/DGRP335.report \
+    --use-names \
+    --db $DBNAME \
+    --classified-out /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken_mito/DGRP335.fq \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads/DGRP335.fastq.gz >/dev/null
+
 cat /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/holo_dmel_6.12_newWolb.fa.gz \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Burkholderia_cenocepacia.fna.gz \
     /media/inter/mkapun/projects/DrosoWolbGenomics/data/AE017196.1_wMel.fa.gz \
@@ -259,11 +270,11 @@ do
 
 done </media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/newDATA.txt
 
-for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken_mito/*_1.fq.gz; do
-    tmp=${i##*/}
-    ID=${tmp%_*}
+while
+    IFS=','
+    read -r ID GROUP SRR
+do
     echo ${ID}
-    ID=wMelOctoless
     echo """
     #!/bin/sh
 
@@ -291,13 +302,23 @@ for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken_mito
     bwa mem \
         -t 20 \
         /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/db/NC_024511.2_start.fasta \
-        /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken/${ID}_1.fq.gz \
-        /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken/${ID}_2.fq.gz |
+        /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken_mito/${ID}_1.fq.gz \
+        /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken_mito/${ID}_2.fq.gz |
         samtools view -F 4 -bh | samtools sort \
         >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_mito/${ID}.bam
+
+    # echo /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_mito/${ID}.bam \
+    # >>  /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/bamlist_Mito.txt
 
     """ >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/${ID}_mapping_mito.qsub
 
     qsub /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/${ID}_mapping_mito.qsub
 
-done
+done </media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/newDATA.txt
+
+bwa mem \
+    -t 20 \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/db/NC_024511.2_start.fasta \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken_mito/DGRP335.fq.gz |
+    samtools view -F 4 -bh | samtools sort \
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_mito/DGRP335.bam
