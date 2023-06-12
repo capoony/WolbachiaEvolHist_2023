@@ -102,16 +102,6 @@ cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_re
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red_noOut/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_red_noOut.pdf
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red_noOut/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_red_noOut.png
 
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo.sh \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_full \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_full.phy \
-    Wolbachia \
-    wYak \
-    0.5
-
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_full/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_full.pdf
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_full/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_full.png
-
 ### for Mitochondria
 
 for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_mito/*.bam; do
