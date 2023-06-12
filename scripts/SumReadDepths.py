@@ -79,6 +79,8 @@ for k in sorted(list(Aut.keys())):
         Type = "Museum"
     if "full" in k:
         WType = "wMel"
+    elif STATUS[NAME[k]]=="uninfected":
+        WType = "None"
     elif k == "POP":
         WType = "wMelPop"
     else:

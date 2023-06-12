@@ -121,10 +121,10 @@ library(scales)
 DATA=read.table('/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.summary',
     header=T)
 
-color <- c('blue3', 'firebrick3','black')
+color <- c('blue3', 'firebrick3','black','white')
 
 
-DATA\$WolbachiaType <- factor(DATA\$WolbachiaType, levels=c('wMel','wMelCS','wMelPop'))
+DATA\$WolbachiaType <- factor(DATA\$WolbachiaType, levels=c('wMel','wMelCS','wMelPop','None'))
 
 PLOT<-ggplot(DATA,
     aes(x=reorder(ID, WolbTiter),fill=WolbachiaType,y=WolbTiter,col=InfectionStatus))+
