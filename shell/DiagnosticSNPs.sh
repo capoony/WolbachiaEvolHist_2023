@@ -1,10 +1,11 @@
 mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants
 
 python3 /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/DiagnosticSNPs.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.vcf.gz \
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_new.vcf.gz \
     --MinCov 2 \
     --output /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants \
     --Variant /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/GT.txt
+
 echo '''
 
 library(tidyverse)
