@@ -5,3 +5,5 @@ results/
 shell/QSUB/
 shell_old/
 busco_downloads/
+output/.DS_Store
+.DS_Store
