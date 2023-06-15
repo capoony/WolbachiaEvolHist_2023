@@ -92,7 +92,6 @@ python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py
     --MinAlt 1 \
     --MaxPropGaps 0.9 \
     --MinCov 2 \
-    --NoGaps \
     --exclude wYak \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
     >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_full.phy
@@ -146,6 +145,24 @@ python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito.vcf.gz \
     --MinAlt 1 \
     --MaxPropGaps 0.5 \
+    --MinCov 2 \
+    --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
+    --exclude mtDyak \
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito_noOut_new.phy
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito_noOut_new \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito_noOut_new.phy \
+    Mitchondria \
+    0.05 \
+    8 \
+    8 \
+    no
+
+python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito.vcf.gz \
+    --MinAlt 1 \
+    --MaxPropGaps 0.5 \
     --MinCov 5 \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
     --exclude mtDyak \
@@ -181,5 +198,5 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointR
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito/Mitchondria.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Mitochondria_SNPs_full.pdf
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito/Mitchondria.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Mitochondria_SNPs_full.png
 
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito_noOut/Mitchondria.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Mitochondria_SNPs_full_noOut.pdf
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito_noOut/Mitchondria.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Mitochondria_SNPs_full_noOut.png
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito_noOut_new/Mitchondria.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Mitochondria_SNPs_full_noOut.pdf
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito_noOut_new/Mitchondria.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Mitochondria_SNPs_full_noOut.png
