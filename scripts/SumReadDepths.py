@@ -41,7 +41,7 @@ MitoDepth = d(float)
 
 Autosomes = ["2L", "2R", "3L", "3R"]
 ONT = ["Re1_full", "Re3", "Re6_full", "Re10",
-       "Ak7_full", "Ak9_full", "MEL_full", "CS", "POP"]
+       "Ak7_full", "Ak9_full", "MEL_full", "CS", "POP", "CK2", "DGRP335", "DGRP338", "ED2", "ED3", "ED6N", "ED10N", "EZ2", "GA125", "KN34", "KR7", "RG3", "RG5", "RG34", "SP80", "TZ14", "UG5N", "ZI268", "ZO12", "ZS11"]
 
 NAME = d(str)
 for l in load_data(options.NA):

@@ -50,6 +50,23 @@ bcftools mpileup \
         -v \
         -o /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_new.vcf.gz
 
+bcftools mpileup \
+    -Bf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolb_Burkholderia.fna \
+    -a AD,DP \
+    -d 1000 \
+    -r "ENA|AE017196|AE017196.1" \
+    -Ou /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping/HG0027.bam |
+    bcftools call \
+        -O z --ploidy 2 \
+        -c \
+        -v \
+        -o /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/HG0027.vcf.gz
+
+gunzip -c /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/HG0027.vcf.gz |
+    grep -v '^#' |
+    awk '{print $(NF)}' |
+    grep '^0/1' | less
+
 gzip /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolb_Burkholderia.fna
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_new.vcf.gz \

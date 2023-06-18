@@ -1,5 +1,5 @@
-Samples=(HG_09 HG_15 HG_16 HG_20 HG0026 HG47203 HG47204 377 378)
-NewName=(Germany_Passau_1800_HG_09 Sweden_Lund_1933_HG_15 Sweden_Lund_1933_HG_16 Sweden_Lund_1933_HG_20 Sweden_Lund_1933_HG0026 Sweden_Lund_1933_HG47203 Sweden_Lund_1933_HG47204 Sweden_Lund_1800_377 Sweden_Lund_1800_378)
+Samples=(HG0027) #HG_09 HG_15 HG_16 HG_20 HG0026 HG47203 HG47204 377 378)
+NewName=(HG0027) #Germany_Passau_1800_HG_09 Sweden_Lund_1933_HG_15 Sweden_Lund_1933_HG_16 Sweden_Lund_1933_HG_20 Sweden_Lund_1933_HG0026 Sweden_Lund_1933_HG47203 Sweden_Lund_1933_HG47204 Sweden_Lund_1800_377 Sweden_Lund_1800_378)
 
 for i in ${!Samples[*]}; do
     Sample=${Samples[i]}
