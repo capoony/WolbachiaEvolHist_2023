@@ -12,14 +12,64 @@ bcftools mpileup \
         -v \
         -o /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/HG0027.vcf.gz
 
+bcftools mpileup \
+    -Bf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolb_Burkholderia.fna \
+    -a AD,DP \
+    -d 1000 \
+    -r "ENA|AE017196|AE017196.1" \
+    -Ou /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping/380.bam |
+    bcftools call \
+        -O z --ploidy 2 \
+        -c \
+        -v \
+        -o /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/380.vcf.gz
+
+gunzip -c /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/380.vcf.gz |
+    grep -v '^#' |
+    awk '{print $(NF)}' |
+    grep '^0/1' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GT_380.txt
+
+python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/freq.py \
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GT_380.txt \
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GT_380.freq
+
 gunzip -c /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/HG0027.vcf.gz |
     grep -v '^#' |
     awk '{print $(NF)}' |
-    grep '^0/1' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GT.txt
+    grep '^0/1' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GT_HG0027.txt
 
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/freq.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GT.txt \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GT.freq
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GT_HG0027.txt \
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GT_HG0027.freq
+
+echo '''
+
+library(tidyverse)
+
+DATA.H3=read.table("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GT_HG0027.freq",
+    header=F)
+
+DATA.H13=read.table("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GT_380.freq",
+    header=F)
+
+colnames(DATA.H3)<-c("MinorFreq")
+DATA.H3$Sample <- rep("H3",nrow(DATA.H3))
+
+colnames(DATA.H13)<-c("MinorFreq")
+DATA.H13$Sample <- rep("H13",nrow(DATA.H13))
+
+DATA.H3.sub<-sample_n(DATA.H3, nrow(DATA.H13))
+
+DATA<-rbind(DATA.H3.sub,DATA.H13)
+
+t.test(MinorFreq~Sample,data=DATA)
+
+ggplot(DATA, aes(x=MinorFreq,fill=Sample)) + geom_histogram(aes(y = after_stat(count / sum(count))),binwidth=0.05)+facet_grid(.~Sample)
+
+ggsave("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GT.pdf")
+''' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GT.r
+
+Rscript /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GT.r
 
 # now do BLAST search
 
@@ -49,8 +99,9 @@ echo '''
 
     blastn \
       -num_threads 100 \
-      -evalue 1e-100 \
-      -outfmt "6 qseqid sseqid sscinames slen qlen pident length mismatch gapopen qstart qend sstart send evalue bitscore" \
+      -evalue 1e-50 \
+      -max_target_seqs 1 \
+      -outfmt "6 qseqid sseqid staxids sscinames slen qlen pident length mismatch gapopen qstart qend sstart send evalue bitscore" \
       -db /media/scratch/NCBI_nt_DB_210714/nt \
       -query /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken_HG0027_1.fa \
       > /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken_HG0027_1_blastn.txt
@@ -85,8 +136,9 @@ echo '''
 
     blastn \
       -num_threads 100 \
-      -evalue 1e-100 \
-      -outfmt "6 qseqid sseqid sscinames slen qlen pident length mismatch gapopen qstart qend sstart send evalue bitscore" \
+      -evalue 1e-50 \
+      -max_target_seqs 1 \
+      -outfmt "6 qseqid sseqid staxids sscinames slen qlen pident length mismatch gapopen qstart qend sstart send evalue bitscore" \
       -db /media/scratch/NCBI_nt_DB_210714/nt \
       -query /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken_HG0029_1.fa \
       > /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken_HG0029_1_blastn.txt
@@ -95,16 +147,17 @@ echo '''
 
 qsub /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken_HG0029_1_blastn.sh
 
-echo '''
+cut -f 2-3 /media/inter/mkapun/projects/SepsidMicroBiome/results/blastn/ASV/qiime.blast \
+    >/media/inter/mkapun/projects/SepsidMicroBiome/results/blastn/ASV/qiime.txt
 
-library(tidyverse)
+perl /media/inter/mkapun/projects/SepsidMicroBiome/scripts/tax_trace.pl \
+    /media/inter/mkapun/projects/SepsidMicroBiome/data/nodes.dmp \
+    /media/inter/mkapun/projects/SepsidMicroBiome/data/names.dmp \
+    /media/inter/mkapun/projects/SepsidMicroBiome/results/blastn/ASV/qiime.txt \
+    /media/inter/mkapun/projects/SepsidMicroBiome/results/blastn/ASV/qiime.tax
 
-DATA=read.table("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GT.freq",
-    header=F)
+echo "featureid" >/media/inter/mkapun/projects/SepsidMicroBiome/results/blastn/ASV/qiime.euk
 
-colnames(DATA)<-c("MinorFreq")
-
-ggplot(DATA, aes(x=MinorFreq)) + geom_histogram(binwidth=0.02)
-
-ggsave("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GT.pdf")
-'''
+paste /media/inter/mkapun/projects/SepsidMicroBiome/results/blastn/ASV/qiime.blast \
+    /media/inter/mkapun/projects/SepsidMicroBiome/results/blastn/ASV/qiime.tax |
+    grep -v "Eukary" | cut -f 1 | uniq >>/media/inter/mkapun/projects/SepsidMicroBiome/results/blastn/ASV/qiime.euk

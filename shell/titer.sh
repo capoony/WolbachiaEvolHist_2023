@@ -169,3 +169,5 @@ mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/titer
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.p* /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/titer
 
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.summary /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/titer
+
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages_full.p* /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/titer
