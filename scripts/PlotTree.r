@@ -56,6 +56,7 @@ PLOT.tree <- ggtree(tree,
     axis.text.y = element_blank(),
     axis.ticks.y = element_blank()
   ) +
+  options(ragg.max_dim = 100000) +
   geom_tiplab()
 
 PNG <- paste0(output, ".png")
@@ -65,11 +66,11 @@ ggsave(
   filename = PDF,
   PLOT.tree,
   width = width,
-  height = height
+  height = height, limitsize = FALSE
 )
 ggsave(
   filename = PNG,
   PLOT.tree,
   width = width,
-  height = height
+  height = height, limitsize = FALSE
 )
