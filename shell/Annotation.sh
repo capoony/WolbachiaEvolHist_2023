@@ -3,7 +3,7 @@ cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/db
 curl -O https://ftp.ncbi.nlm.nih.gov/genomes/refseq/bacteria/Wolbachia_endosymbiont_of_Drosophila_melanogaster/latest_assembly_versions/GCF_000008025.1_ASM802v1/GCF_000008025.1_ASM802v1_protein.faa.gz
 
 gunzip /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/db/GCF_000008025.1_ASM802v1_protein.faa.gz
-
+##test
 mkdir -p /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Annotation/log
 
 for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken/*_1.fq.gz; do
