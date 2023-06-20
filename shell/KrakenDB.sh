@@ -91,3 +91,29 @@ kraken2-build \
 kraken2-build \
     --build \
     --db $DBNAME
+
+######
+
+awk '{if ($0~/>/) {print $1"|kraken:taxid|1335053"} else {print}}' /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GCF_008245065.1_ASM824506v1_genomic.fna \
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GCF_008245065.1_ASM824506v1_genomic_DB.fna
+
+sudo -s
+module load Assembly/kraken-2.1.2
+
+DBNAME=/media/scratch/kraken-2.1.2/db/Supergroups
+kraken2-build \
+    --use-ftp \
+    --download-taxonomy \
+    --db $DBNAME
+
+kraken2-build \
+    --add-to-library /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GCF_008245065.1_ASM824506v1_genomic_DB.fna \
+    --db $DBNAME
+
+kraken2-build \
+    --add-to-library /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/db/w1118_wMelCS_start.fasta \
+    --db $DBNAME
+
+kraken2-build \
+    --build \
+    --db $DBNAME
