@@ -18,6 +18,19 @@ parser.add_option("--window", dest="WI", help="Input file")
 (options, args) = parser.parse_args()
 parser.add_option_group(group)
 
+def median(x):
+  ''' calculate median '''
+  mid =int(len(x)/2)
+  sort=sorted(x)
+  if len(x)==0:
+    return "NA"
+  if len(x)%2==0:
+    lower=sort[mid-1]
+    upper=sort[mid]
+    return (float(lower)+float(upper))/2.0
+  else:
+    return sort[mid]
+
 
 def load_data(x):
     ''' import data either from a gzipped or or uncrompessed file or from STDIN'''
@@ -31,13 +44,8 @@ def load_data(x):
     return y
 
 
-NAME = d(str)
-for l in load_data(options.SY):
-    a = l.rstrip().split(",")
-    NAME[a[0]] = a[1]
-
 names = options.NA.split(",")
-print("Pos\t"+"\t".join([NAME[x] for x in names]))
+print("Pos\t"+"\t".join([x for x in names]))
 Cov = d(list)
 window = int(options.WI)
 Pos = 0
@@ -50,7 +58,7 @@ for l in load_data(options.IN):
             if len(Cov[i]) == 0:
                 PL.append("NA")
             else:
-                PL.append(str(sum(Cov[i])/len(Cov[i])))
+                PL.append(str(median(Cov[i])))
         print(str(Pos*window)+"\t"+"\t".join(PL))
         Pos = round(int(a[1])/window, 0)
         Cov = d(list)
@@ -62,5 +70,5 @@ for i in range(len(pops)):
     if len(Cov[i]) == 0:
         PL.append("NA")
     else:
-        PL.append(str(sum(Cov[i])/len(Cov[i])))
+        PL.append(str(median(Cov[i])))
 print(str(Pos*window)+"\t"+"\t".join(PL))
