@@ -340,7 +340,7 @@ for i in ${!Samples[*]}; do
 
 
     samtools coverage /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/mapping/${Sample}.bam|
-        awk -v ID=\${Sample} 'NR>1{print ID"\t"\$0}' \
+        awk -v ID=${Sample} 'NR>1{print ID"\t"$0}' \
         > /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/mapping/${Sample}_coverages.txt
 
     """ >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/${Sample}_mapping.qsub
