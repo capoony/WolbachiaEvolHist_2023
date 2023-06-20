@@ -155,7 +155,83 @@ awk -F "\t" '$7>=99 {print $1"\t"$2"\t"$3"\t"$4}' /media/inter/mkapun/projects/W
 awk -F "\t" '$7>=99 {print $1"\t"$2"\t"$3"\t"$4}' /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken_HG0029_1_blastn.txt |
     uniq >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken_HG0029_1_blastn_99.txt
 
-### HOLY S**T, at least H3 looks like Supergroup B WOlbachia ???
+grep 'Wolb' /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken_HG0029_1_blastn_99.txt >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken_HG0029_1_blastn_99_Wolb.txt
+
+grep 'Wolb' /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken_HG0027_1_blastn_99.txt >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken_HG0027_1_blastn_99_Wolb.txt
+
+### then I manually added information on supergroups based on diverse references
+
+echo """
+
+library(tidyverse)
+library(gridExtra)
+
+DATA<-read.table("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken_HG0027_1_blastn_99_Wolb.txt",
+    header=F,
+    sep="\t")
+
+colnames(DATA)<-c("Read","ID","TaxID","Desc","Supergroup")
+DATA.sum<-DATA %>%
+    group_by(Supergroup,Desc) %>%
+    summarise(Count=n())
+
+D3<-    ggplot(DATA.sum,aes(x=Supergroup,
+            y=Count,
+            col=Desc,
+            fill=Supergroup,
+            label=Desc))+
+        geom_bar(stat="identity",
+            )+
+            ggtitle("H03")+
+        geom_text(position = position_stack(vjust = 0.5))+
+        scale_color_manual(values=rep("black",length(unique(DATA.sum$Desc))))+ 
+        scale_fill_manual(values=c("#c99f68","#9ac524","#d1d1cd"))+
+        guides(colour="none")+
+        theme_bw()
+
+DATA<-read.table("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken_HG0029_1_blastn_99_Wolb.txt",
+    header=F,
+    sep="\t")
+
+colnames(DATA)<-c("Read","ID","TaxID","Desc","Supergroup")
+DATA.sum<-DATA %>%
+    group_by(Supergroup,Desc) %>%
+    summarise(Count=n())
+
+D5<-    ggplot(DATA.sum,aes(x=Supergroup,
+            y=Count,
+            col=Desc,
+            fill=Supergroup,
+            label=Desc))+
+        geom_bar(stat="identity",
+            )+
+            ggtitle("H05")+
+        geom_text(position = position_stack(vjust = 0.5))+
+        scale_color_manual(values=rep("black",length(unique(DATA.sum$Desc))))+ 
+        scale_fill_manual(values=c("#c99f68","#9ac524","#d1d1cd"))+
+        guides(colour="none")+
+        theme_bw()
+
+PLOT<-grid.arrange(D3,D5,ncol=2)
+
+ggsave(file="/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/BLAST_summary.pdf",
+    PLOT,
+    width=20,
+    height=10)
+
+
+ggsave(file="/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/BLAST_summary.png",
+    PLOT,
+    width=20,
+    height=10)
+
+""" > /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/BLAST_summary.r
+
+Rscript  /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/BLAST_summary.r
+
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/BLAST_summary.p* /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants
+
+### HOLY S**T, at least H3 looks like Supergroup B Wolbachia ???
 
 cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027
 
