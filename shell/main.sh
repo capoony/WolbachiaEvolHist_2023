@@ -2,6 +2,10 @@
 
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/GetData.sh
 
+## trim raw reads
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/trimming.sh
+
 ## Make Kraken Databases
 
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/KrakenDB.sh
@@ -26,9 +30,13 @@ sh /media/inter/mkapun/projects/WolbEvolHist_2023/shell/Annotation.sh
 
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/mapReads.sh
 
-## Subset to ~50x coverages
+## Detect diagnostic SNPs for wMel and wMelCS and characterize
 
-# sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/subsetBAM.sh
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/DiagnosticSNPs.sh
+
+## map all reads against the hologenome
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/mapReads_full.sh
 
 ## investigate the distribution of read depths along the reference
 

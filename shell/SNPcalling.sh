@@ -34,6 +34,12 @@ done
 
 sed 's/\t/|/g' /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_coverages.txt | awk '{print "|"$0"|"}' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Wolb_coverages.txt
 
+### now index mapped BAM flies
+
+for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping/*.bam; do
+    samtools index $i
+done
+
 ## now exclude libraries which, based on the BLOBtools analyses do not contain Wolbachia or less than XXX reads mapped to the reference
 gunzip /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolb_Burkholderia.fna.gz
 ## SNP calling
@@ -48,7 +54,7 @@ bcftools mpileup \
         -O z --ploidy 1 \
         -c \
         -v \
-        -o /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_new.vcf.gz
+        -o /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.vcf.gz
 
 bcftools mpileup \
     -Bf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolb_Burkholderia.fna \
@@ -69,35 +75,17 @@ gunzip -c /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData
 
 gzip /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolb_Burkholderia.fna
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_new.vcf.gz \
-    --MinAlt 1 \
-    --MaxPropGaps 0.5 \
-    --MinCov 5 \
-    --exclude 377,378,380,HG0029,HG0027,HG0034 \
-    --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red.phy
-
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red.phy \
-    Wolbachia \
-    0.8 \
-    12 \
-    5 \
-    yes
-
-python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_new.vcf.gz \
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.vcf.gz \
     --MinAlt 1 \
     --MaxPropGaps 0.5 \
     --MinCov 5 \
     --exclude 377,378,380,HG0029,HG0027,HG0034,wYak \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red_noOut.phy
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.phy
 
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red_noOut \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red_noOut.phy \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.phy \
     Wolbachia \
     0.1 \
     8 \
@@ -105,7 +93,7 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointR
     no
 
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_new.vcf.gz \
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.vcf.gz \
     --MinAlt 1 \
     --MaxPropGaps 0.9 \
     --MinCov 2 \
@@ -122,11 +110,8 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointR
     8 \
     yes
 
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_red.pdf
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_red.png
-
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red_noOut/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_red_noOut.pdf
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_red_noOut/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_red_noOut.png
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs.pdf
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs.png
 
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_full/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_full.pdf
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_full/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_full.png
@@ -168,55 +153,16 @@ python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py
     --MinCov 2 \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
     --exclude mtDyak \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito_noOut_new.phy
-
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito_noOut_new \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito_noOut_new.phy \
-    Mitchondria \
-    0.05 \
-    8 \
-    8 \
-    no
-
-python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito.vcf.gz \
-    --MinAlt 1 \
-    --MaxPropGaps 0.5 \
-    --MinCov 5 \
-    --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
-    --exclude mtDyak \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito_noOut.phy
-
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito_noOut \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito_noOut.phy \
-    Mitchondria \
-    0.05 \
-    8 \
-    8 \
-    yes
-
-python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito.vcf.gz \
-    --MinAlt 1 \
-    --MaxPropGaps 0.5 \
-    --MinCov 5 \
-    --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
-    --exclude NA \
     >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito.phy
 
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito.phy \
     Mitchondria \
-    0.3 \
+    0.05 \
     8 \
     8 \
     no
 
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito/Mitchondria.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Mitochondria_SNPs_full.pdf
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito/Mitchondria.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Mitochondria_SNPs_full.png
-
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito_noOut_new/Mitchondria.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Mitochondria_SNPs_full_noOut.pdf
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito_noOut_new/Mitchondria.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Mitochondria_SNPs_full_noOut.png
