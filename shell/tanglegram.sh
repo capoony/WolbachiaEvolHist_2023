@@ -3,7 +3,7 @@
 mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram
 
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/IntersectPhy.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito_noOut.phy,/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_red_noOut.phy \
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito.phy,/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.phy \
     --names MITO,WOLB \
     --output /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/tanglegram/
 
@@ -25,7 +25,7 @@ raxmlHPC-PTHREADS-SSE3 \
 
 raxmlHPC-PTHREADS-SSE3 \
     -m GTRCAT \
-    -N 100 \
+    -N 2 \
     -p 772374015 \
     -b 444353738 \
     -n bootrep_snps \
@@ -57,7 +57,7 @@ raxmlHPC-PTHREADS-SSE3 \
 
 raxmlHPC-PTHREADS-SSE3 \
     -m GTRCAT \
-    -N 100 \
+    -N 2 \
     -p 772374015 \
     -b 444353738 \
     -n bootrep_snps \

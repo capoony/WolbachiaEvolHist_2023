@@ -73,7 +73,7 @@ Rscript /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GT.r
 
 # now do BLAST search
 
-gunzip -c /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken/HG0027_1.fq.gz |
+gunzip -c /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken/HG0027_1.fq.gz | head -400000 |
     sed -n '1~4s/^@/>/p;2~4p' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken_HG0027_1.fa
 
 echo '''
@@ -110,7 +110,7 @@ echo '''
 
 qsub /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken_HG0027_1_blastn.sh
 
-gunzip -c /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken/HG0029_1.fq.gz |
+gunzip -c /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken/HG0029_1.fq.gz | head -400000 |
     sed -n '1~4s/^@/>/p;2~4p' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/kraken_HG0029_1.fa
 
 echo '''

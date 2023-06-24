@@ -1,24 +1,20 @@
 mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants
 
 python3 /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/DiagnosticSNPs.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_new.vcf.gz \
-    --MinCov 2 \
-    --output /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants \
-    --Variant /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/GT.txt
+  --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.vcf.gz \
+  --MinCov 2 \
+  --output /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants \
+  --Variant /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/GT.txt
 
 echo '''
-
-
 
 library(tidyverse)
 library(ggpubr)
 
-
-
 DATA=read.table("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants_variants.txt",
     header=T)
 
-DATA=read.table("D:/GitHub/WolbachiaEvolHist_2023/output/Variants/variants_variants.txt",
+DATA=read.table("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants_variants.txt",
 header=T)
 
 DATA <-DATA %>%
@@ -55,20 +51,20 @@ PLOT=ggplot(DATA)+
 #PLOT
 PLOT.full=ggarrange(PLOT2,PLOT,ncol=2,widths=c(1,2))
 
-ggsave("D:/GitHub/WolbachiaEvolHist_2023/output/Variants/variants_dist.pdf",
+ggsave("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants_dist.pdf",
   PLOT.full,
   width=8,
   height=6)
 
-ggsave("D:/GitHub/WolbachiaEvolHist_2023/output/Variants/variants_dist.png",
+ggsave("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants_dist.png",
   PLOT.full,
   width=8,
   height=6)
 
-ggsave("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants_variants.pdf",
-    Plot,
-    width=9,
-    height=4)
+# ggsave("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants_variants.pdf",
+#     PLOT,
+#     width=9,
+#     height=4)
 
 ''' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants_variants.r
 
