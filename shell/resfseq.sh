@@ -4,8 +4,10 @@ mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/refseq
 
 cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/refseq
 
+## get full list of available bacterial RefSeq genomes
 wget ftp://ftp.ncbi.nih.gov/genomes/refseq/bacteria/assembly_summary.txt
 
+## filter for wMel-type genomes that are NOT in Aedes
 grep 'wMel' assembly_summary.txt |
     grep -v 'Aedes' |
     awk -F '\t' '{print $9$10","$20}' |
@@ -15,6 +17,7 @@ grep 'wMel' assembly_summary.txt |
     grep -v 'Aedes' >assembly_summary_list_genomes.txt
 
 mkdir data
+
 ## obtain and rename read data for all samples from input file
 while
     IFS=','
@@ -25,7 +28,7 @@ do
 
 done <assembly_summary_complete_genomes.txt
 
-### BUSCO
+### BUSCO analysis
 
 mkdir -p busco/log
 

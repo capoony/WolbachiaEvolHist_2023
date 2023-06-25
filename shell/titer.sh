@@ -6,13 +6,15 @@ for ID in 380 HG_16 HG_14 HG_17 HG_18 HG_19 HG_21 HG0021 HG0025 HG0028 HG0035 HG
 
     i=/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/${ID}.bam
 
-    samtools index $i &
-    # samtools coverage $i | awk -v ID=$ID 'NR>1{print ID"\t"$0}' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages_${ID}.txt &
+    samtools index $i
+
+    samtools coverage $i | awk -v ID=$ID 'NR>1{print ID"\t"$0}' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages_${ID}.txt
 
 done
 
 cat /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages_*.txt >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.txt
 
+## summarize and make a pivot table
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/SumReadDepths.py \
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_full/Full_coverages.txt \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \

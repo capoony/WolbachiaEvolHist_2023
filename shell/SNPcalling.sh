@@ -19,21 +19,6 @@ for i in ${!Samples[*]}; do
 
 done
 
-### obtain coverages
-
-printf "#ID\trname\tstartpos\tendpos\tnumreads\tcovbases\tcoverage\tmeandepth\tmeanbaseq\tmeanmapq\n" >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_coverages_new.txt
-
-for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping/*.bam; do
-
-    tmp=${i##*/}
-    ID=${tmp%.*}
-
-    samtools coverage $i | awk -v ID=$ID 'NR>1{print ID"\t"$0}' >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_coverages_new.txt
-
-done
-
-sed 's/\t/|/g' /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb_coverages.txt | awk '{print "|"$0"|"}' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Wolb_coverages.txt
-
 ### now index mapped BAM flies
 
 for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping/*.bam; do
@@ -42,7 +27,8 @@ done
 
 ## now exclude libraries which, based on the BLOBtools analyses do not contain Wolbachia or less than XXX reads mapped to the reference
 gunzip /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolb_Burkholderia.fna.gz
-## SNP calling
+
+## SNP calling of Wolbachia reads
 bcftools mpileup \
     -Bf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolb_Burkholderia.fna \
     -b /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/bamlist_Wolb_stringent.txt \
@@ -56,23 +42,7 @@ bcftools mpileup \
         -v \
         -o /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.vcf.gz
 
-bcftools mpileup \
-    -Bf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolb_Burkholderia.fna \
-    -a AD,DP \
-    -d 1000 \
-    -r "ENA|AE017196|AE017196.1" \
-    -Ou /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping/HG0027.bam |
-    bcftools call \
-        -O z --ploidy 2 \
-        -c \
-        -v \
-        -o /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/HG0027.vcf.gz
-
-gunzip -c /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/HG0027.vcf.gz |
-    grep -v '^#' |
-    awk '{print $(NF)}' |
-    grep '^0/1' | less
-
+## select SNPs and make phylip input
 gzip /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolb_Burkholderia.fna
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.vcf.gz \
@@ -83,6 +53,7 @@ python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
     >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.phy
 
+## make phylogenetic tree
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.phy \
@@ -92,6 +63,7 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointR
     8 \
     no
 
+## repeat SNP selection with relaxed parameters to include all samples
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.vcf.gz \
     --MinAlt 1 \
@@ -116,7 +88,7 @@ cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb/Wo
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_full/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_full.pdf
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_full/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_SNPs_full.png
 
-### for Mitochondria
+### repeat for Mitochondria
 
 for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_mito/*.bam; do
     echo $i >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/bamlist_Mito.txt

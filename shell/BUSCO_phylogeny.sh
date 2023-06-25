@@ -4,7 +4,7 @@
 
 mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2
 
-rm -f /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/complete_busco_ids.txt
+#rm -f /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/complete_busco_ids.txt
 
 cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/denovo
 
@@ -179,7 +179,7 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointR
     0.00005 \
     8 \
     5 \
-    yes
+    no
 
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2_noOut \
@@ -188,7 +188,7 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointR
     0.0001 \
     8 \
     5 \
-    yes
+    no
 
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_BUSCO.pdf
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_BUSCO.png

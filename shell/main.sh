@@ -1,3 +1,7 @@
+## download historic raw read data from SRA
+
+shell/GetData.sh
+
 ## download data from SRA
 
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/GetData.sh
