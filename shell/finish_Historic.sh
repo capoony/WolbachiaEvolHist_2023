@@ -41,6 +41,9 @@ for i in ${!Samples[*]}; do
 
 done
 
+## copy to output and manually edit FASTA header to contain more info
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/DraftGenome/*/nucmer/*_start.fasta /media/inter/mkapun/projects/WolbachiaEvolHist_2023/Genomes
+
 ### BUSCO of finished genomes
 
 for i in ${!Samples[*]}; do

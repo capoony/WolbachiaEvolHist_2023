@@ -82,7 +82,7 @@ for i in ${!NewName[*]}; do
 
 done
 
-## copy assemblies to output folder
+## copy to output and manually edit FASTA header to contain more info
 
 mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/Genomes
 
