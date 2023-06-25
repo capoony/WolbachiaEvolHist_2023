@@ -78,14 +78,12 @@ for i in ${!NewName[*]}; do
     python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/SetStart.py \
       --reference /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/AE017196.1_wMel.fa \
       --input - \
-      >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomics/FASTA/${New}_start.fasta
+      >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/FASTA/${New}_start.fasta
 
 done
 
 ## copy assemblies to output folder
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes/*/nucmer/*.fasta \
-  /media/inter/mkapun/projects/WolbachiaEvolHist_2023/Output/Genomes
 
-rm -f /media/inter/mkapun/projects/WolbachiaEvolHist_2023/Output/Genomes/sorted_contigs.fasta
+mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/Genomes
 
-gzip /media/inter/mkapun/projects/WolbachiaEvolHist_2023/Output/Genomes/*.fasta
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/FASTA/*_start.fasta /media/inter/mkapun/projects/WolbachiaEvolHist_2023/Genomes
