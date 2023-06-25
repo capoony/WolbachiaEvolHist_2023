@@ -12,7 +12,7 @@ for file in $(find -iname "full_table*.tsv"); do
     grep -v "^#" ${file} | awk '$2=="Complete" {print $1}' >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/complete_busco_ids.txt
 done
 
-cd /media/inter/mkapun/projects/DrosoWolbGenomics/results/assemblies
+cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/assemblies_ONT
 
 for file in $(find -iname "full_table*.tsv"); do
     grep -v "^#" ${file} | awk '$2=="Complete" {print $1}' >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/complete_busco_ids.txt
@@ -59,7 +59,7 @@ done
 
 ### Get Sequences
 
-cd /media/inter/mkapun/projects/DrosoWolbGenomics/results/assemblies
+cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/assemblies_ONT
 
 for dir in $(find . -type d -name "single_copy_busco_sequences"); do
     echo $dir

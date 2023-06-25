@@ -65,6 +65,23 @@ for i in ${!Samples[*]}; do
 
 done
 
+## Now scaffold and readjust start
+NewName=(Re1_full Re3 Re6_full Re10 Ak7_full Ak9_full MEL_full CS POP))
+for i in ${!NewName[*]}; do
+  New=${NewName[i]}
+
+  echo $New
+
+  python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/Scaffold.py \
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes/${New}/nucmer/${New}.fasta \
+    --Name ${New} |
+    python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/SetStart.py \
+      --reference /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/AE017196.1_wMel.fa \
+      --input - \
+      >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomics/FASTA/${New}_start.fasta
+
+done
+
 ## copy assemblies to output folder
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes/*/nucmer/*.fasta \
   /media/inter/mkapun/projects/WolbachiaEvolHist_2023/Output/Genomes
