@@ -1,6 +1,6 @@
 ## Historic museum samples provide evidence for a recent replacementn of _Wolbachia_ types in European _Drosophila melanogaster_.
 
-The bioinformatics pipeline for the data generation and analyses in [Strunov _et al._ 2023](). Note, that we worked with the library IDs. The names used for the MS can be found [here]([label](datasets/NAMES_CORRECT))
+The bioinformatics pipeline for the data generation and analyses in [Strunov _et al._ 2023](). Note, that we worked with the library IDs. The names used for the MS can be found [here](datasets/NAMES_CORRECT)
 
 ### (A) Obtain data
 
