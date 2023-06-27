@@ -92,7 +92,7 @@ kraken2-build \
     --build \
     --db $DBNAME
 
-######
+###### now add wMeg for Supergroup A & B db
 
 awk '{if ($0~/>/) {print $1"|kraken:taxid|1335053"} else {print}}' /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GCF_008245065.1_ASM824506v1_genomic.fna \
     >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GCF_008245065.1_ASM824506v1_genomic_DB.fna
