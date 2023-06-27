@@ -10,6 +10,8 @@ esearch -db sra -query PRJNA945389 | efetch -format runinfo >runinfo.csv
 ## select most important columns
 cat runinfo.csv | cut -f 1,12,29 -d , | sed "s/ /_/g" >run_sample_name.csv
 
+## manually add two samples of wMelCS and wMelCSb
+
 ## obtain and rename read data for all samples from input file
 module load Tools/SRAtools-2.11.2
 
