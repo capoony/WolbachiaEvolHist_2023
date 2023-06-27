@@ -10,18 +10,16 @@ esearch -db sra -query PRJNA945389 | efetch -format runinfo >runinfo.csv
 ## select most important columns
 cat runinfo.csv | cut -f 1,12,29 -d , | sed "s/ /_/g" >run_sample_name.csv
 
-#### Then manually add info for 10 more Illumina data with Wolb reads
-
+## obtain and rename read data for all samples from input file
 module load Tools/SRAtools-2.11.2
 
-## obtain and rename read data for all samples from input file
 while
-    IFS=','
-    read -r SRR ID Species
+  IFS=','
+  read -r SRR ID Species
 do
-    ## if not Illumina only convert to FASTQ
+  ## if not Illumina only convert to FASTQ
 
-    echo """
+  echo """
       fasterq-dump \
         --split-3 \
         -o ${ID} \
@@ -34,6 +32,6 @@ do
       pigz reads/${ID}*
       """ >../shell/${ID}.sh
 
-    sh ../shell/${ID}.sh &
+  sh ../shell/${ID}.sh &
 
 done <run_sample_name.csv

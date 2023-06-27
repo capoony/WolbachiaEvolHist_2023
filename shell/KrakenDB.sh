@@ -1,6 +1,6 @@
 ## make Database for Wolbachia
 
-### manually download FASTA files first, see RefSeq IDs in paper
+### use the de-novo assemblies of MEL, CS and POP to create a DB to prefilter reads
 
 mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/db
 
@@ -33,7 +33,9 @@ kraken2-build \
     --build \
     --db $DBNAME
 
-### Make database for Mitochondria
+### Make database for Mitochondira
+
+## now the same for mitochondria
 
 cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data
 
@@ -61,8 +63,6 @@ kraken2-build \
     --db $DBNAME
 
 cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data
-
-## Get D. melanogaster Genome and make database with Dmel and wMelCS
 
 curl -O http://ftp.flybase.net/releases/FB2023_02/dmel_r6.51/fasta/dmel-all-chromosome-r6.51.fasta.gz
 
@@ -92,9 +92,7 @@ kraken2-build \
     --build \
     --db $DBNAME
 
-## Get wMeg and build Library of Supergroups A and B
-
-wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/008/245/065/GCF_008245065.1_ASM824506v1/GCF_008245065.1_ASM824506v1_genomic.fna.gz
+######
 
 awk '{if ($0~/>/) {print $1"|kraken:taxid|1335053"} else {print}}' /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GCF_008245065.1_ASM824506v1_genomic.fna \
     >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/HG0027/GCF_008245065.1_ASM824506v1_genomic_DB.fna
