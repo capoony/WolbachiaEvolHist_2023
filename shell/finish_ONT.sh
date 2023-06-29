@@ -66,7 +66,7 @@ for i in ${!Samples[*]}; do
 done
 
 ## Now scaffold and readjust start
-NewName=(Re1_full Re3 Re6_full Re10 Ak7_full Ak9_full MEL_full CS POP))
+NewName=(Re1_full Re3 Re6_full Re10 Ak7_full Ak9_full MEL_full CS POP)
 for i in ${!NewName[*]}; do
   New=${NewName[i]}
 
