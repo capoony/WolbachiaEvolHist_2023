@@ -32,6 +32,19 @@ def load_data(x):
         y = open(x, "r", encoding="latin-1")
     return y
 
+def median(x):
+  ''' calculate median '''
+  mid =int(len(x)/2)
+  sort=sorted(x)
+  if len(x)==0:
+    return "NA"
+  if len(x)%2==0:
+    lower=sort[mid-1]
+    upper=sort[mid]
+    return (float(lower)+float(upper))/2.0
+  else:
+    return sort[mid]
+
 
 Aut = d(list)
 X = d(float)
@@ -85,5 +98,5 @@ for k in sorted(list(Aut.keys())):
         WType = "wMelPop"
     else:
         WType = "wMelCS"
-    print(k, Type, WType, STATUS[NAME[k]], str(sum(Aut[k])/len(Aut[k])), str(X[k]), str(MitoDepth[k]), str(
+    print(k, Type, WType, STATUS[NAME[k]], str(median(Aut[k])), str(X[k]), str(MitoDepth[k]), str(
         WolDepth[k]), str(WolCov[k]), str(WolDepth[k]/(sum(Aut[k])/len(Aut[k]))), sep="\t")

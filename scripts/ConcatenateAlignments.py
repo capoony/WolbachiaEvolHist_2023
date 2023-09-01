@@ -14,7 +14,7 @@ group = OptionGroup(parser, "< put description here >")
 
 parser.add_option("--input", dest="IN", help="Input file")
 parser.add_option("--names", dest="NA", help="Input file")
-parser.add_option("--exclude", dest="EX", help="Input file")
+parser.add_option("--exclude", dest="EX", help="Input file",default="NA")
 parser.add_option("--geneList", dest="GL", help="Input file")
 parser.add_option("--NoGaps", dest="NG",
                   help="Input file", action="store_true")

@@ -5,7 +5,7 @@ Samples=(Re1_full Re3 Re6_full Re10 Ak7_full Ak9_full MEL_full CS POP)
 
 module load NGSmapper/minimap2-2.17
 module load Tools/samtools-1.12
-Sample=MEL_full
+
 for i in ${!Samples[*]}; do
     Sample=${Samples[i]}
 

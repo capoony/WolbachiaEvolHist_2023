@@ -112,3 +112,7 @@ for ID in 380 HG_16 HG_14 HG_17 HG_18 HG_19 HG_21 HG0021 HG0025 HG0028 HG0035 HG
     qsub /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/${ID}_mapping_mit.qsub
 
 done
+
+### we further repeated using the wMelCS genome as the reference to test if this results in a reference bias
+
+sh
