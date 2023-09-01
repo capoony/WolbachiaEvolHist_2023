@@ -99,3 +99,16 @@ We used our custom automated denovo assembly pipeline, which can be found [here]
 
 
 ---
+#### additional analyses:
+
+######  identify if there is a potential reference bias
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/mapReads_wMelCS.sh
+
+## make phylogeny of supergroup B samples
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/SupergroupB_phylogeny.sh
+
+## BLAST mitochondria reads in H03 and H05
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/mitoBLAST.sh
