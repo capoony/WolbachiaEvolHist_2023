@@ -31,6 +31,7 @@ done </media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/SupergroupB.txt
 ### Include samples H03 and H05 (HG0027 and HG0029)
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads/HG0029_*.fastq.gz /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads_SB
 cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads/HG0027_*.fastq.gz /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads_SB
+cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads/HG47205_*.fastq.gz /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads_SB
 
 mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/trim_SB
 
@@ -131,7 +132,7 @@ for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads_SB/*_1.f
 
     """ >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/${ID}_mapping_SB.qsub
 
-    qsub /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/${ID}_mapping_SB.qsub
+    sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/${ID}_mapping_SB.qsub
 
 done
 
@@ -326,17 +327,17 @@ bcftools mpileup \
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData_SB/Wolb.vcf.gz \
     --MinAlt 1 \
-    --MaxPropGaps 0.95 \
-    --MinCov 2 \
+    --MaxPropGaps 0.99 \
+    --MinCov 1 \
     --exclude NA \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names_SB.txt \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData_SB/Wolb.phy
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData_SB/Wolb2.phy
 
 ## make phylogenetic tree
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_SB \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData_SB/Wolb.phy \
-    Wolbachia \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_SB2 \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData_SB/Wolb2.phy \
+    Wolbachia2 \
     0.3 \
     8 \
     8 \
@@ -374,11 +375,11 @@ for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_SB/
     tmp=${i##*/}
 
     ID=${tmp%.bam*}
-
+    ID=HG47205
     samtools view -bh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_SB/${ID}.bam "NZ_CP021120.1|kraken:taxid|1335053:474800-475500" |
         samtools consensus -f fasta - |
         sed "s/NZ_CP021120.1|kraken:taxid|1335053/${ID}/g" \
-            >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Gryllus/Wolb_Gryll.fa
+            >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Gryllus/Wolb_Gryll2.fa
 
 done
 
@@ -390,15 +391,15 @@ mafft \
     --thread 50 \
     --auto \
     --adjustdirection \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Gryllus/Wolb_Gryll.fa \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Gryllus/Wolb_Gryll_aln.fa
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Gryllus/Wolb_Gryll2.fa \
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Gryllus/Wolb_Gryll2_aln.fa
 
 ## make phylogenetic tree
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Gryllus/wsp \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Gryllus/Wolb_Gryll_aln.fa \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Gryllus/wsp2 \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Gryllus/Wolb_Gryll2_aln.fa \
     Wolbachia_wsp \
-    0.1 \
+    0.02 \
     8 \
     8 \
     no

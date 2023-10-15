@@ -155,15 +155,13 @@ python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/ConcatenateAl
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names2.txt \
     --exclude HG0027,HG0029,HG47205,HG_09,HG0026,HG_20,WMELOCTOLESS,WMEL_AMD,WMELCS112,WMELCSCSBERKELEY,WMELPC75,WMELPLUS,WMELPOP1,WMELPOP2,WMELPOP3 \
-    --geneList /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna.genes \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna.fa
+    --output /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna
 
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/ConcatenateAlignments.py \
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names2.txt \
     --exclude HG0027,HG0029,HG47205,HG_09,HG0026,HG_20,WMELOCTOLESS,WMEL_AMD,WMELCS112,WMELCSCSBERKELEY,WMELPC75,WMELPLUS,WMELPOP1,WMELPOP2,WMELPOP3,WYAK \
-    --geneList /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna.genes \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna_noOut.fa
+    --output /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna
 
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/ConcatenateAlignments.py \
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna \

@@ -1,6 +1,6 @@
 ## get data
 
-cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/
+cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/
 
 module load Tools/SRAtools-2.11.2
 
@@ -15,15 +15,15 @@ do
       fasterq-dump \
         --split-3 \
         -o ${ID} \
-        -O reads \
+        -O data/reads \
         -e 8 \
         -f \
         -p \
         ${SRR}
 
-      pigz reads/${ID}*
-      """ >../shell/${ID}.sh
+      pigz data/reads/${ID}*
+      """ >shell/QSUB/${ID}.sh
 
-  sh ../shell/${ID}.sh &
+  sh shell/QSUB/${ID}.sh &
 
-done </datasets/newDATA.txt
+done <datasets/newDATA2.txt

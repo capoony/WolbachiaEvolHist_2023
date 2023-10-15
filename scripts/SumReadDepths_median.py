@@ -12,6 +12,7 @@ group = OptionGroup(parser, '< put description here >')
 #########################################################   CODE   #########################################################################
 
 parser.add_option("--input", dest="IN", help="Input file")
+parser.add_option("--median", dest="ME", help="Input file")
 parser.add_option("--names", dest="NA",
                   help="numerical parameter", default=1)
 parser.add_option("--status", dest="ST",
@@ -55,19 +56,11 @@ MitoDepth = d(float)
 
 Autosomes = ["2L", "2R", "3L", "3R"]
 ONT = ["Re1_full", "Re3", "Re6_full", "Re10",
-       "Ak7_full", "Ak9_full", "MEL_full", "CS", "POP", "CK2", "DGRP335", "DGRP338", "ED2", "ED3", "ED6N", "ED10N", "EZ2", "GA125", "KN34", "KR7", "RG3", "RG5", "RG34", "SP80", "TZ14", "UG5N", "ZI268", "ZO12", "ZS11", "DGRP857", "DGRP88", "DGRP427",]
-
-TYPE = ["wMel", "wMelCS", "wMel", "wMelCS",
-        "wMel", "wMel", "wMel", "wMelCS", "wMelCS", "wMel", "wMelCS", "wMelCS", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "uninfected", "uninfected", "uninfected"]
-
-
-RECENT = dict(zip(*[ONT, TYPE]))
-
-# print(RECENT)
+       "Ak7_full", "Ak9_full", "MEL_full", "CS", "POP", "CK2", "DGRP335", "DGRP338", "ED2", "ED3", "ED6N", "ED10N", "EZ2", "GA125", "KN34", "KR7", "RG3", "RG5", "RG34", "SP80", "TZ14", "UG5N", "ZI268", "ZO12", "ZS11"]
 
 NAME = d(str)
 for l in load_data(options.NA):
-    a = l.rstrip().split()
+    a = l.rstrip().split(",")
     NAME[a[0]] = a[1]
 
 STATUS = d(str)
@@ -81,28 +74,37 @@ for l in load_data(options.IN):
     a = l.rstrip().split()
     if len(a) != 10:
         continue
+    if a[1] == "W_pipientis":
+        WolCov[a[0]] = float(a[-4])
+
+for l in load_data(options.ME):
+    a = l.rstrip().split()
+    if len(a) != 10:
+        continue
     if a[1] in Autosomes:
         Aut[a[0]].append(float(a[-3]))
     if a[1] == "X":
         X[a[0]] = float(a[-3])
     if a[1] == "W_pipientis":
         WolDepth[a[0]] = float(a[-3])
-        WolCov[a[0]] = float(a[-4])
     if a[1] == "mitochondrion_genome":
         MitoDepth[a[0]] = float(a[-3])
 
 print("ID\tType\tWolbachiaType\tInfectionStatus\tAut\tX\tMito\tWolb\tWolbCov\tWolbTiter")
 for k in sorted(list(Aut.keys())):
-    if k in RECENT:
+    if k not in NAME:
+        continue
+    if k in ONT:
         Type = "Recent"
-        WType = RECENT[k]
-        print(k.split("_full")[0], Type, WType, STATUS[k], str(median(Aut[k])), str(X[k]), str(MitoDepth[k]), str(
-            WolDepth[k]), str(WolCov[k]), str(WolDepth[k]/(sum(Aut[k])/len(Aut[k]))), sep="\t")
     else:
         Type = "Museum"
-        if STATUS[k] == "infected":
-            WType = "wMelCS"
-        else:
-            WType = STATUS[k]
-        print(NAME[k], Type, WType, STATUS[k], str(median(Aut[k])), str(X[k]), str(MitoDepth[k]), str(
-            WolDepth[k]), str(WolCov[k]), str(WolDepth[k]/(sum(Aut[k])/len(Aut[k]))), sep="\t")
+    if "full" in k:
+        WType = "wMel"
+    elif STATUS[NAME[k]] == "uninfected":
+        WType = "None"
+    elif k == "POP":
+        WType = "wMelPop"
+    else:
+        WType = "wMelCS"
+    print(k, Type, WType, STATUS[NAME[k]], str(median(Aut[k])), str(X[k]), str(MitoDepth[k]), str(
+        WolDepth[k]), str(WolCov[k]), str(WolDepth[k]/(median(Aut[k]))), sep="\t")

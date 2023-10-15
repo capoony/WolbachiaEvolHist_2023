@@ -59,23 +59,19 @@ The bioinformatics pipeline for the data generation and analyses in [Strunov _et
 
 ### (D) SNP calling, classification and phylogenetic reconstruction
 
-#### (1) SNP calling for _Wolbachia_ and Mitochondria and phylogenetic reconstruction
-
-[shell/SNPcalling.sh](shell/SNPcalling.sh)
-
-#### (2) compare Mitochondria and _Wolbachia_ with tanglegrams
-
-[shell/tanglegram.sh](shell/tanglegram.sh)
-
-#### (3) Classification of _Wolbachia_ types with diagnostic SNPs
+#### (1) Classification of _Wolbachia_ types with diagnostic SNPs
 
 [shell/DiagnosticSNPs.sh](shell/DiagnosticSNPs.sh)
 
-#### (4) Phylogenetic reconstruction based on BUSCO genes
+#### (2) SNP calling for _Wolbachia_ and Mitochondria and phylogenetic reconstruction
 
-[shell/BUSCO_phylogeny.sh](shell/BUSCO_phylogeny.sh)
+[shell/SNPcalling.sh](shell/SNPcalling.sh)
 
-#### (5) specifically investigate samples H03 and H05
+#### (3) compare Mitochondria and _Wolbachia_ with tanglegrams
+
+[shell/tanglegram.sh](shell/tanglegram.sh)
+
+#### (4) specifically investigate samples H03 and H05
 
 [shell/WeirdSamples.sh](shell/WeirdSamples.sh)
 
@@ -97,18 +93,38 @@ We used our custom automated denovo assembly pipeline, which can be found [here]
 
 [shell/finish_Historic.sh](shell/finish_Historic.sh)
 
+#### (3) Phylogenetic reconstruction based on BUSCO genes
+
+[shell/BUSCO_phylogeny.sh](shell/BUSCO_phylogeny.sh)
 
 ---
-#### additional analyses:
 
-######  identify if there is a potential reference bias
+### Additional analyses:
+
+####  test for statistical congruency between *Wolbachia* and Mito Trees
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/congruencyTrees.sh
+
+####  identify if there is a potential reference bias
 
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/mapReads_wMelCS.sh
 
-## make phylogeny of supergroup B samples
+#### make phylogeny of supergroup B samples
 
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/SupergroupB_phylogeny.sh
 
-## BLAST mitochondria reads in H03 and H05
+#### BLAST mitochondria reads in H03 and H05
 
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/mitoBLAST.sh
+
+#### calculate Titer based on Median 
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/titer_median.sh
+
+#### calculate Read depths based on prefiltered reads
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/titer_prefiltered.sh
+
+#### get Pairwise SNP differences among groups
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/SnpDiff.sh
