@@ -154,14 +154,12 @@ mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/ph
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/ConcatenateAlignments.py \
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna \
     --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names2.txt \
-    --exclude HG0027,HG0029,HG47205,HG_09,HG0026,HG_20,WMELOCTOLESS,WMEL_AMD,WMELCS112,WMELCSCSBERKELEY,WMELPC75,WMELPLUS,WMELPOP1,WMELPOP2,WMELPOP3 \
+    --exclude HG0027,HG0029,HG47205,WMELOCTOLESS,WMEL_AMD,WMELCS112,WMELCSCSBERKELEY,WMELPC75,WMELPLUS,WMELPOP1,WMELPOP2,WMELPOP3 \
     --output /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna
 
-python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/ConcatenateAlignments.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna \
-    --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names2.txt \
-    --exclude HG0027,HG0029,HG47205,HG_09,HG0026,HG_20,WMELOCTOLESS,WMEL_AMD,WMELCS112,WMELCSCSBERKELEY,WMELPC75,WMELPLUS,WMELPOP1,WMELPOP2,WMELPOP3,WYAK \
-    --output /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna
+python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/IgnoreSingletons.py \
+    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna.fa \
+    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna_noSing.fa
 
 python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/ConcatenateAlignments.py \
     --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna \
@@ -178,6 +176,23 @@ sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointR
     8 \
     5 \
     no
+
+sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2_noSing \
+    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna_noSing.fa \
+    Wolbachia \
+    0.00005 \
+    8 \
+    5 \
+    no
+
+output=/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2_noSing
+Rscript /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/PlotTree_outgroup.r \
+    ${output}/RAxML_bipartitions.FINAL_snps \
+    ${output}/Wolb_BUSCO_noSing \
+    Wolb_BUSCO_noSing \
+    0.00005 \
+    WYAK
 
 sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
     /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2_noOut \
