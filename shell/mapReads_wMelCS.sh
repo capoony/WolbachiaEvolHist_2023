@@ -1,15 +1,16 @@
 ## Map reads for Wolbachia wMelCS
+PWD=/media/inter/mkapun/projects/WolbachiaEvolHist_2023
 
-## get refernce genome; downloaded manually from https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_014354335.1/ and stored as /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/GCF_014354335.1_ASM1435433v1_genomic.fna
+## get refernce genome; downloaded manually from https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_014354335.1/ and stored as ${PWD}/data/GCF_014354335.1_ASM1435433v1_genomic.fna
 
-mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_wMelCS
+mkdir ${PWD}/results/mapping_wMelCS
 module load NGSmapper/bwa-0.7.13
 
-gzip /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/GCF_014354335.1_ASM1435433v1_genomic.fna
+gzip ${PWD}/data/GCF_014354335.1_ASM1435433v1_genomic.fna
 
 ## index reference
 module load NGSmapper/bwa-0.7.13
-bwa index /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/GCF_014354335.1_ASM1435433v1_genomic.fna.gz
+bwa index ${PWD}/data/GCF_014354335.1_ASM1435433v1_genomic.fna.gz
 
 for ID in 380 HG_16 HG_14 HG_17 HG_18 HG_19 HG_21 HG0021 HG0025 HG0028 HG0035 HG29702 HG47203 376 377 378 HG_09 HG_15 HG_16 HG_20 HG0026 HG0027 HG0029 HG0034 HG47203 HG47204 HG47205 CK2 DGRP370 DGRP646 DGRP335 DGRP338 ED2 ED3 ED6N ED10N EZ2 GA125 KN34 KR7 RG3 RG5 RG34 SP80 TZ14 UG5N ZI268 ZO12 ZS11 wMelCS wMelCSb; do
 
@@ -20,7 +21,7 @@ for ID in 380 HG_16 HG_14 HG_17 HG_18 HG_19 HG_21 HG0021 HG0025 HG0028 HG0035 HG
     #PBS -N Annotation_${Species}
 
     ## Redirect output stream to this file.
-    #PBS -o /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_wMelCS/${ID}_log.txt
+    #PBS -o ${PWD}/results/mapping_wMelCS/${ID}_log.txt
 
     ## Stream Standard Output AND Standard Error to outputfile (see above)
     #PBS -j oe
@@ -39,15 +40,15 @@ for ID in 380 HG_16 HG_14 HG_17 HG_18 HG_19 HG_21 HG0021 HG0025 HG0028 HG0035 HG
 
     bwa mem \
         -t 50 \
-        /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/GCF_014354335.1_ASM1435433v1_genomic.fna.gz \
-        /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken/${ID}_1.fq.gz \
-        /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken/${ID}_2.fq.gz |
+        ${PWD}/data/GCF_014354335.1_ASM1435433v1_genomic.fna.gz \
+        ${PWD}/results/kraken/${ID}_1.fq.gz \
+        ${PWD}/results/kraken/${ID}_2.fq.gz |
         samtools view  -F 4 -bh | samtools sort \
-        >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_wMelCS/${ID}.bam
+        >${PWD}/results/mapping_wMelCS/${ID}.bam
 
-    """ >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/${ID}_mapping.qsub
+    """ >${PWD}/shell/QSUB/${ID}_mapping.qsub
 
-    sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/${ID}_mapping.qsub
+    sh ${PWD}/shell/QSUB/${ID}_mapping.qsub
 
 done
 
@@ -59,10 +60,10 @@ module load Tools/samtools-1.12
 
 bwa mem \
     -t 50 \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/GCF_014354335.1_ASM1435433v1_genomic.fna.gz \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken/${ID}.fq.gz |
+    ${PWD}/data/GCF_014354335.1_ASM1435433v1_genomic.fna.gz \
+    ${PWD}/results/kraken/${ID}.fq.gz |
     samtools view -F 4 -bh | samtools sort \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_wMelCS/${ID}.bam
+    >${PWD}/results/mapping_wMelCS/${ID}.bam
 
 ### now also map ONT reads
 Samples=(Re1_full Re3 Re6_full Re10 Ak7_full Ak9_full MEL_full CS POP)
@@ -76,12 +77,12 @@ for i in ${!Samples[*]}; do
     echo $i ${Sample}
 
     minimap2 -ax map-ont \
-        /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/GCF_014354335.1_ASM1435433v1_genomic.fna.gz \
+        ${PWD}/data/GCF_014354335.1_ASM1435433v1_genomic.fna.gz \
         /media/inter/mkapun/projects/DrosoWolbGenomics/results/assemblies/${Sample}/data/ONT/${Sample}_ont.fq.gz |
         samtools view -bh | samtools sort \
-        >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_wMelCS/${Sample}.bam
+        >${PWD}/results/mapping_wMelCS/${Sample}.bam
 
-    samtools index /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_wMelCS/${Sample}.bam
+    samtools index ${PWD}/results/mapping_wMelCS/${Sample}.bam
 
 done
 
@@ -92,22 +93,22 @@ module load Tools/samtools-1.12
 
 ## make BAMlist
 
-mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData_wMelCS
-for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_wMelCS/*.bam; do
-    echo $i >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData_wMelCS/bamlist_Wolb.txt
+mkdir ${PWD}/results/MergedData_wMelCS
+for i in ${PWD}/results/mapping_wMelCS/*.bam; do
+    echo $i >>${PWD}/results/MergedData_wMelCS/bamlist_Wolb.txt
 
 done
 
-for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_wMelCS/*.bam; do
+for i in ${PWD}/results/mapping_wMelCS/*.bam; do
     samtools index $i &
 done
 
-gunzip /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/GCF_014354335.1_ASM1435433v1_genomic.fna.gz
+gunzip ${PWD}/data/GCF_014354335.1_ASM1435433v1_genomic.fna.gz
 
 ## SNP calling of Wolbachia reads
 bcftools mpileup \
-    -Bf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/GCF_014354335.1_ASM1435433v1_genomic.fna \
-    -b /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData_wMelCS/bamlist_Wolb.txt \
+    -Bf ${PWD}/data/GCF_014354335.1_ASM1435433v1_genomic.fna \
+    -b ${PWD}/results/MergedData_wMelCS/bamlist_Wolb.txt \
     -a AD,DP \
     -d 1000 \
     -Ou |
@@ -115,23 +116,23 @@ bcftools mpileup \
         -O z --ploidy 1 \
         -c \
         -v \
-        -o /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData_wMelCS/Wolb.vcf.gz
+        -o ${PWD}/results/MergedData_wMelCS/Wolb.vcf.gz
 
 ## select SNPs and make phylip input
-gzip /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolb_Burkholderia.fna
-python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/BCF2Phylip.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData_wMelCS/Wolb.vcf.gz \
+gzip ${PWD}/data/Wolb_Burkholderia.fna
+python ${PWD}/scripts/BCF2Phylip.py \
+    --input ${PWD}/results/MergedData_wMelCS/Wolb.vcf.gz \
     --MinAlt 1 \
     --MaxPropGaps 0.6 \
     --MinCov 5 \
     --exclude 377,378,380,HG0029,HG0027,HG0034,wYak \
-    --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names.txt \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData_wMelCS/Wolb.phy
+    --names ${PWD}/data/names.txt \
+    >${PWD}/results/MergedData_wMelCS/Wolb.phy
 
 ## make phylogenetic tree
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_wMelCS \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData_wMelCS/Wolb.phy \
+sh ${PWD}/shell/makePhylo_MidpointRoot.sh \
+    ${PWD}/results/phylogney/Wolb_wMelCS \
+    ${PWD}/results/MergedData_wMelCS/Wolb.phy \
     Wolbachia \
     0.1 \
     8 \
@@ -145,14 +146,14 @@ library(dendextend)
 library(phylogram) # to make dendrograms from non-ultrametric trees
 library(ape) # to import NEXUS and to plot co-phyloplots
 
-Tree.wMel<-midpoint.root(read.tree("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb/RAxML_bipartitions.FINAL_snps"))
+Tree.wMel<-midpoint.root(read.tree("${PWD}/results/phylogney/Wolb/RAxML_bipartitions.FINAL_snps"))
 
 wMel.ultra=as.dendrogram(chronos(Tree.wMel, lambda=0) )
 # wMel.unmatched <- as.dendrogram(multi2di(wMel.ultra, random=TRUE) )
 # plot(wMel.unmatched)
 
 ## load Mitodata based on amino acids and match UCE labels
-Tree.wMelCS<-midpoint.root(read.tree("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb_wMelCS/RAxML_bipartitions.FINAL_snps"))
+Tree.wMelCS<-midpoint.root(read.tree("${PWD}/results/phylogney/Wolb_wMelCS/RAxML_bipartitions.FINAL_snps"))
 
 wMelCS.ultra=as.dendrogram(chronos(Tree.wMelCS, lambda=0) )
 # wMelCS.unmatched <- as.dendrogram(multi2di(wMelCS.ultra, random=TRUE) )
@@ -160,7 +161,7 @@ wMelCS.ultra=as.dendrogram(chronos(Tree.wMelCS, lambda=0) )
 
 dndlist<-dendlist("wMel_ref"=wMel.ultra,"wMelCS_ref"=wMelCS.ultra)
 
-pdf("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData_wMelCS/Tanglegram.pdf",
+pdf("${PWD}/results/MergedData_wMelCS/Tanglegram.pdf",
     width=6,
     height=6)
 dndlist %>% untangle(method = "step1side") %>% 
@@ -170,7 +171,7 @@ dndlist %>% untangle(method = "step1side") %>%
         edge.lwd=3)
 dev.off()
 
-png("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData_wMelCS/Tanglegram.png",
+png("${PWD}/results/MergedData_wMelCS/Tanglegram.png",
     width=6,
     height=6,
     units="in",
@@ -182,6 +183,6 @@ dndlist %>% untangle(method = "step1side") %>%
         edge.lwd=3)
 dev.off()
 
-''' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData_wMelCS/plot.r
+''' >${PWD}/results/MergedData_wMelCS/plot.r
 
-Rscript /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData_wMelCS/plot.r
+Rscript ${PWD}/results/MergedData_wMelCS/plot.r

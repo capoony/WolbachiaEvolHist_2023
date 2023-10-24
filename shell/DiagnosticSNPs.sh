@@ -1,37 +1,39 @@
-mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants
+PWD=/media/inter/mkapun/projects/WolbachiaEvolHist_2023
 
-python3 /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/DiagnosticSNPs.py \
-  --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.vcf.gz \
+mkdir ${PWD}/output/Variants
+
+python3 ${PWD}/scripts/DiagnosticSNPs.py \
+  --input ${PWD}/results/MergedData/Wolb.vcf.gz \
   --MinCov 2 \
-  --output /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants \
-  --Variant /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/GT.txt
+  --output ${PWD}/output/Variants/variants \
+  --Variant ${PWD}/data/GT.txt
 
-echo '''
+echo """
 
 library(tidyverse)
 library(ggpubr)
 
-DATA=read.table("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants_variants.txt",
+DATA=read.table('${PWD}/output/Variants/variants_variants.txt',
     header=T)
 
-DATA=read.table("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants_variants.txt",
+DATA=read.table('${PWD}/output/Variants/variants_variants.txt',
 header=T)
 
 DATA <-DATA %>%
-filter(Sample != "wYak")
+filter(Sample != 'wYak')
 
 Sums <- DATA %>%
-    filter(Sample != "wYak") %>%
+    filter(Sample != 'wYak') %>%
     group_by(Sample,Variant) %>%
     summarize(Sum=n())
 
 PLOT2<-ggplot(Sums,aes(x= forcats::fct_rev(Sample),y=Sum,fill=Variant))+
-    geom_bar(stat="identity")+
+    geom_bar(stat='identity')+
     theme_bw()+
-    scale_fill_manual(values = c( "blue3","firebrick3"))+
+    scale_fill_manual(values = c( 'blue3','firebrick3'))+
     coord_flip()+ 
-    xlab("")+
-    theme(legend.position = "none")
+    xlab('')+
+    theme(legend.position = 'none')
 
 #PLOT2
 
@@ -39,8 +41,8 @@ PLOT=ggplot(DATA)+
   geom_rect(aes(xmin = Pos-1000, xmax = Pos+1000, ymin = 0, ymax = 1,fill=Variant))+
   facet_grid(Sample~.)+
     theme_bw()+
-    xlab("Genomic position")+
-    scale_fill_manual(values = c( "blue3","firebrick3"))+
+    xlab('Genomic position')+
+    scale_fill_manual(values = c( 'blue3','firebrick3'))+
    theme(
         axis.text.y=element_blank(),  #remove y axis labels
         axis.ticks.y=element_blank()  #remove y axis ticks
@@ -51,31 +53,31 @@ PLOT=ggplot(DATA)+
 #PLOT
 PLOT.full=ggarrange(PLOT2,PLOT,ncol=2,widths=c(1,2))
 
-ggsave("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants_dist.pdf",
+ggsave('${PWD}/output/Variants/variants_dist.pdf',
   PLOT.full,
   width=8,
   height=6)
 
-ggsave("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants_dist.png",
+ggsave('${PWD}/output/Variants/variants_dist.png',
   PLOT.full,
   width=8,
   height=6)
 
-# ggsave("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants_variants.pdf",
+# ggsave('${PWD}/output/Variants/variants_variants.pdf',
 #     PLOT,
 #     width=9,
 #     height=4)
 
-''' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants_variants.r
+""" >${PWD}/output/Variants/variants_variants.r
 
-Rscript /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Variants/variants_variants.r
+Rscript ${PWD}/output/Variants/variants_variants.r
 
-mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Umea
+mkdir ${PWD}/results/Umea
 
 module load Tools/bcftools-1.16
 module load Tools/samtools-1.12
 
-for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolbachia/*_sort.bam; do
+for i in ${PWD}/data/Wolbachia/*_sort.bam; do
   tmp=${i##*/}
   ID=${tmp%_sort.bam*}
   path=${i%/*}
@@ -84,45 +86,45 @@ for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolbachia/*_so
 
   samtools view -h ${path}/${ID}_sort.bam | sed 's/Wolbachia_pipientis_\[AE017196.1\]/ENA|AE017196|AE017196.1/g' | samtools view -bh >tmp
   mv tmp ${path}/${ID}_sort.bam
-  # echo ${path}/${ID}_sort.bam >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolbachia/bamlist.txt
-  # echo $ID >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolbachia/samplelist.txt
+  # echo ${path}/${ID}_sort.bam >>${PWD}/data/Wolbachia/bamlist.txt
+  # echo $ID >>${PWD}/data/Wolbachia/samplelist.txt
 done
 
 bcftools mpileup \
-  -Bf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/db/AE017196.1_wMel.fa \
-  -b /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolbachia/bamlist.txt \
+  -Bf ${PWD}/data/db/AE017196.1_wMel.fa \
+  -b ${PWD}/data/Wolbachia/bamlist.txt \
   -a AD,DP \
   -Ou |
   bcftools call \
     --ploidy 1 \
     -c \
     -v |
-  gzip >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolbachia/Umea.vcf.gz
+  gzip >${PWD}/data/Wolbachia/Umea.vcf.gz
 
-python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/GTWolbDiagSNPS.py \
-  --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/Wolbachia/Umea.vcf.gz \
-  --Variant /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data_old/OldStuff/output/Variants/variants_diag.txt \
-  >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Umea/variants.txt
+python ${PWD}/scripts/GTWolbDiagSNPS.py \
+  --input ${PWD}/data/Wolbachia/Umea.vcf.gz \
+  --Variant ${PWD}/data_old/OldStuff/output/Variants/variants_diag.txt \
+  >${PWD}/results/Umea/variants.txt
 
-echo '''
+echo """
 
 library(tidyverse)
 library(ggpubr)
 
-DATA=read.table("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Umea/variants.txt",
+DATA=read.table('${PWD}/results/Umea/variants.txt',
     header=T)
 Sums <- DATA %>%
-    filter(Sample != "wYak") %>%
+    filter(Sample != 'wYak') %>%
     group_by(Sample,Variant) %>%
     summarize(Sum=n())
 
 PLOT2<-ggplot(Sums,aes(x= forcats::fct_rev(Sample),y=Sum,fill=Variant))+
-    geom_bar(stat="identity")+
+    geom_bar(stat='identity')+
     theme_bw()+
-    scale_fill_manual(values = c( "blue3","firebrick3"))+
+    scale_fill_manual(values = c( 'blue3','firebrick3'))+
     coord_flip()+ 
-    xlab("")+
-    theme(legend.position = "none")
+    xlab('')+
+    theme(legend.position = 'none')
 
 #PLOT2
 
@@ -130,8 +132,8 @@ PLOT=ggplot(DATA)+
   geom_rect(aes(xmin = Pos-1000, xmax = Pos+1000, ymin = 0, ymax = 1,fill=Variant))+
   facet_grid(Sample~.)+
     theme_bw()+
-    xlab("Genomic position")+
-    scale_fill_manual(values = c( "blue3","firebrick3"))+
+    xlab('Genomic position')+
+    scale_fill_manual(values = c( 'blue3','firebrick3'))+
    theme(
         axis.text.y=element_blank(),  #remove y axis labels
         axis.ticks.y=element_blank()  #remove y axis ticks
@@ -142,16 +144,16 @@ PLOT=ggplot(DATA)+
 #PLOT
 PLOT.full=ggarrange(PLOT2,PLOT,ncol=2,widths=c(1,2))
 
-ggsave("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Umea/variants_dist.pdf",
+ggsave('${PWD}/results/Umea/variants_dist.pdf',
   PLOT.full,
   width=8,
   height=6)
 
-ggsave("/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Umea/variants_dist.png",
+ggsave('${PWD}/results/Umea/variants_dist.png',
   PLOT.full,
   width=8,
   height=6)
 
-''' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Umea/variants.r
+""" >${PWD}/results/Umea/variants.r
 
-Rscript /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/Umea/variants.r
+Rscript ${PWD}/results/Umea/variants.r

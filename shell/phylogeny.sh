@@ -1,4 +1,6 @@
 ### make Script to plot Trees
+PWD=/media/inter/mkapun/projects/WolbachiaEvolHist_2023
+
 echo """
 # load necessary R libraries
 library('ggtree')
@@ -55,7 +57,7 @@ ggsave(filename=PDF,
   PLOT.tree)
 ggsave(filename=PNG,
   PLOT.tree)
-""" >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/PlotTree_outgroup.r
+""" >${PWD}/scripts/PlotTree_outgroup.r
 
 echo """
 # load necessary R libraries
@@ -110,12 +112,12 @@ ggsave(filename=PDF,
   PLOT.tree)
 ggsave(filename=PNG,
   PLOT.tree)
-""" >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/PlotTree.r
+""" >${PWD}/scripts/PlotTree.r
 
 ### First Wolbachia
-rm -rf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb
-mkdir -p /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb
-cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb
+rm -rf ${PWD}/results/phylogney/Wolb
+mkdir -p ${PWD}/results/phylogney/Wolb
+cd ${PWD}/results/phylogney/Wolb
 
 module load Phylogeny/RAxML-2.8.10
 
@@ -126,7 +128,7 @@ raxmlHPC-PTHREADS-SSE3 \
   -N 20 \
   -p 772374015 \
   -n Wolbachia_snps \
-  -s /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.phy \
+  -s ${PWD}/results/MergedData/Wolb.phy \
   -T 200
 
 raxmlHPC-PTHREADS-SSE3 \
@@ -135,7 +137,7 @@ raxmlHPC-PTHREADS-SSE3 \
   -p 772374015 \
   -b 444353738 \
   -n bootrep_snps \
-  -s /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.phy \
+  -s ${PWD}/results/MergedData/Wolb.phy \
   -T 200
 
 # Now, reconcile the best ML tree w/ the bootreps:
@@ -146,18 +148,18 @@ raxmlHPC-SSE3 -f b \
   -n FINAL_snps
 
 ## plot Tree
-Rscript /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/PlotTree_outgroup.r \
-  /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb/RAxML_bipartitions.FINAL_snps \
-  /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Wolb/Wolb \
+Rscript ${PWD}/scripts/PlotTree_outgroup.r \
+  ${PWD}/results/phylogney/Wolb/RAxML_bipartitions.FINAL_snps \
+  ${PWD}/results/phylogney/Wolb/Wolb \
   Wolbachia \
   0.25 \
   wMel1_Gulbenkian,wMel2_Gulbenkian,wMel3_Gulbenkian,wMel1_Portugal,wMel2_Portugal,wMel1_Finland,wMel2_Finland,wMel_LabStrain_Gulbenkian,wMel_Indiana,wMel_Donor4Aedes
 
 ### Then Mitochondria
 
-rm -rf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito
-mkdir -p /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito
-cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito
+rm -rf ${PWD}/results/phylogney/Mito
+mkdir -p ${PWD}/results/phylogney/Mito
+cd ${PWD}/results/phylogney/Mito
 
 module load Phylogeny/RAxML-2.8.10
 
@@ -168,7 +170,7 @@ raxmlHPC-PTHREADS-SSE3 \
   -N 20 \
   -p 772374015 \
   -n Mitochondria_snps \
-  -s /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito.phy \
+  -s ${PWD}/results/MergedData/Mito.phy \
   -T 200
 
 raxmlHPC-PTHREADS-SSE3 \
@@ -177,7 +179,7 @@ raxmlHPC-PTHREADS-SSE3 \
   -p 772374015 \
   -b 444353738 \
   -n bootrep_snps \
-  -s /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Mito.phy \
+  -s ${PWD}/results/MergedData/Mito.phy \
   -T 200
 
 # Now, reconcile the best ML tree w/ the bootreps:
@@ -188,13 +190,13 @@ raxmlHPC-SSE3 -f b \
   -n FINAL_snps
 
 ## plot tree
-Rscript /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/PlotTree.r \
-  /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito/RAxML_bipartitions.FINAL_snps \
-  /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/Mito/Mito \
+Rscript ${PWD}/scripts/PlotTree.r \
+  ${PWD}/results/phylogney/Mito/RAxML_bipartitions.FINAL_snps \
+  ${PWD}/results/phylogney/Mito/Mito \
   Mitochondria \
   0.25 \
   NO
 
 ## copy to output folder
 
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/phylogney/*/*.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny
+cp ${PWD}/results/phylogney/*/*.pdf ${PWD}/output/Phylogeny

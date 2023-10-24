@@ -1,72 +1,73 @@
-mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/trim
+PWD=/media/inter/mkapun/projects/WolbachiaEvolHist_2023
 
-for ID in 380 HG_16 HG_14 HG_17 HG_18 HG_19 HG_21 HG0021 HG0025 HG0028 HG0035 HG29702 HG47203 376 377 378 HG_09 HG_15 HG_16 HG_20 HG0026 HG0027 HG0029 HG0034 HG47203 HG47204 HG47205 CK2 DGRP88 DGRP857 DGRP42 DGRP335 DGRP338 ED2 ED3 ED6N ED10N EZ2 GA125 KN34 KR7 RG3 RG5 RG34 SP80 TZ14 UG5N ZI268 ZO12 ZS11 wMelCS wMelCSb; do
+mkdir ${PWD}/data/trim
+
+while read -r ID; do
 
     echo """
-#!/bin/sh
+    #!/bin/sh
 
-## name of Job
-#PBS -N trim_galore_${ID}
+    ## name of Job
+    #PBS -N trim_galore_${ID}
 
-## Redirect output stream to this file.
-#PBS -o /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/trim/${ID}_log.txt
+    ## Redirect output stream to this file.
+    #PBS -o ${PWD}/data/trim/${ID}_log.txt
 
-## Stream Standard Output AND Standard Error to outputfile (see above)
-#PBS -j oe
+    ## Stream Standard Output AND Standard Error to outputfile (see above)
+    #PBS -j oe
 
-## Select 50 cores and 200gb of RAM
-#PBS -l select=1:ncpus=20:mem=200g
+    ## Select 50 cores and 200gb of RAM
+    #PBS -l select=1:ncpus=20:mem=200g
 
-######## load dependencies #######
+    ######## load dependencies #######
 
-source /opt/anaconda3/etc/profile.d/conda.sh
-conda activate trim-galore-0.6.2
+    source /opt/anaconda3/etc/profile.d/conda.sh
+    conda activate trim-galore-0.6.2
 
-## Go to output folder
-cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/trim
+    ## Go to output folder
+    cd ${PWD}/data/trim
 
-## loop through all FASTQ pairs and trim by quality PHRED 20, min length 30bp and automatically detect & remove adapters
+    ## loop through all FASTQ pairs and trim by quality PHRED 20, min length 30bp and automatically detect & remove adapters
 
-trim_galore   \
-    --paired   \
-    --quality 20   \
-    --length 30    \
-    --cores 20   \
-    --fastqc   \
-    --gzip   \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads/${ID}_1.fastq.gz   \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads/${ID}_2.fastq.gz
+    trim_galore   \
+        --paired   \
+        --quality 20   \
+        --length 30    \
+        --cores 20   \
+        --fastqc   \
+        --gzip   \
+        ${PWD}/data/reads/${ID}_1.fastq.gz   \
+        ${PWD}/data/reads/${ID}_2.fastq.gz
 
-""" >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/trim_${ID}.txt
+    """ >${PWD}/shell/QSUB/trim_${ID}.txt
 
-    sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/trim_${ID}.txt
+    sh ${PWD}/shell/QSUB/trim_${ID}.txt
 
-done
+done <${PWD}/datasets/AllSamples.txt
 
 ## now also sample DGRP335
 ID=DGRP335
 conda activate trim-galore-0.6.2
 
 ## Go to output folder
-cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/trim
+cd ${PWD}/data/trim
 trim_galore \
     --quality 20 \
     --length 30 \
     --cores 20 \
     --fastqc \
-    --gzip /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/reads/${ID}.fastq.gz
+    --gzip ${PWD}/data/reads/${ID}.fastq.gz
 
 ## unzip FASTQC folders to get readlengths
-cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/trim
+cd ${PWD}/data/trim
 
 for i in *.zip; do unzip $i; done
 
 ## now summarize the lengths
-for ID in 380 HG_16 HG_14 HG_17 HG_18 HG_19 HG_21 HG0021 HG0025 HG0028 HG0035 HG29702 HG47203 376 377 378 HG_09 HG_15 HG_16 HG_20 HG0026 HG0027 HG0029 HG0034 HG47203 HG47204 HG47205 CK2 DGRP335 DGRP338 ED2 ED3 ED6N ED10N EZ2 GA125 KN34 KR7 RG3 RG5 RG34 SP80 TZ14 UG5N ZI268 ZO12 ZS11; do
-
-    python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/fastqLengthDist.py \
-        --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/trim/${ID}_1_val_1_fastqc/fastqc_data.txt \
+while read -r ID; do
+    python ${PWD}/scripts/fastqLengthDist.py \
+        --input ${PWD}/data/trim/${ID}_1_val_1_fastqc/fastqc_data.txt \
         --name ${ID} \
-        >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/TrimmedReadLength.summary
+        >>${PWD}/data/trim/TrimmedReadLength.summary
 
-done
+done <${PWD}/datasets/AllSamples.txt

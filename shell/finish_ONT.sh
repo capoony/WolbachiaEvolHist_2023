@@ -1,54 +1,56 @@
+PWD=/media/inter/mkapun/projects/WolbachiaEvolHist_2023
+
 ### Isolate Wolbachia Contigs
-mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes
+mkdir ${PWD}/results/WolbGenomes
 
 ## get wMel Reference
-cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data
+cd ${PWD}/data
 wget https://www.ebi.ac.uk/ena/browser/api/fasta/AE017196.1?download=true
 
-mv /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/AE017196.1?download=true /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/AE017196.1_wMel.fa
+mv ${PWD}/data/AE017196.1?download=true ${PWD}/data/AE017196.1_wMel.fa
 
 Samples=(Re1_full Re3 Re6_full Re10 Ak7_full Ak9_full MEL_full CS POP)
 for i in ${!Samples[*]}; do
   Sample=${Samples[i]}
   echo $i ${Sample}
 
-  mkdir -p /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes/${Sample}/Genomes
+  mkdir -p ${PWD}/results/WolbGenomes/${Sample}/Genomes
 
   ## Only keep BLAST hits with more than 95% identity and store first two columns
-  awk '$6>95' /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/assemblies/${Sample}/results/BLAST/blastn_${Sample}.txt |
+  awk '$6>95' ${PWD}/results/assemblies/${Sample}/results/BLAST/blastn_${Sample}.txt |
     cut -f 1-2 \
-      >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes/${Sample}/${Sample}.bl
+      >${PWD}/results/WolbGenomes/${Sample}/${Sample}.bl
 
   ## assign taxonomic information
   perl /media/inter/mkapun/projects/SepsidMicroBiome/scripts/tax_trace.pl \
     /media/inter/mkapun/projects/SepsidMicroBiome/data/nodes.dmp \
     /media/inter/mkapun/projects/SepsidMicroBiome/data/names.dmp \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes/${Sample}/${Sample}.bl \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes/${Sample}/${Sample}.tax
+    ${PWD}/results/WolbGenomes/${Sample}/${Sample}.bl \
+    ${PWD}/results/WolbGenomes/${Sample}/${Sample}.tax
 
   ## split by taxonomy
-  python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/SplitFASTAByBLASTsimple.py \
-    --FASTA /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/assemblies/${Sample}/output/${Sample}_ONT.fa.gz \
-    --BLAST /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes/${Sample}/${Sample}.tax \
-    --output /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes/${Sample}/Genomes
+  python ${PWD}/scripts/SplitFASTAByBLASTsimple.py \
+    --FASTA ${PWD}/results/assemblies/${Sample}/output/${Sample}_ONT.fa.gz \
+    --BLAST ${PWD}/results/WolbGenomes/${Sample}/${Sample}.tax \
+    --output ${PWD}/results/WolbGenomes/${Sample}/Genomes
 
   ##combine contigs in order according to showtilingoutput in multifasta files
 
-  mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes/${Sample}/nucmer
-  cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes/${Sample}/nucmer
+  mkdir ${PWD}/results/WolbGenomes/${Sample}/nucmer
+  cd ${PWD}/results/WolbGenomes/${Sample}/nucmer
 
   conda activate mummer-3.23
 
-  gunzip /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes/${Sample}/Genomes/Wolbachia.fa.gz
+  gunzip ${PWD}/results/WolbGenomes/${Sample}/Genomes/Wolbachia.fa.gz
 
   ## Use NUCMER to align all Wolbachia-specific contigs agains the reference.
   nucmer \
     -mum \
     -p ${Sample} \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/AE017196.1_wMel.fa \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes/${Sample}/Genomes/Wolbachia.fa
+    ${PWD}/data/AE017196.1_wMel.fa \
+    ${PWD}/results/WolbGenomes/${Sample}/Genomes/Wolbachia.fa
 
-  gzip /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes/${Sample}/Genomes/Wolbachia.fa
+  gzip ${PWD}/results/WolbGenomes/${Sample}/Genomes/Wolbachia.fa
 
   #combine contigs in order according to showtilingoutput in multifasta files
 
@@ -58,10 +60,10 @@ for i in ${!Samples[*]}; do
 
   show-tiling -i 20.0 -v 20.0 -V 0 -g -1 -R ${Sample}.filter.delta >${Sample}.tiling
 
-  python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/CombineContigs.py \
+  python ${PWD}/scripts/CombineContigs.py \
     --tile ${Sample}.tiling \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes/${Sample}/Genomes/Wolbachia.fa.gz \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes/${Sample}/nucmer/${Sample}.fasta
+    --input ${PWD}/results/WolbGenomes/${Sample}/Genomes/Wolbachia.fa.gz \
+    >${PWD}/results/WolbGenomes/${Sample}/nucmer/${Sample}.fasta
 
 done
 
@@ -72,18 +74,18 @@ for i in ${!NewName[*]}; do
 
   echo $New
 
-  python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/Scaffold.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/WolbGenomes/${New}/nucmer/${New}.fasta \
+  python ${PWD}/scripts/Scaffold.py \
+    --input ${PWD}/results/WolbGenomes/${New}/nucmer/${New}.fasta \
     --Name ${New} |
-    python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/SetStart.py \
-      --reference /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/AE017196.1_wMel.fa \
+    python ${PWD}/scripts/SetStart.py \
+      --reference ${PWD}/data/AE017196.1_wMel.fa \
       --input - \
-      >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/FASTA/${New}_start.fasta
+      >${PWD}/results/CompGenomes/FASTA/${New}_start.fasta
 
 done
 
 ## copy to output and manually edit FASTA header to contain more info
 
-mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/Genomes
+mkdir ${PWD}/Genomes
 
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/FASTA/*_start.fasta /media/inter/mkapun/projects/WolbachiaEvolHist_2023/Genomes
+cp ${PWD}/results/CompGenomes/FASTA/*_start.fasta ${PWD}/Genomes

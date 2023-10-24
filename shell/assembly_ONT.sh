@@ -1,5 +1,7 @@
 ##  First make denovo assemblies of wMelCS-typ libraries
 
+PWD=/media/inter/mkapun/projects/WolbachiaEvolHist_2023
+
 Samples=(Re3 Re10 CS POP)
 Barcodes=(04 06 10 16)
 
@@ -9,11 +11,11 @@ for i in ${!Samples[*]}; do
 
   echo $i $Sample $Barcode
 
-  mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/assemblies_ONT/${Sample}
+  mkdir ${PWD}/results/assemblies_ONT/${Sample}
 
   /media/inter/pipelines/AutDeNovo/AutDeNovo.sh \
     Name=${Sample} \
-    OutputFolder=/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/assemblies_ONT/${Sample} \
+    OutputFolder=${PWD}/results/assemblies_ONT/${Sample} \
     ONT=/media/inter/SeqData/raw/MinION/20221013_DrosoWolbGenomics/SUP/FASTQ/barcode${Barcode} \
     threads=100 \
     RAM=400 \
@@ -31,7 +33,7 @@ Samples=(Re1 Re6 Ak7 Ak9 MEL)
 Barcodes=(03 05 07 08 09)
 Barcodes2=(18 19 20 21 17)
 
-mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/CombinedMel
+mkdir ${PWD}/data/CombinedMel
 
 for i in ${!Samples[*]}; do
   Sample=${Samples[i]}
@@ -40,18 +42,18 @@ for i in ${!Samples[*]}; do
 
   echo $i $Sample $Barcode
 
-  mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/CombinedMel/${Samples[i]}
+  mkdir ${PWD}/data/CombinedMel/${Samples[i]}
 
   cp /media/inter/SeqData/raw/MinION/20221013_DrosoWolbGenomics/SUP/FASTQ/barcode${Barcode}/*.gz \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/CombinedMel/${Samples[i]}
+    ${PWD}/data/CombinedMel/${Samples[i]}
 
   cp /media/inter/SeqData/raw/MinION/20230202_DrosoWolbGenomics2/SUP/FASTQ/barcode${Barcode2}/*.gz \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/CombinedMel/${Samples[i]}
+    ${PWD}/data/CombinedMel/${Samples[i]}
 
   /media/inter/pipelines/AutDeNovo/AutDeNovo.sh \
     Name=${Sample}_full \
-    OutputFolder=/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/assemblies_ONT/${Sample}_full \
-    ONT=/media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/CombinedMel/${Samples[i]} \
+    OutputFolder=${PWD}/results/assemblies_ONT/${Sample}_full \
+    ONT=${PWD}/data/CombinedMel/${Samples[i]} \
     threads=100 \
     RAM=400 \
     RAMAssembly=800 \
@@ -60,14 +62,14 @@ for i in ${!Samples[*]}; do
     BuscoDB=rickettsiales_odb10 \
     Racon=2
 
-  rm -rf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/assemblies_ONT/${Sample}
+  rm -rf ${PWD}/results/assemblies_ONT/${Sample}
 
 done
 
-rm -rf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/CombinedMel
+rm -rf ${PWD}/data/CombinedMel
 
 ## prepapre for SRA upload
-mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/SRA
+mkdir ${PWD}/data/SRA
 
 Samples=(Re1_1 Re3 Re6_1 Re10 Ak7_1 Ak9_1 MEL_1 CS POP)
 Barcodes=(03 04 05 06 07 08 09 10 16)
@@ -77,7 +79,7 @@ for i in ${!Samples[*]}; do
   Barcode=${Barcodes[i]}
 
   cat /media/inter/SeqData/raw/MinION/20221013_DrosoWolbGenomics/SUP/FASTQ/barcode${Barcode}/*.fastq.gz \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/SRA/${Sample}.fq.gz
+    >${PWD}/data/SRA/${Sample}.fq.gz
 
 done
 
@@ -89,6 +91,6 @@ for i in ${!Samples[*]}; do
   Barcode=${Barcodes2[i]}
 
   cat /media/inter/SeqData/raw/MinION/20230202_DrosoWolbGenomics2/SUP/FASTQ/barcode${Barcode}/*.fastq.gz \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/SRA/${Sample}.fq.gz
+    >${PWD}/data/SRA/${Sample}.fq.gz
 
 done

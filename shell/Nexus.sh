@@ -26,4 +26,4 @@ do
 
   sh shell/QSUB/${ID}.sh &
 
-done <datasets/newDATA2.txt
+done <datasets/newDATA.txt

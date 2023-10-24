@@ -1,10 +1,11 @@
-### manually make Groups file: /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/groups.txt
+### manually make Groups file: ${PWD}/data/groups.txt
+PWD=/media/inter/mkapun/projects/WolbachiaEvolHist_2023
 
-mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/SnpDiff
+mkdir ${PWD}/results/SnpDiff
 
-python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/SNPDiff.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/MergedData/Wolb.phy \
-    --groups /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/groups.txt \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/SnpDiff/counts.txt
+python ${PWD}/scripts/SNPDiff.py \
+    --input ${PWD}/results/MergedData/Wolb.phy \
+    --groups ${PWD}/data/groups.txt \
+    >${PWD}/results/SnpDiff/counts.txt
 
 ## Then make Pivot table In Excel

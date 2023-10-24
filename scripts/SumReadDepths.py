@@ -55,10 +55,10 @@ MitoDepth = d(float)
 
 Autosomes = ["2L", "2R", "3L", "3R"]
 ONT = ["Re1_full", "Re3", "Re6_full", "Re10",
-       "Ak7_full", "Ak9_full", "MEL_full", "CS", "POP", "CK2", "DGRP335", "DGRP338", "ED2", "ED3", "ED6N", "ED10N", "EZ2", "GA125", "KN34", "KR7", "RG3", "RG5", "RG34", "SP80", "TZ14", "UG5N", "ZI268", "ZO12", "ZS11", "DGRP857", "DGRP88", "DGRP427",]
+       "Ak7_full", "Ak9_full", "MEL_full", "CS", "POP", "CK2", "DGRP335", "DGRP338", "ED2", "ED3", "ED6N", "ED10N", "EZ2", "GA125", "KN34", "KR7", "RG3", "RG5", "RG34", "SP80", "TZ14", "UG5N", "ZI268", "ZO12", "ZS11", "DGRP857", "DGRP88", "DGRP427", "DGRP370", "DGRP646", "wMelCS", "wMelCSb"]
 
 TYPE = ["wMel", "wMelCS", "wMel", "wMelCS",
-        "wMel", "wMel", "wMel", "wMelCS", "wMelCS", "wMel", "wMelCS", "wMelCS", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "uninfected", "uninfected", "uninfected"]
+        "wMel", "wMel", "wMel", "wMelCS", "wMelCS", "wMel", "wMelCS", "wMelCS", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "wMel", "uninfected", "uninfected", "uninfected", "wMel", "wMel", "wMelCS", "wMelCS"]
 
 
 RECENT = dict(zip(*[ONT, TYPE]))

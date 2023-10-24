@@ -2,42 +2,47 @@
 
 ## Get list of full IDs, see here for credits: https://bioinformaticsworkbook.org/phylogenetics/reconstructing-species-phylogenetic-tree-with-busco-genes-using-maximum-liklihood-method.html#gsc.tab=0
 
-mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2
+PWD=/media/inter/mkapun/projects/WolbachiaEvolHist_2023
 
-#rm -f /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/complete_busco_ids.txt
+mkdir ${PWD}/results/CompGenomes/busco_genes2
 
-cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/denovo
+#rm -f ${PWD}/results/CompGenomes/busco_genes2/complete_busco_ids.txt
+
+cd ${PWD}/results/denovo
 
 for file in $(find -iname "full_table*.tsv"); do
-    grep -v "^#" ${file} | awk '$2=="Complete" {print $1}' >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/complete_busco_ids.txt
+    grep -v "^#" ${file} | awk '$2=="Complete" {print $1}' \
+        >>${PWD}/results/CompGenomes/busco_genes2/complete_busco_ids.txt
 done
 
-cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/assemblies_ONT
+cd ${PWD}/results/assemblies_ONT
 
 for file in $(find -iname "full_table*.tsv"); do
-    grep -v "^#" ${file} | awk '$2=="Complete" {print $1}' >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/complete_busco_ids.txt
+    grep -v "^#" ${file} | awk '$2=="Complete" {print $1}' \
+        >>${PWD}/results/CompGenomes/busco_genes2/complete_busco_ids.txt
 done
 
-cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/refseq/busco
+cd ${PWD}/data/refseq/busco
 
 for file in $(find -iname "full_table*.tsv"); do
-    grep -v "^#" ${file} | awk '$2=="Complete" {print $1}' >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/complete_busco_ids.txt
+    grep -v "^#" ${file} | awk '$2=="Complete" {print $1}' \
+        >>${PWD}/results/CompGenomes/busco_genes2/complete_busco_ids.txt
 done
 
 ## Genes that are present in ALL samples
 
-sort /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/complete_busco_ids.txt |
+sort ${PWD}/results/CompGenomes/busco_genes2/complete_busco_ids.txt |
     uniq -c \
-        >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/complete_busco_ids_with_counts.txt
+        >${PWD}/results/CompGenomes/busco_genes2/complete_busco_ids_with_counts.txt
 
-awk '$1 >= 33 {print $2}' /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/complete_busco_ids_with_counts.txt \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/final_busco_ids.txt
+awk '$1 >= 33 {print $2}' ${PWD}/results/CompGenomes/busco_genes2/complete_busco_ids_with_counts.txt \
+    >${PWD}/results/CompGenomes/busco_genes2/final_busco_ids.txt
 
 ### Get Sequences
 
-mkdir -p /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna
+mkdir -p ${PWD}/results/CompGenomes/busco_genes2/busco_dna
 
-cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/denovo
+cd ${PWD}/results/denovo
 
 for dir in $(find . -type d -name "single_copy_busco_sequences"); do
     echo $dir
@@ -49,17 +54,20 @@ for dir in $(find . -type d -name "single_copy_busco_sequences"); do
         file=${i##*/}
         #echo $file
 
-        cp $i /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
-        sed -i 's/^>/>'${abbrv}'|/g' /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
-        cut -f 1 -d ":" /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file} | tr '[:lower:]' '[:upper:]' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}.1
-        mv /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}.1 /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
+        cp $i ${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
+        sed -i 's/^>/>'${abbrv}'|/g' ${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
+        cut -f 1 -d ":" ${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file} |
+            tr '[:lower:]' '[:upper:]' \
+                >${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}.1
+        mv ${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}.1 \
+            ${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
     done
 
 done
 
 ### Get Sequences
 
-cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/assemblies_ONT
+cd ${PWD}/results/assemblies_ONT
 
 for dir in $(find . -type d -name "single_copy_busco_sequences"); do
     echo $dir
@@ -71,15 +79,18 @@ for dir in $(find . -type d -name "single_copy_busco_sequences"); do
         file=${i##*/}
         #echo $file
 
-        cp $i /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
-        sed -i 's/^>/>'${abbrv}'|/g' /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
-        cut -f 1 -d ":" /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file} | tr '[:lower:]' '[:upper:]' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}.1
-        mv /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}.1 /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
+        cp $i ${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
+        sed -i 's/^>/>'${abbrv}'|/g' ${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
+        cut -f 1 -d ":" ${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file} |
+            tr '[:lower:]' '[:upper:]' \
+                >${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}.1
+        mv ${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}.1 \
+            ${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
     done
 
 done
 
-cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/refseq/busco
+cd ${PWD}/data/refseq/busco
 
 for dir in $(find . -type d -name "single_copy_busco_sequences"); do
     echo $dir
@@ -91,10 +102,10 @@ for dir in $(find . -type d -name "single_copy_busco_sequences"); do
         file=${i##*/}
         #echo $file
 
-        cp $i /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
-        sed -i 's/^>/>'${abbrv}'|/g' /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
-        cut -f 1 -d ":" /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file} | tr '[:lower:]' '[:upper:]' >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}.1
-        mv /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}.1 /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
+        cp $i ${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
+        sed -i 's/^>/>'${abbrv}'|/g' ${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
+        cut -f 1 -d ":" ${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file} | tr '[:lower:]' '[:upper:]' >${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}.1
+        mv ${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}.1 ${PWD}/results/CompGenomes/busco_genes2/busco_dna/${abbrv}_${file}
     done
 
 done
@@ -102,20 +113,20 @@ done
 ### concatenate and reduce to shared genes, what a beautiful code!!!
 
 while read line; do
-    cat /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna/*_${line}.fna \
-        >>/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/${line}_dna.fasta
-done </media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/final_busco_ids.txt
+    cat ${PWD}/results/CompGenomes/busco_genes2/busco_dna/*_${line}.fna \
+        >>${PWD}/results/CompGenomes/busco_genes2/${line}_dna.fasta
+done <${PWD}/results/CompGenomes/busco_genes2/final_busco_ids.txt
 
-## rm -rf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/busco_dna
+## rm -rf ${PWD}/results/CompGenomes/busco_genes2/busco_dna
 
 # append outgroup data
 
 ### make alignments
 
-mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna
+mkdir ${PWD}/results/CompGenomes/mafft_dna
 conda activate mafft-7.487
 
-for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/busco_genes2/*_dna.fasta; do
+for i in ${PWD}/results/CompGenomes/busco_genes2/*_dna.fasta; do
 
     tmp=${i##*/}
     ID=${tmp%_*}
@@ -125,86 +136,45 @@ for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes
         --auto \
         --adjustdirection \
         ${i} \
-        >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna/${ID}_aln.fasta
+        >${PWD}/results/CompGenomes/mafft_dna/${ID}_aln.fasta
 
-    python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/fixIDAfterMafft.py \
-        --Alignment /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna/${ID}_aln.fasta \
+    python ${PWD}/scripts/fixIDAfterMafft.py \
+        --Alignment ${PWD}/results/CompGenomes/mafft_dna/${ID}_aln.fasta \
         --input ${i} \
-        >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna/${ID}_aln_fixed.fasta
+        >${PWD}/results/CompGenomes/mafft_dna/${ID}_aln_fixed.fasta
 
-    rm -f /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna/${ID}_aln.fasta
+    rm -f ${PWD}/results/CompGenomes/mafft_dna/${ID}_aln.fasta
 
 done
 
-# for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/refseq/data/*.fa
+# for i in ${PWD}/data/refseq/data/*.fa
 # do
 # tmp=${i##*/}
 # ID=${tmp%%.*}
 
-# echo "$ID,$ID" >> /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names2.txt
+# echo "$ID,$ID" >> ${PWD}/data/names2.txt
 
 # done
 
 ## make phylogeny
 
-rm -rf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2
+rm -rf ${PWD}/results/CompGenomes/phylogeny2
 
-mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2
+mkdir ${PWD}/results/CompGenomes/phylogeny2
 
-python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/ConcatenateAlignments.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna \
-    --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names2.txt \
+python ${PWD}/scripts/ConcatenateAlignments.py \
+    --input ${PWD}/results/CompGenomes/mafft_dna \
+    --names ${PWD}/data/names2.txt \
     --exclude HG0027,HG0029,HG47205,WMELOCTOLESS,WMEL_AMD,WMELCS112,WMELCSCSBERKELEY,WMELPC75,WMELPLUS,WMELPOP1,WMELPOP2,WMELPOP3 \
-    --output /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna
+    --output ${PWD}/results/CompGenomes/alignment_dna
 
-python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/IgnoreSingletons.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna.fa \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna_noSing.fa
+## Manually edit Alignment File in JalView -- puuh --- and store as ${PWD}/results/CompGenomes/alignment_dna_noSing.fa
 
-python /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/ConcatenateAlignments.py \
-    --input /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/mafft_dna \
-    --names /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/names2.txt \
-    --exclude NA \
-    --NoGaps \
-    >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/alignment_dna_noGap.fa
-
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2 \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna.fa \
+sh ${PWD}/shell/makePhylo_MidpointRoot.sh \
+    ${PWD}/results/CompGenomes/phylogeny2_noSing \
+    ${PWD}/results/CompGenomes/alignment_dna_noSing.fa \
     Wolbachia \
     0.00005 \
     8 \
     5 \
     no
-
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2_noSing \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna_noSing.fa \
-    Wolbachia \
-    0.00005 \
-    8 \
-    5 \
-    no
-
-output=/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2_noSing
-Rscript /media/inter/mkapun/projects/WolbachiaEvolHist_2023/scripts/PlotTree_outgroup.r \
-    ${output}/RAxML_bipartitions.FINAL_snps \
-    ${output}/Wolb_BUSCO_noSing \
-    Wolb_BUSCO_noSing \
-    0.00005 \
-    WYAK
-
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/makePhylo_MidpointRoot.sh \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2_noOut \
-    /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/alignment_dna_noOut.fa \
-    Wolbachia \
-    0.0001 \
-    8 \
-    5 \
-    no
-
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_BUSCO.pdf
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_BUSCO.png
-
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2_noOut/Wolbachia.pdf /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_BUSCO_noOut.pdf
-cp /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/CompGenomes/phylogeny2_noOut/Wolbachia.png /media/inter/mkapun/projects/WolbachiaEvolHist_2023/output/Phylogeny/Wolbachia_BUSCO_noOut.png

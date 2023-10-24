@@ -103,28 +103,28 @@ We used our custom automated denovo assembly pipeline, which can be found [here]
 
 ####  test for statistical congruency between *Wolbachia* and Mito Trees
 
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/congruencyTrees.sh
+[shell/congruencyTrees.sh](shell/congruencyTrees.sh)
 
 ####  identify if there is a potential reference bias
 
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/mapReads_wMelCS.sh
+[shell/mapReads_wMelCS.sh](shell/mapReads_wMelCS.sh)
 
 #### make phylogeny of supergroup B samples
 
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/SupergroupB_phylogeny.sh
+[shell/SupergroupB_phylogeny.sh](shell/SupergroupB_phylogeny.sh)
 
 #### BLAST mitochondria reads in H03 and H05
 
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/mitoBLAST.sh
+[shell/mitoBLAST.sh](shell/mitoBLAST.sh)
 
 #### calculate Titer based on Median 
 
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/titer_median.sh
+[shell/titer_median.sh](shell/titer_median.sh)
 
 #### calculate Read depths based on prefiltered reads
 
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/titer_prefiltered.sh
+[shell/titer_prefiltered.sh](shell/titer_prefiltered.sh)
 
 #### get Pairwise SNP differences among groups
 
-sh /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/SnpDiff.sh
+[shell/SnpDiff.sh](shell/SnpDiff.sh)

@@ -1,8 +1,9 @@
 ## download Datasets
+PWD=/media/inter/mkapun/projects/WolbachiaEvolHist_2023
 
-mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/refseq
+mkdir ${PWD}/data/refseq
 
-cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/refseq
+cd ${PWD}/data/refseq
 
 ## get full list of available bacterial RefSeq genomes
 wget ftp://ftp.ncbi.nih.gov/genomes/refseq/bacteria/assembly_summary.txt
@@ -44,7 +45,7 @@ do
   #PBS -N BUSCO_${ID}
 
   ## Redirect output stream to this file.
-  #PBS -o /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/refseq/busco/log/Busco_${ID}_log.txt
+  #PBS -o ${PWD}/data/refseq/busco/log/Busco_${ID}_log.txt
 
   ## Stream Standard Output AND Standard Error to outputfile (see above)
   #PBS -j oe
@@ -60,18 +61,18 @@ do
   ######## run analyses #######
 
   ## Go to pwd
-  cd /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/refseq/busco
+  cd ${PWD}/data/refseq/busco
 
-  gunzip /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/refseq/data/${ID}.fa.gz
+  gunzip ${PWD}/data/refseq/data/${ID}.fa.gz
 
-  busco -i /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/refseq/data/${ID}.fa \
+  busco -i ${PWD}/data/refseq/data/${ID}.fa \
        -o ${ID}  \
           -m genome  \
              -c 50  \
                 -f  \
                    -l rickettsiales_odb10
-    """ >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/${ID}_Busco.qsub
+    """ >${PWD}/shell/QSUB/${ID}_Busco.qsub
 
-    qsub /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/${ID}_Busco.qsub
+    qsub ${PWD}/shell/QSUB/${ID}_Busco.qsub
 
 done <assembly_summary_complete_genomes.txt

@@ -1,4 +1,6 @@
 ## Map reads for Wolbachia
+PWD=/media/inter/mkapun/projects/WolbachiaEvolHist_2023
+
 mkdir /media/inter/mkapun/projects/DrosoWolbGenomics/results/RefMapping
 
 Samples=(Re1_full Re3 Re6_full Re10 Ak7_full Ak9_full MEL_full CS POP)
@@ -23,12 +25,12 @@ done
 
 ## now map against Mito
 
-mkdir /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_mito
+mkdir ${PWD}/results/mapping_mito
 
 ## index reference
-bwa index /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/db/NC_024511.2_start.fasta
+bwa index ${PWD}/data/db/NC_024511.2_start.fasta
 
-for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken_mito/ONT/*.fq.gz; do
+for i in ${PWD}/results/kraken_mito/ONT/*.fq.gz; do
     tmp=${i##*/}
     ID=${tmp%.fq.gz*}
     echo ${ID}
@@ -40,7 +42,7 @@ for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken_mito
     #PBS -N Annotation_${Species}
 
     ## Redirect output stream to this file.
-    #PBS -o /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_mito/${ID}_log.txt
+    #PBS -o ${PWD}/results/mapping_mito/${ID}_log.txt
 
     ## Stream Standard Output AND Standard Error to outputfile (see above)
     #PBS -j oe
@@ -59,22 +61,22 @@ for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken_mito
 
 
     minimap2 -ax map-ont \
-        /media/inter/mkapun/projects/WolbachiaEvolHist_2023/data/db/NC_024511.2_start.fasta  \
-        /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/kraken_mito/ONT/${ID}.fq.gz |
+        ${PWD}/data/db/NC_024511.2_start.fasta  \
+        ${PWD}/results/kraken_mito/ONT/${ID}.fq.gz |
         samtools view -bh | samtools sort \
-        >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_mito/${ID}.bam
+        >${PWD}/results/mapping_mito/${ID}.bam
 
-    """ >/media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/${ID}_mapping_mito.qsub
+    """ >${PWD}/shell/QSUB/${ID}_mapping_mito.qsub
 
-    qsub /media/inter/mkapun/projects/WolbachiaEvolHist_2023/shell/QSUB/${ID}_mapping_mito.qsub
+    qsub ${PWD}/shell/QSUB/${ID}_mapping_mito.qsub
 
 done
 
-for i in /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_mito/*_complete.bam; do
+for i in ${PWD}/results/mapping_mito/*_complete.bam; do
 
     tmp=${i##*/}
     ID=${tmp%_complete.bam*}
     echo ${ID}
 
-    mv /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_mito/${ID}_complete.bam /media/inter/mkapun/projects/WolbachiaEvolHist_2023/results/mapping_mito/${ID}.bam
+    mv ${PWD}/results/mapping_mito/${ID}_complete.bam ${PWD}/results/mapping_mito/${ID}.bam
 done
